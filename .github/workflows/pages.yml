@@ -33,8 +33,8 @@ jobs:
       - name: Build static website
         working-directory: web
         env:
-          PUBLIC_SITE_URL: https://woraphontrangpanich-jpg.github.io
-          PUBLIC_BASE_PATH: /intaniadebate/
+          PUBLIC_SITE_URL: https://intaniadebateclub.com
+          PUBLIC_BASE_PATH: /
           PUBLIC_MEDIA_PROVIDER: local
           ASTRO_TELEMETRY_DISABLED: '1'
         run: npm run build
