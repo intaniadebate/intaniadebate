@@ -2,7 +2,9 @@
 
 เว็บไซต์ Intania Debate Club — MVP 2
 
-เว็บสาธารณะ: https://woraphontrangpanich-jpg.github.io/intaniadebate/
+เว็บสาธารณะ: https://intaniadebateclub.com/
+
+สถานะการเชื่อมโดเมนและ HTTPS: [คู่มือโดเมน](docs/CUSTOM_DOMAIN.md)
 
 Home และ 3 หน้าหลัก: เส้นทางแข่งขัน ทำเนียบ และนอกเวที ข้อมูลการแข่งขัน 2017–2026 จากตารางของชมรม รายชื่อ/อัลบั้มอยู่ระหว่างรวบรวม
 
