@@ -12,7 +12,10 @@
 - GitHub Actions run `39055543286` deploy สำเร็จ
 - ตรวจ HTTP `/`, `/home/`, `/competitions/`, `/members/`, `/memories/`, `/credits/` ตอบ 200 ไม่มี base path เก่า; ภาพ/CSS/JS ที่อ้างผ่าน href/src ในหน้าที่ตรวจตอบ 200 และ www redirect 301 เข้าโดเมนหลัก
 - GitHub Pages verified domain สำเร็จในบัญชี `woraphontrangpanich-jpg` เพิ่ม TXT `_github-pages-challenge-woraphontrangpanich-jpg` ตามค่าที่ GitHub กำหนดแล้ว ต้องเก็บ record นี้ไว้
-- ยังรอ HTTPS certificate: GitHub อยู่ขั้น Certificate Requested และยังแจ้ง alternate www InvalidDNSError แม้ public DNS และ HTTP redirect ทดสอบผ่านแล้ว ยังเปิด Enforce HTTPS ไม่ได้ และ HTTPS certificate validation ยังไม่ผ่าน ห้ามสรุปว่า HTTPS พร้อมจนตรวจสำเร็จ
+- ตรวจ HTTPS ของโดเมนหลักสำเร็จครบ 29 หน้าปกติ พร้อมภาพ/CSS/JS ที่อ้างถึง ทุกหน้าตอบ 200 ไม่มี base path เก่า (build มี 30 หน้าโดยนับ 404.html ด้วย)
+- GitHub DNS health check ผ่านทั้ง domain และ alt_domain (`is_valid=true`, `is_https_eligible=true`, ไม่มี CAA error) แล้ว
+- ยังรอ HTTPS certificate ใหม่สำหรับ www: API รายงาน `dns_changed` และกำลังขอ certificate ใหม่ การตรวจ certificate ของโดเมนหลักผ่าน แต่ www ยังไม่ผ่าน `peer_failed_verification` และ `https_enforced=false` การลองเปิด Enforce HTTPS ถูก GitHub ปฏิเสธด้วยข้อความ `The certificate has not finished being issued` จึงต้องรอ certificate พร้อมก่อนลองอีกครั้ง
+- วันที่ 18 ตุลาคม 2026 ประมาณ 01:09 (Asia/Bangkok) เริ่มคำขอใหม่หนึ่งครั้งด้วยการล้าง/ตั้ง Custom domain กลับทันทีผ่าน API ตามคู่มือ GitHub โดยคง DNS เดิมและ verified domain ไว้ หลังดำเนินการโดเมนหลักยัง HTTPS 200 แต่ www ยังรอ certificate ไม่ควรเริ่มใหม่ซ้ำระหว่างรอ
 
 ## ขั้นตอนเชื่อม
 
