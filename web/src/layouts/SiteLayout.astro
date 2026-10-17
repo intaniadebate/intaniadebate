@@ -1,0 +1,42 @@
+---
+import { withBase } from '../lib/paths.mjs';
+import '../styles/legacy.css';
+import '../styles/v2.css';
+import competition from '../data/competitions.json';
+import rosters from '../data/rosters.json';
+import albums from '../data/albums.json';
+import media from '../data/media.json';
+import { validateData } from '../lib/data.mjs';
+validateData(competition, rosters, albums, media);
+const { title = 'Intania Debate Club', description = 'เรื่องราว ผู้คน และเส้นทางการแข่งขันของชมรมโต้วาที คณะวิศวกรรมศาสตร์ จุฬาฯ', active = '', cover = false } = Astro.props;
+const nav = [{ label: 'รู้จักชมรม', href: '/home#about', id: 'home' }, { label: 'ข่าวสาร', href: '/home#news', id: 'news' }, { label: 'เส้นทางแข่งขัน', href: '/competitions', id: 'competitions' }, { label: 'ทำเนียบ', href: '/members', id: 'members' }, { label: 'นอกเวที', href: '/memories', id: 'memories' }];
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+---
+<!doctype html>
+<html lang="th" data-theme="wine">
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title} — Intania Debate Club</title><meta name="description" content={description} />
+    <meta name="theme-color" content="#f5f2eb" /><link rel="icon" href="data:," />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+Thai:wght@400;450;500;600&display=swap" rel="stylesheet" />
+    <script is:inline src={withBase('/preferences.js')}></script>
+  </head>
+  <body class:list={[cover && 'cover-page', 'mvp-two']}>
+    <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+    <header class="site-header"><div class="shell header-inner">
+      <a class="brand" href={withBase('/home')} aria-label="Intania Debate Club หน้าแรก"><span>INTANIA<br />DEBATE CLUB</span></a>
+      <nav class="main-nav desktop-nav" aria-label="เมนูหลัก">{nav.map(item => <a href={withBase(item.href)} aria-current={active === item.id ? 'page' : undefined}>{item.label}</a>)}</nav>
+      <a class="header-contact" href="https://www.instagram.com/intaniadebateclub/">มาคุยกัน <span aria-hidden="true">↗</span></a>
+      <details class="mobile-menu"><summary>เมนู <span aria-hidden="true">＋</span></summary><nav aria-label="เมนูหลักบนมือถือ">{nav.map(item => <a href={withBase(item.href)} aria-current={active === item.id ? 'page' : undefined}>{item.label}</a>)}</nav></details>
+    </div></header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer shell"><a class="brand" href={withBase('/home')}>INTANIA DEBATE CLUB</a><span>คิด พูด และเติบโตไปด้วยกัน<br />คณะวิศวกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</span><a class="credit-link" href={withBase('/credits')}>เครดิตและแหล่งที่มา ↗</a></footer>
+    <div class="site-preferences shell"><button type="button" class="motion-toggle" aria-pressed="false">การเคลื่อนไหว: เปิด</button><details class="tone-panel"><summary>เลือกบรรยากาศ</summary><div class="tone-options"><button data-tone="wine" aria-pressed="true"><span class="swatch wine"></span>ครีม / ไวน์</button><button data-tone="sage" aria-pressed="false"><span class="swatch sage"></span>เซจ / เขียว</button><button data-tone="ink" aria-pressed="false"><span class="swatch ink"></span>กระดาษ / หมึก</button></div></details></div>
+    <script>
+      import '../scripts/site.js';
+    </script>
+  </body>
+</html>

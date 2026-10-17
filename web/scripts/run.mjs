@@ -1,0 +1,18 @@
+import { spawn } from 'node:child_process';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { loadLocalEnv } from './env.mjs';
+import { prepareMedia } from './prepare-media.mjs';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+loadLocalEnv(root);
+const command = process.argv[2] || 'dev';
+if (!['dev', 'build'].includes(command)) throw new Error('Use dev or build');
+const preview = command === 'dev';
+await prepareMedia(preview);
+const astroRoot = path.join(root, 'node_modules', 'astro');
+const astroPackage = JSON.parse(await fs.readFile(path.join(astroRoot, 'package.json'), 'utf8'));
+const astroBin = typeof astroPackage.bin === 'string' ? astroPackage.bin : astroPackage.bin.astro;
+const child = spawn(process.execPath, [path.join(astroRoot, astroBin), command, ...process.argv.slice(3)], { cwd: root, stdio: 'inherit', env: { ...process.env, ASTRO_TELEMETRY_DISABLED: '1', INTANIA_MEDIA_PREVIEW: String(preview) } });
+child.on('exit', code => { process.exitCode = code ?? 1; });
+for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => child.kill(signal));

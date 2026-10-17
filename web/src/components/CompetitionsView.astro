@@ -1,0 +1,27 @@
+---
+import { withBase } from '../lib/paths.mjs';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import YearNav from './YearNav.astro';
+import MatchCard from './MatchCard.astro';
+import Rivals from './Rivals.astro';
+import data from '../data/competitions.json';
+import { seasonMatches, resultSummary } from '../lib/data.mjs';
+const { year = 2017 } = Astro.props;
+const selected = seasonMatches(data.matches, year);
+const main = selected.filter(m => m.eventId === 'freshy');
+const other = selected.filter(m => m.eventId !== 'freshy');
+const summary = resultSummary(selected);
+const season = data.seasons.find(s => s.year === year);
+const rank = season.placement.match(/อันดับ\s*(\d+)/)?.[1];
+---
+<SiteLayout title={`เส้นทางแข่งขัน ${year} (พ.ศ. ${year + 543})`} active="competitions">
+  <section class="archive-hero shell"><div><p class="eyebrow">ON THE STAGE · 2017—2026</p><h1>ทุกนัด<br />มี<em>เรื่องเล่า.</em></h1></div><div class="archive-hero-copy"><p>จากญัตติแรก สู่เวทีถัดไป<br />ย้อนดูคู่แข่ง ผลการแข่งขัน และสิ่งที่เราได้เรียนรู้ระหว่างทาง</p><div class="archive-totals"><span><strong>10</strong> ปีบนเวที</span><span><strong>{data.matches.length}</strong> แมตช์ที่บันทึก</span></div><a class="text-link" href="#rivals">รู้จักคู่ปรับตลอดกาล ↓</a></div></section>
+  <div class="archive-workspace shell"><YearNav selected={year} base="/competitions" label="เลือกปีการแข่งขัน" /><section class="season-chapter" aria-labelledby="season-heading"><div class="season-heading"><div><p class="eyebrow">CU FRESHY DEBATE · {year + 543}</p><h2 id="season-heading">{year}<span class="season-year-rule" aria-hidden="true"></span></h2></div><div class:list={['placement', rank === '1' && 'is-champion']}><span>ปลายทางของปีนี้</span><strong>{rank ? <><small>อันดับ</small>{rank}</> : 'ตกรอบคัดเลือก'}</strong></div></div>
+    <div class="season-score"><span>{summary.total} แมตช์ที่บันทึก</span><span class="score-win">ชนะ {summary.wins}</span><span>แพ้ {summary.losses}</span><a href={withBase(`/members/${year}`)}>พบกับทีมปีนี้ ↗</a></div>
+    <ol class="match-timeline">{main.map((match, i) => <MatchCard match={match} index={i} />)}</ol>
+    <div class="season-finish"><span class="finish-dot" aria-hidden="true"></span><p>จากเวทีนี้ สู่บทถัดไป</p><strong>{season.placement}</strong><a class="text-link" href={withBase(`/members/${year}`)}>หกเสียงของปี {year} ↗</a></div>
+    {other.length > 0 && <aside class="other-event"><p class="eyebrow">อีกเวทีของปีเดียวกัน</p><h3>The Visionary Debate</h3><p>รายการแยกจาก CU Freshy Debate</p><ol class="match-timeline">{other.map((match, i) => <MatchCard match={match} index={i} />)}</ol></aside>}
+    <nav class="chapter-pager" aria-label="เปลี่ยนปี">{year > 2017 ? <a href={withBase(`/competitions/${year - 1}`)}>← {year - 1}</a> : <span />}{year < 2026 && <a href={withBase(`/competitions/${year + 1}`)}>{year + 1} →</a>}</nav>
+  </section></div>
+  <Rivals matches={data.matches} />
+</SiteLayout>

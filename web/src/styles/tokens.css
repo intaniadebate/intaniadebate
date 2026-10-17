@@ -1,0 +1,87 @@
+/* Intania Debate Club · prototype design tokens */
+:root {
+  color-scheme: light;
+  --color-paper: oklch(96.15% 0.0098 87.5);
+  --color-paper-2: oklch(93.52% 0.0144 84.6);
+  --color-ink: oklch(27.38% 0.0062 78.2);
+  --color-muted: oklch(50.89% 0.0139 79.7);
+  --color-rule: oklch(87.42% 0.0146 84.6);
+  --color-soft: oklch(89.13% 0.0159 42.4);
+  --color-accent: oklch(38.21% 0.1038 11);
+  --color-accent-ink: var(--color-paper);
+  --color-focus: oklch(38.21% 0.1038 11);
+  --color-photo-caption: oklch(96.15% 0.0098 87.5 / 0.82);
+  --color-photo-frame: oklch(96.15% 0.0098 87.5 / 0.22);
+  --color-photo-frame-strong: oklch(96.15% 0.0098 87.5 / 0.53);
+  --color-photo-border: oklch(96.15% 0.0098 87.5 / 0.4);
+  --color-photo-overlay: oklch(27.38% 0.0062 78.2 / 0.67);
+  --color-photo-hover: oklch(96.15% 0.0098 87.5 / 0.07);
+  --color-shadow-soft: oklch(27.38% 0.0062 78.2 / 0.05);
+  --color-swatch-wine: oklch(38.21% 0.1038 11);
+  --color-swatch-wine-soft: oklch(89.13% 0.0159 42.4);
+  --color-swatch-sage: oklch(41.47% 0.0406 171.9);
+  --color-swatch-sage-soft: oklch(89.49% 0.0229 135);
+  --color-swatch-ink: oklch(29.48% 0.0092 248.1);
+  --color-swatch-ink-soft: oklch(90.48% 0.0055 117.9);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Noto Sans Thai", Tahoma, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", monospace;
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+  --space-section: clamp(var(--space-2xl), 7vw, var(--space-3xl));
+  --space-row-action: 3.25rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-display: clamp(2.75rem, 4.8vw, 5.5rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-base: 220ms;
+  --dur-slow: 420ms;
+
+  --rule-thin: 1px solid var(--color-rule);
+  --radius-card: 2px;
+  --radius-control: 8px;
+  --radius-pill: 999px;
+  --size-moment-card: 18rem;
+}
+
+html[data-theme="sage"] {
+  --color-paper: oklch(95.77% 0.0095 119.6);
+  --color-paper-2: oklch(93.32% 0.0156 126.8);
+  --color-ink: oklch(31.27% 0.0245 161.3);
+  --color-muted: oklch(48.02% 0.0243 156.2);
+  --color-rule: oklch(86.68% 0.0204 128.7);
+  --color-soft: oklch(89.49% 0.0229 135);
+  --color-accent: oklch(41.47% 0.0406 171.9);
+  --color-accent-ink: var(--color-paper);
+  --color-focus: oklch(41.47% 0.0406 171.9);
+}
+
+html[data-theme="ink"] {
+  --color-paper: oklch(96.38% 0.0054 95.1);
+  --color-paper-2: oklch(93.04% 0.0068 97.4);
+  --color-ink: oklch(26.78% 0.0063 258.4);
+  --color-muted: oklch(49.35% 0.0101 248);
+  --color-rule: oklch(87.45% 0.0042 121.6);
+  --color-soft: oklch(90.48% 0.0055 117.9);
+  --color-accent: oklch(29.48% 0.0092 248.1);
+  --color-accent-ink: var(--color-paper);
+  --color-focus: oklch(29.48% 0.0092 248.1);
+}

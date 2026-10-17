@@ -1,0 +1,1407 @@
+{
+  "source": "สรุปการแข่งขันโต้วาทีคณะวิศวะ_2017-2026_ฉบับวิเคราะห์ทุกนัด.xlsx",
+  "sourceSha256": "7bc0793939435602cf10ebf6e366c9e428f3c1ae40165abf0a08c921b71fcd51",
+  "updatedAt": "2026-10-17",
+  "seasons": [
+    {
+      "year": 2017,
+      "placement": "อันดับ 4"
+    },
+    {
+      "year": 2018,
+      "placement": "อันดับ 3"
+    },
+    {
+      "year": 2019,
+      "placement": "ตกรอบคัดเลือก"
+    },
+    {
+      "year": 2020,
+      "placement": "อันดับ 4"
+    },
+    {
+      "year": 2021,
+      "placement": "อันดับ 1"
+    },
+    {
+      "year": 2022,
+      "placement": "อันดับ 3"
+    },
+    {
+      "year": 2023,
+      "placement": "อันดับ 4"
+    },
+    {
+      "year": 2024,
+      "placement": "อันดับ 2"
+    },
+    {
+      "year": 2025,
+      "placement": "อันดับ 2"
+    },
+    {
+      "year": 2026,
+      "placement": "ตกรอบคัดเลือก"
+    }
+  ],
+  "matches": [
+    {
+      "id": "2017-freshy-01",
+      "year": 2017,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบคัดเลือกที่ 1",
+      "motion": "หมอผีดีกว่าหมอดู",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะอักษรศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "อนุมาน",
+      "decision": "ไม่พบผลโหวตรายคู่",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/VatasilpChula/posts/pfbid02LD9BV3W2bsVebXUUgK9bMZ7JcSr8d3d89Zq5SpwyvPb15Ae7gJdES3iZqJA23m9sl"
+      ],
+      "images": [
+        "evidence-3cf44fae0065",
+        "evidence-d5aeb1a9ce34"
+      ]
+    },
+    {
+      "id": "2017-freshy-02",
+      "year": 2017,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบคัดเลือกที่ 2",
+      "motion": "คนเจน Y สบายกว่าคนเจน X",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะนิเทศศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "อนุมาน",
+      "decision": "ไม่พบผลโหวตรายคู่",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=1496103757132512",
+        "https://www.facebook.com/VatasilpChula/posts/pfbid0pDyGKZM6KMBdwejNca4kZcrzmT6QWskAKqV7GyWnF8QJZUhWAQ7QowSXrchNPJ3gl"
+      ],
+      "images": [
+        "evidence-df5037f7a548",
+        "evidence-e2cf2f66d8a3"
+      ]
+    },
+    {
+      "id": "2017-freshy-03",
+      "year": 2017,
+      "sequence": 3,
+      "eventId": "freshy",
+      "order": 3.0,
+      "round": "รอบ 8 ทีมสุดท้าย",
+      "motion": "ไม่เชื่อต้องลบหลู่",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะครุศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "อนุมานตามเส้นทาง: มีการแข่งขันรอบ 4 ทีมต่อ จึงผ่านรอบ 8 ทีม",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo?fbid=1503745893034965&set=pcb.1503747183034836",
+        "https://www.facebook.com/VatasilpChula/posts/pfbid02UJxrJvNUSoMuDNjt753QQcSujU8husE1dBCkga4fyGkgpHrKeXs24hpbBB6fwmExl"
+      ],
+      "images": [
+        "evidence-3bfb8e01a9e8"
+      ]
+    },
+    {
+      "id": "2017-freshy-04",
+      "year": 2017,
+      "sequence": 4,
+      "eventId": "freshy",
+      "order": 4.0,
+      "round": "รอบรองชนะเลิศ",
+      "motion": "การแต่งงานไม่ใช่เรื่องสำคัญของชีวิตคู่",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะรัฐศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "แพ้",
+      "basis": "อนุมานตามเส้นทาง: อันดับสุดท้าย 4 และมีคู่ชิงอันดับ 3 หมายถึงแพ้รอบ 4 ทีม",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo?fbid=1510004332409121&set=pcb.1510005619075659"
+      ],
+      "images": [
+        "evidence-7d8f6a4e2481"
+      ]
+    },
+    {
+      "id": "2017-freshy-05",
+      "year": 2017,
+      "sequence": 5,
+      "eventId": "freshy",
+      "order": 5.0,
+      "round": "ชิงอันดับที่ 3",
+      "motion": "เรียกร้องสิทธิสตรี ริดรอนสิทธิบุรุษ",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะวิทยาศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "แพ้",
+      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 4 หมายถึงแพ้คู่ชิงอันดับ 3",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/VatasilpChula/posts/pfbid027jjZDomzvHa28uYJFKDjEVWpwv1R327p6Fc5fQib6ETtt2d9sHAhL3zVYbySBFTfl",
+        "https://www.facebook.com/VatasilpChula/videos/1517415368334684"
+      ],
+      "images": [
+        "evidence-cf377df7864b"
+      ]
+    },
+    {
+      "id": "2018-freshy-01",
+      "year": 2018,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบคัดเลือกที่ 1",
+      "motion": "ปัญหาขยะล้นเป็นผลจากผู้ผลิตมากกว่าผู้บริโภค",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะวิทยาศาสตร์การกีฬา",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "ถอนตัว/ไม่ลงคะแนน",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=1905654946177389"
+      ],
+      "images": [
+        "evidence-b98b0414d623"
+      ]
+    },
+    {
+      "id": "2018-freshy-02",
+      "year": 2018,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบคัดเลือกที่ 2",
+      "motion": "Set Zero สัตว์จรจัดทำร้ายสัตว์เกินกว่าเหตุ",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะสถาปัตยกรรมศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายค้าน #1",
+        "หัวหน้าฝ่ายค้าน",
+        "หัวหน้าฝ่ายเสนอ",
+        "ไม่ปรากฏในภาพ"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [
+        "https://www.youtube.com/watch?v=EWnD-wm1xQg"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=1917481891661361",
+        "https://www.facebook.com/photo/?fbid=1917481898328027"
+      ],
+      "images": [
+        "evidence-9368c80d26a4",
+        "evidence-abfd9b7120a9"
+      ]
+    },
+    {
+      "id": "2018-freshy-03",
+      "year": 2018,
+      "sequence": 3,
+      "eventId": "freshy",
+      "order": 3.0,
+      "round": "รอบ 8 ทีมสุดท้าย",
+      "motion": "เอาชีวิตรอดในโลกยุคใหม่จำเป็นต้องใส่หน้ากาก",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะแพทยศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "ชนะ",
+      "basis": "อนุมานตามเส้นทาง: มีการแข่งขันรอบ 4 ทีมต่อ จึงผ่านรอบ 8 ทีม",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [
+        "https://www.youtube.com/watch?v=1LTwBEu_ZzU"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=1946176492125234"
+      ],
+      "images": [
+        "evidence-a134ac16fd95"
+      ]
+    },
+    {
+      "id": "2018-freshy-04",
+      "year": 2018,
+      "sequence": 4,
+      "eventId": "freshy",
+      "order": 4.0,
+      "round": "รอบรองชนะเลิศ (ระบุจากคลิป)",
+      "motion": "กฎหมายอัมพาตประเทศชาติอัมพฤกษ์",
+      "side": "ฝ่ายเสนอ (ตามคำอธิบายคลิป)",
+      "opponent": "คณะวิทยาศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "แพ้",
+      "basis": "อนุมานตามเส้นทาง: อันดับสุดท้าย 3 และมีคู่ชิงอันดับ 3 หมายถึงแพ้รอบ 4 ทีม",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [
+        "https://www.youtube.com/watch?v=BmMO0xpiTDQ"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=1964153443660872"
+      ],
+      "images": [
+        "evidence-63cd06c5b0c3"
+      ]
+    },
+    {
+      "id": "2018-freshy-05",
+      "year": 2018,
+      "sequence": 5,
+      "eventId": "freshy",
+      "order": 5.0,
+      "round": "ชิงรางวัลรองชนะเลิศอันดับ 2 (ชิงอันดับ 3)",
+      "motion": "ปัญญาประดิษฐ์ก้าวหน้าปัญญามนุษย์ถอยหลัง",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะนิติศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 3 หมายถึงชนะคู่ชิงอันดับ 3",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [
+        "https://www.youtube.com/watch?v=C_zLVstegA0"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=1971933582882858"
+      ],
+      "images": [
+        "evidence-f4a1373a752d"
+      ]
+    },
+    {
+      "id": "2019-freshy-01",
+      "year": 2019,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบคัดเลือกที่ 1",
+      "motion": "อนุรักษ์สายพันธุ์หายาก ต้องฝากความหวังไว้ที่ภาครัฐมากกว่าประชาชน",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะสถาปัตยกรรมศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "แพ้",
+      "basis": "ยืนยัน",
+      "decision": "เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "หัวหน้าฝ่ายเสนอ",
+        "ผู้สนับสนุนฝ่ายเสนอ #1",
+        "ผู้สนับสนุนฝ่ายค้าน #2",
+        "ผู้สนับสนุนฝ่ายค้าน #3"
+      ],
+      "placement": "ตกรอบคัดเลือก",
+      "videos": [
+        "https://www.youtube.com/watch?v=DI9V-D-8SLE"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=2453693988040146"
+      ],
+      "images": [
+        "evidence-d6bc74b8e6ed"
+      ]
+    },
+    {
+      "id": "2019-freshy-02",
+      "year": 2019,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบคัดเลือกที่ 2",
+      "motion": "คนดังกระทำความผิด ควรรับผิดมากกว่าคนอื่น",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะเศรษฐศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "แพ้",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล"
+      ],
+      "placement": "ตกรอบคัดเลือก",
+      "videos": [
+        "https://www.youtube.com/watch?v=ccU0STJwfSc"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=2501549423254602"
+      ],
+      "images": []
+    },
+    {
+      "id": "2020-freshy-01",
+      "year": 2020,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบคัดเลือกรอบที่ 2",
+      "motion": "ฝึกฝนซอฟต์สกิลตอบโจทย์โลกภายหน้ามากกว่าพัฒนาฮาร์ดสกิล",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะนิติศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายเสนอ #1 (นิติศาสตร์)",
+        "ผู้สนับสนุนฝ่ายค้าน #1 (วิศวะ)",
+        "ผู้สนับสนุนฝ่ายค้าน #3 (วิศวะ)",
+        "ผู้สนับสนุนฝ่ายค้าน #2 (วิศวะ)"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [
+        "https://www.youtube.com/watch?v=hpuWfxxKsu4"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo.php?fbid=3371748336234702"
+      ],
+      "images": [
+        "evidence-c2938de9dc45",
+        "evidence-a2b7e5ecd9a4"
+      ]
+    },
+    {
+      "id": "2020-freshy-02",
+      "year": 2020,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 2.5,
+      "round": "รอบคัดเลือกรอบพิเศษ",
+      "motion": "การสอบเข้ามหาวิทยาลัยควรใช้เฉพาะวิชาที่มีสอนในโรงเรียน",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะรัฐศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "แพ้",
+      "basis": "อนุมานจาก Win สะสมหลังรอบพิเศษ",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [
+        "https://www.youtube.com/watch?v=AMhbcLGHSGs"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo.php?fbid=3441535415922660",
+        "https://www.facebook.com/photo.php?fbid=3448111398598395",
+        "https://www.facebook.com/photo.php?fbid=3448111398598395"
+      ],
+      "images": [
+        "evidence-945ebc91c0d3",
+        "evidence-8ddcaedee751"
+      ]
+    },
+    {
+      "id": "2020-freshy-03",
+      "year": 2020,
+      "sequence": 3,
+      "eventId": "freshy",
+      "order": 3.0,
+      "round": "รอบ 8 ทีมสุดท้าย",
+      "motion": "เลือกงานตามความต้องการของตลาดต่อยอดได้มากกว่าเลือกงานตามความสามารถที่ถนัด",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะนิติศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "ชนะ",
+      "basis": "ยืนยันจากการ์ดผลรอบ 8 ทีม",
+      "decision": "เอกฉันท์",
+      "judges": "ไม่พบจำนวนกรรมการ",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายเสนอ #2 (วิศวะ)",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [
+        "https://www.youtube.com/watch?v=F0VVIvm6K2s"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo.php?fbid=3481308475278687"
+      ],
+      "images": [
+        "evidence-aee831858f70",
+        "evidence-2c8ec1720635"
+      ]
+    },
+    {
+      "id": "2020-freshy-04",
+      "year": 2020,
+      "sequence": 4,
+      "eventId": "freshy",
+      "order": 4.0,
+      "round": "รอบรองชนะเลิศ (4 ทีมสุดท้าย)",
+      "motion": "ประเทศไทยควรปกครองแบบกระจายอำนาจมากกว่าแบบรวมศูนย์",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะแพทยศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "แพ้",
+      "basis": "ยืนยัน",
+      "decision": "เอกฉันท์",
+      "judges": "ไม่พบจำนวนกรรมการ",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายเสนอ #3 (แพทยศาสตร์)",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [
+        "https://www.youtube.com/watch?v=IWZS0uZUg_s"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo.php?fbid=3490330067709861"
+      ],
+      "images": [
+        "evidence-123593eea71c"
+      ]
+    },
+    {
+      "id": "2020-freshy-05",
+      "year": 2020,
+      "sequence": 5,
+      "eventId": "freshy",
+      "order": 5.0,
+      "round": "ชิงอันดับ 3",
+      "motion": "มหาวิทยาลัยควรคิดให้นิสิตเป็นดั่งลูกค้า",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะนิเทศศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "แพ้",
+      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 4 หมายถึงแพ้คู่ชิงอันดับ 3",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [
+        "https://www.youtube.com/watch?v=dNxnmp6mtgQ"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=3490364634373071",
+        "https://www.facebook.com/VatasilpChula/videos/301089430997808"
+      ],
+      "images": []
+    },
+    {
+      "id": "2021-freshy-01",
+      "year": 2021,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบที่ 1",
+      "motion": "Plant-based diet คือคำตอบของการบริโภคในอนาคต",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะพาณิชยศาสตร์และการบัญชี",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายเสนอ #2",
+        "ผู้สนับสนุนฝ่ายค้าน #3",
+        "หัวหน้าฝ่ายค้าน",
+        "หัวหน้าฝ่ายเสนอ และผู้สนับสนุนฝ่ายเสนอ #1"
+      ],
+      "placement": "อันดับ 1",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=9330992143643595"
+      ],
+      "images": [
+        "evidence-b638dfeba338"
+      ]
+    },
+    {
+      "id": "2021-freshy-02",
+      "year": 2021,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบที่ 2",
+      "motion": "ประเทศไทยควรมีการลดหย่อนโทษผู้ต้องขัง",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะครุศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "หัวหน้าฝ่ายเสนอ",
+        "หัวหน้าฝ่ายค้าน",
+        "ผู้สนับสนุนฝ่ายเสนอ #3",
+        "ผู้สนับสนุนฝ่ายค้าน #3"
+      ],
+      "placement": "อันดับ 1",
+      "videos": [
+        "https://www.youtube.com/watch?v=vf-6wJVNKmE"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=9330992316976911"
+      ],
+      "images": [
+        "evidence-5771865b7cf9"
+      ]
+    },
+    {
+      "id": "2021-visionary-03",
+      "year": 2021,
+      "sequence": 3,
+      "eventId": "visionary",
+      "order": 2.25,
+      "round": "โต้วาทีสร้างสรรค์สังคม รอบที่ 2",
+      "motion": "การแสดงออกทางความคิดผ่านคำพูดไม่ควรมีขอบเขต",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะนิเทศศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "แพ้",
+      "basis": "อนุมานจากประกาศคู่ต่อเนื่อง",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล"
+      ],
+      "placement": "รายการแยก; ไม่พบอันดับสุดท้าย",
+      "videos": [
+        "https://www.youtube.com/watch?v=QETYKkhqXAE"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo.php?fbid=4497523250323866",
+        "https://www.facebook.com/VatasilpChula/posts/pfbid0P2CBUrDi69vM3v78zLpQiSfbvGFfWznLKjgv5qMjjQzpuWU2yaSXebEyuQCDFZ1Jl",
+        "https://www.facebook.com/photo/?fbid=4516415651767959",
+        "https://www.facebook.com/photo/?fbid=4516415658434625",
+        "https://www.facebook.com/photo/?fbid=4516415751767949",
+        "https://www.facebook.com/VatasilpChula/posts/pfbid0P2CBUrDi69vM3v78zLpQiSfbvGFfWznLKjgv5qMjjQzpuWU2yaSXebEyuQCDFZ1Jl",
+        "https://www.facebook.com/photo/?fbid=4516415651767959",
+        "https://www.facebook.com/photo/?fbid=4516415658434625",
+        "https://www.facebook.com/photo/?fbid=4516415751767949"
+      ],
+      "images": [
+        "evidence-c30d114e83d3"
+      ]
+    },
+    {
+      "id": "2021-freshy-04",
+      "year": 2021,
+      "sequence": 4,
+      "eventId": "freshy",
+      "order": 4.0,
+      "round": "รอบรองชนะเลิศ (4 ทีมสุดท้าย)",
+      "motion": "คนแปลกแยกมักเป็นผู้สร้างความเปลี่ยนแปลงในสังคม",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะพาณิชยศาสตร์และการบัญชี",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "อนุมานตามกติกาผู้ใช้: อันดับสุดท้าย 1 หมายถึงชนะรอบ 4 ทีมและเข้าชิงชนะเลิศ",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 1",
+      "videos": [
+        "https://www.youtube.com/watch?v=dPGh2hlytG0"
+      ],
+      "sources": [
+        "https://www.facebook.com/VatasilpChula"
+      ],
+      "images": []
+    },
+    {
+      "id": "2021-freshy-05",
+      "year": 2021,
+      "sequence": 5,
+      "eventId": "freshy",
+      "order": 6.0,
+      "round": "รอบชิงชนะเลิศ",
+      "motion": "แก้ปัญหาฝุ่น PM 2.5 ยังไม่ได้ ไร้ความหวังไปจัดการก๊าซเรือนกระจก",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะวิทยาศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 1 หมายถึงชนะรอบชิงชนะเลิศ",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 1",
+      "videos": [
+        "https://www.youtube.com/watch?v=II8qtn2gBCM"
+      ],
+      "sources": [
+        "https://www.facebook.com/VatasilpChula"
+      ],
+      "images": []
+    },
+    {
+      "id": "2022-freshy-01",
+      "year": 2022,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบที่ 1",
+      "motion": "สุขภาพที่ดี เริ่มได้ที่ตัวคุณ",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะเศรษฐศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "แพ้",
+      "basis": "ยืนยันจากการ์ดผล",
+      "decision": "เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายเสนอ #3",
+        "ผู้สนับสนุนฝ่ายค้าน #1",
+        "หัวหน้าฝ่ายเสนอ และผู้สนับสนุนฝ่ายค้าน #2 และ #3",
+        "ไม่มีผู้ได้อันดับ 4 (การ์ดแสดง “–”)"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [
+        "https://www.youtube.com/watch?v=SQAll4Wrock"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=5495601700516011"
+      ],
+      "images": [
+        "evidence-11f036f7a8c0"
+      ]
+    },
+    {
+      "id": "2022-freshy-02",
+      "year": 2022,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบคัดเลือกที่ 2",
+      "motion": "ให้ AI เป็นผู้พิพากษา เป็นการด้อยค่าความยุติธรรมของมนุษย์",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะนิติศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "แพ้",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "หัวหน้าฝ่ายเสนอ",
+        "ผู้สนับสนุนฝ่ายค้าน #2",
+        "ผู้สนับสนุนฝ่ายเสนอ #1",
+        "ผู้สนับสนุนฝ่ายค้าน #3"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=9451093184966823"
+      ],
+      "images": [
+        "evidence-fb02064dcaf4"
+      ]
+    },
+    {
+      "id": "2022-freshy-03",
+      "year": 2022,
+      "sequence": 3,
+      "eventId": "freshy",
+      "order": 4.0,
+      "round": "รอบรองชนะเลิศ (อนุมานจากการเข้าชิงอันดับ 3)",
+      "motion": "ภาพยนตร์อิงประวัติศาสตร์ไม่จำเป็นต้องเคารพเหตุการณ์จริง",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะนิเทศศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "แพ้",
+      "basis": "อนุมานตามเส้นทาง: อันดับสุดท้าย 3 และมีคู่ชิงอันดับ 3 หมายถึงแพ้รอบ 4 ทีม",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=9457680714308070"
+      ],
+      "images": [
+        "evidence-7e5f9041859e"
+      ]
+    },
+    {
+      "id": "2022-freshy-04",
+      "year": 2022,
+      "sequence": 4,
+      "eventId": "freshy",
+      "order": 5.0,
+      "round": "ชิงอันดับ 3",
+      "motion": "การศึกษาในมหาวิทยาลัยยุคใหม่ควรให้ความสำคัญกับการสร้างทักษะมากกว่าการเรียนรู้ทฤษฎี",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะแพทยศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "ชนะ",
+      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 3 หมายถึงชนะคู่ชิงอันดับ 3",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [
+        "https://www.youtube.com/watch?v=-hOPqSZGWVI&t=6319s"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=9457699197639555"
+      ],
+      "images": [
+        "evidence-a7c4d1243759"
+      ]
+    },
+    {
+      "id": "2023-freshy-01",
+      "year": 2023,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบคัดเลือกที่ 1",
+      "motion": "เด็กเล็กควรได้รับการส่งเสริมให้ใช้ได้มากกว่าสองภาษา",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะวิทยาศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "แพ้",
+      "basis": "อนุมานจาก Win สะสมหลังรอบ 2",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "หัวหน้าฝ่ายเสนอ",
+        "ผู้สนับสนุนฝ่ายเสนอ #3",
+        "หัวหน้าฝ่ายค้าน",
+        "ผู้สนับสนุนฝ่ายค้าน #3"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.instagram.com/stories/highlights/18074737402393513/",
+        "https://www.instagram.com/p/CyvcDMLpacq/?img_index=4",
+        "https://www.instagram.com/p/CyvcDMLpacq/?img_index=4"
+      ],
+      "images": []
+    },
+    {
+      "id": "2023-freshy-02",
+      "year": 2023,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบคัดเลือกที่ 1",
+      "motion": "เด็กเล็กควรได้รับการส่งเสริมให้ใช้ได้มากกว่าสองภาษา",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะเภสัชศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "ไม่ปรากฏในภาพ",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "หัวหน้าฝ่ายเสนอ",
+        "ผู้สนับสนุนฝ่ายเสนอ #3",
+        "หัวหน้าฝ่ายค้าน",
+        "ผู้สนับสนุนฝ่ายค้าน #3"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=931262482542668"
+      ],
+      "images": [
+        "evidence-218816a08c7e"
+      ]
+    },
+    {
+      "id": "2023-freshy-03",
+      "year": 2023,
+      "sequence": 3,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบคัดเลือกที่ 2",
+      "motion": "ญัตติไม่ควรมีสิทธิ์เปลี่ยนแปลงการตัดสินใจบริจาคร่างกายของผู้วายชนม์",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะครุศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "แพ้",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายค้าน #1",
+        "หัวหน้าฝ่ายเสนอ และผู้สนับสนุนฝ่ายค้าน #2",
+        "ผู้สนับสนุนฝ่ายเสนอ #1",
+        "ไม่มีผู้ได้อันดับ 4 (การ์ดแสดง “–”)"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.instagram.com/p/CyvcDMLpacq/",
+        "https://www.facebook.com/photo/?fbid=934052878930295"
+      ],
+      "images": [
+        "evidence-bec61d136660",
+        "evidence-73b532cf43cf"
+      ]
+    },
+    {
+      "id": "2023-freshy-04",
+      "year": 2023,
+      "sequence": 4,
+      "eventId": "freshy",
+      "order": 3.0,
+      "round": "รอบ 8 ทีมสุดท้าย",
+      "motion": "เจ้าของสิทธิบัตรยาควรกำหนดราคายาได้ตามต้องการ",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะรัฐศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "ชนะ",
+      "basis": "อนุมานตามเส้นทาง: มีการแข่งขันรอบ 4 ทีมต่อ จึงผ่านรอบ 8 ทีม",
+      "decision": "ไม่พบผลโหวตรายคู่",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=627277082941211&set=pcb.627277149607871"
+      ],
+      "images": []
+    },
+    {
+      "id": "2023-freshy-05",
+      "year": 2023,
+      "sequence": 5,
+      "eventId": "freshy",
+      "order": 4.0,
+      "round": "รอบรองชนะเลิศ",
+      "motion": "องค์กรตำรวจเสื่อมโทรมเพราะปัญหาเชิงโครงสร้างมากกว่าระดับปัจเจก",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะนิติศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "แพ้",
+      "basis": "อนุมานตามเส้นทาง: อันดับสุดท้าย 4 และมีคู่ชิงอันดับ 3 หมายถึงแพ้รอบ 4 ทีม",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=934062398929343",
+        "https://www.facebook.com/VatasilpChula/posts/pfbid0DmD1fZpy8hHHRaD1C1iqkGQR3V8PfgEgp1fhGnojYZNkQy8uSzdcjpHDqpatFq3nl"
+      ],
+      "images": [
+        "evidence-2a2b4e54f33c"
+      ]
+    },
+    {
+      "id": "2023-freshy-06",
+      "year": 2023,
+      "sequence": 6,
+      "eventId": "freshy",
+      "order": 5.0,
+      "round": "ชิงอันดับ 3",
+      "motion": "บรรทัดฐานทางสังคมเป็นสิ่งตีกรอบความคิดสร้างสรรค์",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะวิทยาศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "แพ้",
+      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 4 หมายถึงแพ้คู่ชิงอันดับ 3",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 4",
+      "videos": [],
+      "sources": [
+        "https://www.facebook.com/photo/?fbid=634149638920622&set=a.476394851362769",
+        "https://www.facebook.com/photo/?fbid=636046915397561&set=a.476394851362769"
+      ],
+      "images": [
+        "evidence-f6a34343fd14"
+      ]
+    },
+    {
+      "id": "2024-freshy-01",
+      "year": 2024,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบที่ 1",
+      "motion": "ภาครัฐสนับสนุนให้อุตสาหกรรม T-POP เติบโตได้มากกว่าภาคเอกชน",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะสถาปัตยกรรมศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "ชนะ",
+      "basis": "อนุมานจากเส้นทางเข้ารอบ 8 ทีม",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [
+        "https://www.youtube.com/watch?v=7sfygCJF8AA"
+      ],
+      "sources": [
+        "https://www.facebook.com/VatasilpChula"
+      ],
+      "images": []
+    },
+    {
+      "id": "2024-freshy-02",
+      "year": 2024,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 3.0,
+      "round": "รอบ 8 ทีมสุดท้าย",
+      "motion": "ยอมเปลี่ยนตัวเองเพื่อใครบางคนดีกว่ารักษาตัวตนเพื่อรอคนที่ใช่",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะอักษรศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "ชนะ",
+      "basis": "อนุมานตามเส้นทาง: มีการแข่งขันรอบ 4 ทีมต่อ จึงผ่านรอบ 8 ทีม",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [
+        "https://www.youtube.com/watch?v=aPHmZv29KPs"
+      ],
+      "sources": [
+        "https://www.facebook.com/photo?fbid=843062028029381&set=a.476394861362768"
+      ],
+      "images": []
+    },
+    {
+      "id": "2024-freshy-03",
+      "year": 2024,
+      "sequence": 3,
+      "eventId": "freshy",
+      "order": 4.0,
+      "round": "รอบรองชนะเลิศ (4 ทีมสุดท้าย)",
+      "motion": "อยู่ให้ถูกที่ดีกว่ามีความดีให้มากพอ",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะเภสัชศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "อนุมานตามกติกาผู้ใช้: อันดับสุดท้าย 2 หมายถึงชนะรอบ 4 ทีมและเข้าชิงชนะเลิศ",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [
+        "https://www.youtube.com/watch?v=XQX05MivXhc"
+      ],
+      "sources": [
+        "https://www.facebook.com/VatasilpChula"
+      ],
+      "images": []
+    },
+    {
+      "id": "2024-freshy-04",
+      "year": 2024,
+      "sequence": 4,
+      "eventId": "freshy",
+      "order": 6.0,
+      "round": "รอบชิงชนะเลิศ",
+      "motion": "การวางตัวเป็นกลางในเวทีโลกดีกว่าการเลือกข้างตามกาลเวลา",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะแพทยศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "แพ้",
+      "basis": "ยืนยัน",
+      "decision": "ไม่พบผลโหวตรายคู่",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [
+        "https://www.youtube.com/watch?v=mBZSXTADGwI&t=7999s"
+      ],
+      "sources": [
+        "https://www.facebook.com/VatasilpChula"
+      ],
+      "images": []
+    },
+    {
+      "id": "2025-freshy-01",
+      "year": 2025,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบที่ 1",
+      "motion": "นโยบายอุดหนุนค่าบริการขนส่งสาธารณะเป็นวิธีแก้ปัญหาการคมนาคมที่ยั่งยืน",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะครุศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายเสนอ #2",
+        "หัวหน้าฝ่ายเสนอ",
+        "ผู้สนับสนุนฝ่ายค้าน #1 และ #3 (อันดับ 3 เสมอ)",
+        "ไม่ปรากฏในภาพ"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [
+        "https://www.youtube.com/watch?v=VQJmbmHPkc0"
+      ],
+      "sources": [
+        "https://www.instagram.com/p/DPQ7ilEkrhR/"
+      ],
+      "images": [
+        "evidence-bc1a7284b142",
+        "evidence-c2220a9832e9"
+      ]
+    },
+    {
+      "id": "2025-freshy-02",
+      "year": 2025,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบคัดเลือกที่ 2 (รอบแฟ้มสะสมผลงาน)",
+      "motion": "ส่งเสริมความเหลื่อมล้ำทางการศึกษาไทย",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะสถาปัตยกรรมศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายค้าน #3",
+        "หัวหน้าฝ่ายค้าน",
+        "ผู้สนับสนุนฝ่ายเสนอ #3",
+        "ผู้สนับสนุนฝ่ายค้าน #2"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [
+        "https://www.youtube.com/watch?v=neaaHWDXpGY"
+      ],
+      "sources": [
+        "https://www.instagram.com/p/DPtFb6EkghE/"
+      ],
+      "images": [
+        "evidence-768e3ecffc30",
+        "evidence-8249b9751a96",
+        "evidence-25f17494ca13"
+      ]
+    },
+    {
+      "id": "2025-freshy-03",
+      "year": 2025,
+      "sequence": 3,
+      "eventId": "freshy",
+      "order": 3.0,
+      "round": "รอบ 8 ทีมสุดท้าย",
+      "motion": "รัฐบาลควรออกนโยบายภาษีตอบโต้เพื่อคุ้มครองผู้ผลิตในประเทศ",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะเศรษฐศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "หัวหน้าฝ่ายค้าน",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [
+        "https://www.youtube.com/playlist?list=PLZKBdzWSguERFw0I9x5rf94ucSBvs6zPw"
+      ],
+      "sources": [
+        "https://www.instagram.com/p/DQOfaqxElKf/"
+      ],
+      "images": [
+        "evidence-ad723671a46a"
+      ]
+    },
+    {
+      "id": "2025-freshy-04",
+      "year": 2025,
+      "sequence": 4,
+      "eventId": "freshy",
+      "order": 4.0,
+      "round": "รอบรองชนะเลิศ (4 ทีมสุดท้าย)",
+      "motion": "ข้อตกลงการค้าเสรีเป็นผลดีต่อประเทศพัฒนาแล้วมากกว่ากำลังพัฒนา",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะครุศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายเสนอ #3",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [
+        "https://www.youtube.com/watch?v=WU4tHQ1nIRQ"
+      ],
+      "sources": [
+        "https://www.facebook.com/VatasilpChula"
+      ],
+      "images": [
+        "evidence-c2db0a5e1fe4"
+      ]
+    },
+    {
+      "id": "2025-freshy-05",
+      "year": 2025,
+      "sequence": 5,
+      "eventId": "freshy",
+      "order": 6.0,
+      "round": "รอบชิงชนะเลิศ",
+      "motion": "ไม่พบข้อความญัตติที่ยืนยันได้",
+      "side": "ไม่พบข้อมูล",
+      "opponent": "คณะนิติศาสตร์ (อนุมานจากอันดับแชมป์และรองชนะเลิศ)",
+      "opponentSide": "ไม่พบข้อมูล",
+      "result": "แพ้",
+      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 2 หมายถึงแพ้รอบชิงชนะเลิศ",
+      "decision": "ไม่พบข้อมูล",
+      "judges": "5",
+      "awards": [
+        "ไม่พบข้อมูล",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [
+        "https://www.youtube.com/watch?v=qCKfE2PdXt4"
+      ],
+      "sources": [
+        "https://www.facebook.com/VatasilpChula"
+      ],
+      "images": [
+        "evidence-d6dd5d5868cb"
+      ]
+    },
+    {
+      "id": "2026-freshy-01",
+      "year": 2026,
+      "sequence": 1,
+      "eventId": "freshy",
+      "order": 1.0,
+      "round": "รอบที่ 1",
+      "motion": "ปัญหา Generation Gap จะลดลงหากสังคมยอมรับมากกว่าบีบบังคับให้ปรับตัว",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะวิทยาศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "ชนะ",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายค้าน #3",
+        "ผู้สนับสนุนฝ่ายค้าน #2",
+        "หัวหน้าฝ่ายเสนอ",
+        "ผู้สนับสนุนฝ่ายเสนอ #3"
+      ],
+      "placement": "ตกรอบคัดเลือก",
+      "videos": [
+        "https://www.youtube.com/watch?v=ciNM-8DTl7E"
+      ],
+      "sources": [
+        "https://www.instagram.com/vatasilpchula/p/DdlPvr1ktbS/"
+      ],
+      "images": [
+        "evidence-4dc5a23bd912",
+        "evidence-4b958fb236e2"
+      ]
+    },
+    {
+      "id": "2026-freshy-02",
+      "year": 2026,
+      "sequence": 2,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบที่ 2",
+      "motion": "การกระจายอำนาจในการตัดสินใจให้ AI มีความปลอดภัยมากกว่าการพึ่งพาผู้นำมนุษย์ในภาวะวิกฤต",
+      "side": "ฝ่ายเสนอ",
+      "opponent": "คณะนิติศาสตร์",
+      "opponentSide": "ฝ่ายค้าน",
+      "result": "แพ้",
+      "basis": "ยืนยัน",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "ไม่พบข้อมูล",
+      "awards": [
+        "หัวหน้าฝ่ายค้าน",
+        "ผู้สนับสนุนฝ่ายเสนอ #2",
+        "ผู้สนับสนุนฝ่ายค้าน #1",
+        "ผู้สนับสนุนฝ่ายเสนอ #3"
+      ],
+      "placement": "ตกรอบคัดเลือก",
+      "videos": [
+        "https://www.youtube.com/playlist?list=PLTvE9cYbaJE4"
+      ],
+      "sources": [
+        "https://www.instagram.com/vatasilpchula/p/DeTXByOEihm/"
+      ],
+      "images": [
+        "evidence-1deae18fa190",
+        "evidence-95da43e55e4c"
+      ]
+    }
+  ]
+}

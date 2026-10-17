@@ -1,0 +1,11 @@
+---
+import { withBase, srcsetWithBase } from '../lib/paths.mjs';
+import catalog from '../data/media.json';
+import { resolveMedia, mediaSrcset } from '../lib/media.mjs';
+const { id, alt, class: className = '', eager = false, sizes = '(max-width: 760px) 100vw, 50vw', width = 960 } = Astro.props;
+const asset = catalog[id];
+const config = { provider: import.meta.env.PUBLIC_MEDIA_PROVIDER || 'local', cloudName: import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME, cdnBase: import.meta.env.PUBLIC_MEDIA_CDN_BASE_URL, preview: import.meta.env.DEV };
+const src = resolveMedia(asset, config, width);
+const fallback = resolveMedia(asset, { provider: 'local', preview: config.preview }, width);
+---
+{src ? <img src={withBase(src)} srcset={srcsetWithBase(mediaSrcset(asset, config))} sizes={sizes} width={asset.width} height={asset.height} alt={alt || asset.alt} class={className} data-media-fallback={withBase(fallback) || ''} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} decoding="async" /> : <div class:list={['photo-placeholder', className]} role="img" aria-label={alt || 'พื้นที่สำหรับภาพที่จะเพิ่ม'}><span aria-hidden="true">INTANIA<br /><i>our next chapter.</i></span></div>}

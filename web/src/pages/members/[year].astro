@@ -1,0 +1,7 @@
+---
+import MembersView from '../../components/MembersView.astro';
+import { years } from '../../lib/data.mjs';
+export function getStaticPaths() { return years.map(year => ({ params: { year: String(year) }, props: { year } })); }
+const { year } = Astro.props;
+---
+<MembersView year={year} />
