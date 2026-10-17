@@ -10,8 +10,9 @@ const roster = rosters.find(r => r.year === year);
 const hasNames = roster.members.some(m => m.fullName || m.nickname);
 ---
 <SiteLayout title={`ทำเนียบปี ${year}`} active="members">
-  <section class="archive-hero members-hero shell"><div><p class="eyebrow">THE PEOPLE BEHIND THE VOICES</p><h1>หกเสียง<br /><em>หนึ่งทีม.</em></h1></div><div class="archive-hero-copy"><p>นักโต้วาทีและสมาชิกชมรมในแต่ละปี<br />ชื่อ ใบหน้า และเรื่องราวที่ทำให้เวทีนี้มีความหมาย</p><p class="serif">Different voices.<br />One shared chapter.</p></div></section>
-  <div class="archive-workspace shell"><YearNav selected={year} base="/members" label="เลือกปีทำเนียบ" /><section class="roster-chapter" aria-labelledby="roster-heading"><div class="roster-heading"><div><p class="eyebrow">INTANIA DEBATERS · {year + 543}</p><h2 id="roster-heading">Class of <em>{year}.</em></h2></div><span class="roster-count">6 คน · นักโต้และสมาชิก</span></div>
+  <section class="archive-hero members-hero shell"><div><p class="eyebrow">THE PEOPLE BEHIND THE VOICES</p><h1>หกเสียง<br /><em>หนึ่งทีม</em></h1></div><div class="archive-hero-copy"><p>นักโต้วาทีและสมาชิกชมรมในแต่ละปี<br />ชื่อ ใบหน้า และเรื่องราวที่ทำให้เวทีนี้มีความหมาย</p><p class="serif">Different voices.<br />One shared chapter.</p></div></section>
+  <p class="visually-hidden" role="status" data-year-announcement></p>
+  <div class="archive-workspace shell" data-year-surface="members" data-selected-year={year}><YearNav selected={year} base="/members" label="เลือกปีทำเนียบ" /><section class="roster-chapter" aria-labelledby="roster-heading"><div class="roster-heading"><div><p class="eyebrow">INTANIA DEBATERS · {year + 543}</p><h2 id="roster-heading">Class of <em>{year}.</em></h2></div><span class="roster-count">6 คน · นักโต้และสมาชิก</span></div>
     {roster.quote && <blockquote class="roster-quote">“{roster.quote}”</blockquote>}
     {roster.groupImage && <figure class="roster-group"><Media id={roster.groupImage} alt={`ภาพสมาชิกชมรมปี ${year}`} /></figure>}
     {!hasNames && <p class="roster-pending">กำลังรวบรวมรายชื่อและภาพของทีมปี {year + 543}</p>}

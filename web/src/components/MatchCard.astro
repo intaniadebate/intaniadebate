@@ -1,22 +1,22 @@
 ---
 import Media from './Media.astro';
-import { isKnown, roundName, safeExternalUrl } from '../lib/data.mjs';
+import { awardText, isKnown, roundName, safeExternalUrl } from '../lib/data.mjs';
 const { match, index } = Astro.props;
 const inferred = match.basis.includes('อนุมาน');
 const videos = match.videos.filter(safeExternalUrl);
 const sources = match.sources.filter(safeExternalUrl);
-const awards = match.awards.map((value, i) => ({ value, rank: i + 1 })).filter(a => isKnown(a.value));
+const awards = match.awards.map((value, i) => ({ value: awardText(value), rank: i + 1 })).filter(a => a.value);
 ---
 <li class:list={['match-item', match.result === 'ชนะ' ? 'is-win' : 'is-loss']} id={`match-${match.id}`}>
-  <span class="timeline-node" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+  <div class="match-stage"><span class="timeline-node" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><p>{match.eventId === 'freshy' ? roundName(match.order) : 'Visionary Debate'}</p><span class="stage-year">{match.year} / {match.year + 543}</span></div>
   <article class="match-card">
-    <div class="match-topline"><span class="eyebrow">{match.eventId === 'freshy' ? roundName(match.order) : 'The Visionary Debate · รอบที่ 2'}</span><span class:list={['result-chip', match.result === 'ชนะ' ? 'win' : 'loss']}>{match.result === 'ชนะ' ? '↗' : '↘'} {match.result}</span></div>
+    <div class="match-topline"><span class="match-team">วิศวกรรมศาสตร์<span>{isKnown(match.side) ? ` · ${match.side}` : ''}</span></span><strong class:list={['result-chip', match.result === 'ชนะ' ? 'win' : 'loss']}><span aria-hidden="true">{match.result === 'ชนะ' ? '✓' : '×'}</span> {match.result}</strong></div>
     <h3><span class="against">พบ</span> {match.opponent.replace(/\s*\(.*$/, '')}</h3>
-    <p class="match-motion">“{match.motion}”</p>
+    <div class="motion-block"><span class="motion-label">ญัตติ</span><p class="match-motion">“{match.motion}”</p></div>
     <div class="match-actions">{videos.map((video, n) => <a class="text-link" href={video} target="_blank" rel="noreferrer">{video.includes('playlist') ? 'ดูเพลย์ลิสต์' : 'ดูบันทึกการแข่งขัน'}{videos.length > 1 ? ` ${n + 1}` : ''} ↗</a>)}<details class="match-details"><summary>รายละเอียดแมตช์ <span aria-hidden="true">＋</span></summary><div class="match-detail-content">
       <dl><div><dt>ฝ่ายวิศวะ</dt><dd>{match.side || 'ไม่ระบุ'}</dd></div><div><dt>ฝ่ายคู่แข่ง</dt><dd>{match.opponentSide || 'ไม่ระบุ'}</dd></div>{isKnown(match.decision) && <div><dt>มติ</dt><dd>{match.decision}</dd></div>}{isKnown(match.judges) && <div><dt>กรรมการ</dt><dd>{match.judges} คน</dd></div>}</dl>
       {awards.length > 0 && <div class="match-awards"><h4>นักโต้ดีเด่น</h4>{awards.map(award => <p><span>{award.rank}</span>{award.value}</p>)}</div>}
-      <p class="source-note">{inferred ? 'ผลสรุปจากอันดับ เส้นทาง หรือสถิติสะสมตามตารางที่รวบรวมไว้' : 'ผลจากหลักฐานรายคู่ตามตารางที่รวบรวมไว้'}</p>
+      <p class="source-note">{match.reviewed ? 'ผลตามตารางที่ชมรมตรวจสอบและปรับแก้แล้ว' : inferred ? 'ผลสรุปจากอันดับ เส้นทาง หรือสถิติสะสมตามตารางที่รวบรวมไว้' : 'ผลจากหลักฐานรายคู่ตามตารางที่รวบรวมไว้'}</p>
       {sources.length > 0 && <div class="source-links">{sources.slice(0, 4).map((source, n) => <a href={source} target="_blank" rel="noreferrer">แหล่งข้อมูล {n + 1} ↗</a>)}</div>}
       {match.images[0] && <figure class="match-evidence"><Media id={match.images[0]} alt={`ภาพประกอบ${roundName(match.order)} ปี ${match.year + 543}`} sizes="(max-width: 760px) 90vw, 600px" /><figcaption>ภาพประกอบการแข่งขัน · ดูรายละเอียดจากแหล่งต้นฉบับ</figcaption></figure>}
     </div></details></div>

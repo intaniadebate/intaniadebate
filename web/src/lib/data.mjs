@@ -1,6 +1,10 @@
 export const years = Array.from({ length: 10 }, (_, i) => 2017 + i);
 export const events = { freshy: 'CU Freshy Debate', visionary: 'The Visionary Debate' };
 export const isKnown = value => Boolean(value && !/^(ไม่พบ|ยังไม่|ไม่ปรากฏ|—)/.test(String(value)));
+export const awardText = value => {
+  const label = String(value || '').replace(/^ไม่พบข้อมูล\s*[-–—]?\s*/, '').trim();
+  return isKnown(label) ? label : '';
+};
 export const roundName = order => ({ 1: 'รอบคัดเลือก 1', 2: 'รอบคัดเลือก 2', 2.5: 'รอบคัดเลือกรอบพิเศษ', 3: 'รอบ 8 ทีม', 4: 'รอบรองชนะเลิศ', 5: 'ชิงอันดับ 3', 6: 'รอบชิงชนะเลิศ' }[order] || 'รอบที่ 2');
 export const seasonMatches = (matches, year) => matches.filter(m => m.year === year).sort((a, b) => a.order - b.order || a.sequence - b.sequence);
 export const resultSummary = matches => ({ total: matches.length, wins: matches.filter(m => m.result === 'ชนะ').length, losses: matches.filter(m => m.result === 'แพ้').length });

@@ -1,5 +1,10 @@
+import { initYearNavigation } from './year-navigation.js';
 const root = document.documentElement;
-document.querySelectorAll('img[data-media-fallback]').forEach(image => {
+const boundImages = new WeakSet();
+function initMedia(scope = document) {
+scope.querySelectorAll('img[data-media-fallback]').forEach(image => {
+  if (boundImages.has(image)) return;
+  boundImages.add(image);
   const fallbackImage = () => {
     const fallback = image.dataset.mediaFallback;
     if (fallback && !image.dataset.fallbackUsed && new URL(image.currentSrc || image.src, location.origin).pathname !== fallback) {
@@ -13,6 +18,8 @@ document.querySelectorAll('img[data-media-fallback]').forEach(image => {
   image.addEventListener('error', fallbackImage);
   if (image.complete && !image.naturalWidth) fallbackImage();
 });
+}
+initMedia();
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 let paused = root.dataset.motion === 'paused';
 try { paused = localStorage.getItem('intania-motion') === 'paused'; } catch {}
@@ -36,7 +43,6 @@ document.querySelectorAll('[data-tone]').forEach(button => {
     document.querySelectorAll('[data-tone]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   });
 });
-document.querySelectorAll('[data-year-navigation]').forEach(select => select.addEventListener('change', () => { const url = new URL(select.value, location.origin); if (url.origin === location.origin) location.assign(url.href); }));
 document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', () => document.querySelector('.mobile-menu').open = false));
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
@@ -111,7 +117,11 @@ if (dialog) {
   dialog.addEventListener('keydown', event => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); index = (index + (event.key === 'ArrowRight' ? 1 : -1) + currentAlbum.photos.length) % currentAlbum.photos.length; showImage(); } });
   dialog.addEventListener('close', () => { photo.removeAttribute('src'); opener?.focus(); });
 }
-if ('IntersectionObserver' in window && !reduced.matches) {
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-inview'); observer.unobserve(entry.target); } }), { threshold: 0.12 });
-  document.querySelectorAll('.match-card,.member-card,.chapter-entry,.album-card').forEach(item => observer.observe(item));
+const observer = 'IntersectionObserver' in window && !reduced.matches
+  ? new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-inview'); observer.unobserve(entry.target); } }), { threshold: 0.12 })
+  : null;
+function observeCards(scope = document) {
+  scope.querySelectorAll('.match-card,.member-card,.chapter-entry,.album-card').forEach(item => observer?.observe(item));
 }
+observeCards();
+initYearNavigation(workspace => { initMedia(workspace); observeCards(workspace); });

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
-import { rivals, resultSummary, validateData } from '../src/lib/data.mjs';
+import { awardText, rivals, resultSummary, validateData } from '../src/lib/data.mjs';
 import { resolveMedia, mediaSrcset } from '../src/lib/media.mjs';
 const read = file => JSON.parse(fs.readFileSync(new URL(file, import.meta.url), 'utf8'));
 const competition = read('../src/data/competitions.json');
@@ -11,18 +11,44 @@ const roster = read('../src/data/rosters.json');
 const media = read('../src/data/media.json');
 const albums = read('../src/data/albums.json');
 
-test('the approved Excel import retains all 43 rows, source fingerprint and all ten final placements', () => {
-  assert.equal(competition.matches.length, 43);
+test('the validated Excel import retains all 44 rows, source fingerprint and all ten final placements', () => {
+  assert.equal(competition.matches.length, 44);
   const workbook = path.resolve('..', 'การแข่งขัน', competition.source);
   assert.equal(createHash('sha256').update(fs.readFileSync(workbook)).digest('hex'), competition.sourceSha256);
   assert.deepEqual(competition.seasons.map(s => s.placement), ['อันดับ 4', 'อันดับ 3', 'ตกรอบคัดเลือก', 'อันดับ 4', 'อันดับ 1', 'อันดับ 3', 'อันดับ 4', 'อันดับ 2', 'อันดับ 2', 'ตกรอบคัดเลือก']);
-  assert.equal(resultSummary(competition.matches).wins + resultSummary(competition.matches).losses, 43);
+  assert.deepEqual(resultSummary(competition.matches), { total: 44, wins: 29, losses: 15 });
+  assert.ok(competition.matches.every(m => m.reviewed));
+  assert.equal(competition.validation.date, '2026-10-18');
   validateData(competition, roster, albums, media);
 });
-test('rival totals account for each imported match once; the alternate event has its own scope', () => {
-  assert.equal(rivals(competition.matches).reduce((n, r) => n + r.matches.length, 0), 43);
-  assert.equal(rivals(competition.matches, { event: 'freshy' }).reduce((n, r) => n + r.matches.length, 0), 42);
-  assert.equal(rivals(competition.matches, { event: 'visionary' }).reduce((n, r) => n + r.matches.length, 0), 1);
+test('rival totals account for each validated match once and retain event filtering', () => {
+  assert.equal(rivals(competition.matches).reduce((n, r) => n + r.matches.length, 0), 44);
+  assert.equal(rivals(competition.matches, { event: 'freshy' }).reduce((n, r) => n + r.matches.length, 0), 44);
+  assert.equal(rivals(competition.matches, { event: 'visionary' }).reduce((n, r) => n + r.matches.length, 0), 0);
+});
+
+test('corrected results, inserted rounds and the confirmed 2023 motion survive the import', () => {
+  const match = (year, order) => competition.matches.find(m => m.year === year && m.order === order);
+  assert.equal(match(2020, 2).result, 'แพ้');
+  assert.equal(match(2020, 2.5).result, 'ชนะ');
+  assert.equal(match(2022, 1).result, 'ชนะ');
+  assert.equal(match(2022, 2).result, 'ชนะ');
+  assert.equal(match(2021, 3).opponent, 'คณะแพทยศาสตร์');
+  assert.equal(match(2022, 3).opponent, 'คณะพาณิชยศาสตร์และการบัญชี');
+  assert.equal(match(2024, 2).opponent, 'คณะอักษรศาสตร์');
+  assert.equal(match(2021, 1).motion, 'เวทีประกวดนางงามไม่ควรจัดต่อไปในอนาคต');
+  assert.equal(match(2023, 3).motion, 'อสังหาริมทรัพย์ไทยไม่ควรให้ชาวต่างชาติซื้อขายขาดได้');
+  assert.equal(match(2021, 6).round, 'รอบชิงชนะเลิศ');
+  for (const year of [2021, 2022, 2023, 2024]) {
+    assert.equal(competition.matches.filter(m => m.year === year).length, 5);
+  }
+});
+
+test('a known award role remains visible when the person name is unavailable', () => {
+  assert.equal(awardText('ไม่พบข้อมูล - หัวหน้าฝ่ายค้าน'), 'หัวหน้าฝ่ายค้าน');
+  assert.equal(awardText('ไม่พบข้อมูล สนับสนุนค้าน #3'), 'สนับสนุนค้าน #3');
+  assert.equal(awardText('ไม่พบข้อมูล'), '');
+  assert.equal(awardText('— รอบนี้ประกาศอันดับ 1 เท่านั้น'), '');
 });
 test('rivals rank losses before frequency and frequency before their name', () => {
   const fixture = [

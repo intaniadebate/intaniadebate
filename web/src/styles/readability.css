@@ -1,0 +1,88 @@
+/* Hallmark · designed-as-app · design.md
+ * Pre-emit critique: Philosophy 4 · Hierarchy 5 · Execution 4 · Specificity 5 · Restraint 4 · Variety 4 */
+html { font-size: 100%; }
+body.mvp-two { font-size: var(--text-reading); line-height: 1.85; }
+.mvp-two :where(p, blockquote) { text-wrap: pretty; }
+.mvp-two :where(h1, h2, h3) { overflow-wrap: anywhere; min-width: 0; }
+.mvp-two .main-nav a, .mvp-two .header-contact { font-size: 1rem; }
+.mvp-two .header-inner { gap: 1.25rem; }
+.mvp-two .main-nav { gap: clamp(1rem, 1.5vw, 1.75rem); }
+.mvp-two .brand { font-size: .875rem; line-height: 1.5; }
+.mvp-two .eyebrow, .mvp-two .hero-content > .eyebrow { font-size: var(--text-caption); letter-spacing: .09em; }
+.mvp-two .hero-description, .mvp-two .intro-small, .mvp-two .about-copy > p,
+.mvp-two .chapter-entry > p, .mvp-two .archive-hero-copy > p,
+.mvp-two .album-story > p:not(.eyebrow), .mvp-two .credits-page p,
+.mvp-two .article-body #post-content, .mvp-two .member-quote, .mvp-two .member-bio { font-size: var(--text-reading); line-height: 1.9; }
+.mvp-two .about-copy .lead, .mvp-two .article-body > .lead { font-size: 1.25rem; }
+.mvp-two .strong-link, .mvp-two .text-link { font-size: 1rem; }
+.mvp-two .button { font-size: 1rem; }
+.mvp-two .cover-thai { font-size: 1.25rem; }
+.mvp-two .intro-strip > p { font-size: 1rem; }
+.mvp-two .intro-strip > .eyebrow { max-width: none; font-size: var(--text-caption); }
+.mvp-two .chapter-number, .mvp-two .archive-note, .mvp-two .news-meta,
+.mvp-two .news-meta .status, .mvp-two .article-status,
+.mvp-two .article-art figcaption, .mvp-two .hero-visual figcaption,
+.mvp-two .source-note { font-size: var(--text-caption); line-height: 1.85; }
+.mvp-two .news-filters button { font-size: 1rem; }
+.mvp-two .news-text h3 { font-size: clamp(1.25rem, 1.1rem + .5vw, 1.65rem); }
+.mvp-two .news-text p { font-size: 1rem; line-height: 1.8; }
+.mvp-two .news-row { grid-template-columns: 10rem minmax(0, 1fr) 3rem; }
+.mvp-two .chapter-entry > .text-link, .mvp-two .chapter-section .section-heading > p { font-size: 1rem; }
+.mvp-two .contact-inner p:not(.eyebrow) { font-size: var(--text-reading); }
+.mvp-two .contact-round, .mvp-two .contact-round > span:last-child { font-size: .9375rem; }
+.mvp-two .site-footer { font-size: var(--text-caption); flex-wrap: wrap; }
+.mvp-two .site-footer .brand { width: auto; }
+.mvp-two .site-preferences { flex-wrap: wrap; }
+.mvp-two .site-preferences :is(summary, button) { font-size: var(--text-caption); }
+.mvp-two label, .mvp-two select { font-size: 1rem; }
+.mvp-two .archive-totals > span, .mvp-two .roster-count,
+.mvp-two .roster-pending, .mvp-two .member-fullname,
+.mvp-two .member-pending .member-copy h3, .mvp-two .roster-outro > .text-link { font-size: 1rem; }
+.mvp-two .member-copy h3 { font-size: 1.25rem; }
+.mvp-two .member-copy > .text-link { font-size: 1rem; }
+.mvp-two .member-index { font-size: var(--text-caption); }
+.mvp-two .portrait-pending > small { font-size: .75rem; padding-inline: .5rem; text-align: center; letter-spacing: .04em; }
+.mvp-two .rivals-intro > p, .mvp-two .rival-controls > p,
+.mvp-two .album-controls > span, .mvp-two .rival-table,
+.mvp-two .rival-table thead th, .mvp-two .rival-table details > summary,
+.mvp-two .rival-table details li > a { font-size: 1rem; }
+.mvp-two .rival-table { min-width: 48rem; }
+.mvp-two .rival-table thead th { font-weight: 500; }
+.mvp-two .rival-table thead th:nth-child(4) { color: var(--color-win); }
+.mvp-two .rival-table thead th:nth-child(5) { color: var(--color-loss); }
+.mvp-two .rival-table [data-wins], .mvp-two .rival-table [data-result="ชนะ"] strong { color: var(--color-win); }
+.mvp-two .rival-table [data-losses], .mvp-two .rival-table [data-result="แพ้"] strong { color: var(--color-loss); }
+.mvp-two .rival-meter i { background: var(--color-loss); }
+.mvp-two .memories-empty > p:not(.eyebrow), .mvp-two .memories-empty > .text-link,
+.mvp-two .album-date > small, .mvp-two .album-cover > span,
+.mvp-two .gallery-toolbar p, .mvp-two .gallery-bottom p { font-size: 1rem; }
+.mvp-two .year-rail > .eyebrow { font-size: var(--text-caption); }
+.mvp-two .year-rail > a { font-size: 1.65rem; min-height: 3rem; }
+.mvp-two .year-rail > a.latest-year { font-size: var(--text-caption); }
+.mvp-two .year-noscript { display: flex; gap: 1rem; flex-wrap: wrap; }
+.mvp-two .year-navigation[aria-busy="true"] { opacity: .65; }
+.mvp-two .year-loading { font-size: var(--text-caption); color: var(--muted); min-height: 1.85em; margin-top: .75rem; }
+@media (max-width: 1100px) {
+  .mvp-two .desktop-nav { display: none; }
+  .mvp-two .mobile-menu { display: block; margin-left: .5rem; }
+  .mvp-two .mobile-menu > summary { display: flex; align-items: center; gap: .5rem; font-size: 1rem; list-style: none; }
+  .mvp-two .mobile-menu > nav { position: absolute; top: 100%; left: 0; right: 0; display: flex; flex-direction: column; background: var(--paper); padding: 1rem 1.5rem; border-bottom: 1px solid var(--line); }
+  .mvp-two .mobile-menu > nav > a { padding: .8rem .3rem; font-size: 1rem; }
+  .mvp-two .header-contact { margin-left: auto; }
+}
+@media (max-width: 600px) {
+  .mvp-two .header-inner { flex-wrap: nowrap; gap: .75rem; }
+  .mvp-two .header-contact { gap: .75rem; font-size: .9375rem; }
+  .mvp-two .brand { font-size: .75rem; }
+  .mvp-two .news-row { grid-template-columns: 4.5rem minmax(0, 1fr) 2.75rem; gap: .75rem; }
+  .mvp-two .news-text p { grid-column: 1 / -1; }
+  .mvp-two .news-meta { gap: .5rem; }
+  .mvp-two .chapter-entry { display: flex; }
+  .mvp-two .chapter-entry > :is(.mini-route, .six-voices, .memory-lines) { display: none; }
+  .mvp-two .chapter-entry > p { margin-block: .5rem; }
+  .mvp-two .section-heading { align-items: start; flex-direction: column; }
+  .mvp-two .archive-hero .eyebrow { font-size: var(--text-caption); }
+  .mvp-two .portrait-pending > small { display: none; }
+  .mvp-two .site-footer { gap: 1rem; }
+  .mvp-two .site-footer .brand { width: 100%; }
+}

@@ -10,6 +10,7 @@ from openpyxl import load_workbook
 parser = argparse.ArgumentParser()
 parser.add_argument('workbook', type=Path)
 parser.add_argument('--output', type=Path, default=Path(__file__).resolve().parents[1] / 'src/data/competitions.json')
+parser.add_argument('--validated-source', type=Path, help='User-reviewed source workbook used to update this master')
 args = parser.parse_args()
 book = load_workbook(args.workbook, read_only=True, data_only=True)
 sheet = book['ผลการแข่งขัน']
@@ -31,6 +32,8 @@ for row in sheet.iter_rows(min_row=5, values_only=True):
     year = int(d['ปี ค.ศ.'])
     seq = int(d['ลำดับในปี'])
     event = 'visionary' if 'สร้างสรรค์สังคม' in get('รอบ') else 'freshy'
+    if not get('ญัตติ') or not get('คู่แข่ง') or get('ผลของวิศวะ') not in ('ชนะ', 'แพ้'):
+        raise ValueError(f'Incomplete match in {year}, sequence {seq}')
     image_keys = []
     for source in get('ภาพหลักฐานในคลัง').splitlines():
         p = Path(source)
@@ -53,6 +56,7 @@ for row in sheet.iter_rows(min_row=5, values_only=True):
         'awards': [get(f'นักโต้ดีเด่นอันดับ {i}') for i in range(1, 5)],
         'placement': get('อันดับสุดท้ายปีนั้น'), 'videos': links(d.get('วิดีโอหรือเพลย์ลิสต์')),
         'sources': links(d.get('โพสต์ผล')), 'images': image_keys,
+        'reviewed': bool(args.validated_source),
     })
 annual = []
 for row in book['สรุปรายปี'].iter_rows(min_row=5, values_only=True):
@@ -60,6 +64,10 @@ for row in book['สรุปรายปี'].iter_rows(min_row=5, values_only=
         annual.append({'year': int(row[0]), 'placement': clean(row[2])})
 book.close()
 payload = {'source': args.workbook.name, 'sourceSha256': hashlib.sha256(args.workbook.read_bytes()).hexdigest(), 'updatedAt': datetime.now(timezone(timedelta(hours=7))).date().isoformat(), 'seasons': annual, 'matches': matches}
+if args.validated_source:
+    payload['validation'] = {'source': args.validated_source.name,
+                             'sourceSha256': hashlib.sha256(args.validated_source.read_bytes()).hexdigest(),
+                             'date': payload['updatedAt']}
 args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 (args.output.parent / 'media.json').write_text(json.dumps(media, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

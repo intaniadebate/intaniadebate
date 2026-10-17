@@ -1,7 +1,7 @@
 {
   "source": "สรุปการแข่งขันโต้วาทีคณะวิศวะ_2017-2026_ฉบับวิเคราะห์ทุกนัด.xlsx",
-  "sourceSha256": "7bc0793939435602cf10ebf6e366c9e428f3c1ae40165abf0a08c921b71fcd51",
-  "updatedAt": "2026-10-17",
+  "sourceSha256": "70aa8e9bcb1e8dbc4120cced8dfa1e5b6adb3860ea8879d5f9e21997d3e9cae6",
+  "updatedAt": "2026-10-18",
   "seasons": [
     {
       "year": 2017,
@@ -74,7 +74,8 @@
       "images": [
         "evidence-3cf44fae0065",
         "evidence-d5aeb1a9ce34"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2017-freshy-02",
@@ -106,7 +107,8 @@
       "images": [
         "evidence-df5037f7a548",
         "evidence-e2cf2f66d8a3"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2017-freshy-03",
@@ -120,7 +122,7 @@
       "opponent": "คณะครุศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
       "result": "ชนะ",
-      "basis": "อนุมานตามเส้นทาง: มีการแข่งขันรอบ 4 ทีมต่อ จึงผ่านรอบ 8 ทีม",
+      "basis": "อนุมาน",
       "decision": "ไม่พบข้อมูล",
       "judges": "ไม่พบข้อมูล",
       "awards": [
@@ -137,7 +139,8 @@
       ],
       "images": [
         "evidence-3bfb8e01a9e8"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2017-freshy-04",
@@ -151,7 +154,7 @@
       "opponent": "คณะรัฐศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
       "result": "แพ้",
-      "basis": "อนุมานตามเส้นทาง: อันดับสุดท้าย 4 และมีคู่ชิงอันดับ 3 หมายถึงแพ้รอบ 4 ทีม",
+      "basis": "อนุมาน",
       "decision": "ไม่พบข้อมูล",
       "judges": "ไม่พบข้อมูล",
       "awards": [
@@ -167,7 +170,8 @@
       ],
       "images": [
         "evidence-7d8f6a4e2481"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2017-freshy-05",
@@ -181,7 +185,7 @@
       "opponent": "คณะวิทยาศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "แพ้",
-      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 4 หมายถึงแพ้คู่ชิงอันดับ 3",
+      "basis": "อนุมาน",
       "decision": "ไม่พบข้อมูล",
       "judges": "ไม่พบข้อมูล",
       "awards": [
@@ -198,7 +202,8 @@
       ],
       "images": [
         "evidence-cf377df7864b"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2018-freshy-01",
@@ -228,7 +233,8 @@
       ],
       "images": [
         "evidence-b98b0414d623"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2018-freshy-02",
@@ -262,7 +268,8 @@
       "images": [
         "evidence-9368c80d26a4",
         "evidence-abfd9b7120a9"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2018-freshy-03",
@@ -276,11 +283,11 @@
       "opponent": "คณะแพทยศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "ชนะ",
-      "basis": "อนุมานตามเส้นทาง: มีการแข่งขันรอบ 4 ทีมต่อ จึงผ่านรอบ 8 ทีม",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล - ผู้สนับสนุนฝ่ายเสนอคนที่ 1",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
@@ -294,7 +301,8 @@
       ],
       "images": [
         "evidence-a134ac16fd95"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2018-freshy-04",
@@ -308,8 +316,8 @@
       "opponent": "คณะวิทยาศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "แพ้",
-      "basis": "อนุมานตามเส้นทาง: อันดับสุดท้าย 3 และมีคู่ชิงอันดับ 3 หมายถึงแพ้รอบ 4 ทีม",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
         "ไม่พบข้อมูล",
@@ -326,7 +334,8 @@
       ],
       "images": [
         "evidence-63cd06c5b0c3"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2018-freshy-05",
@@ -340,11 +349,11 @@
       "opponent": "คณะนิติศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
       "result": "ชนะ",
-      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 3 หมายถึงชนะคู่ชิงอันดับ 3",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "ไม่เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล - ผู้สนับสนุนฝ่ายเสนอคนที่ 3 และผู้สนับสนุนฝ่ายค้านคนที่ 1",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
@@ -358,7 +367,8 @@
       ],
       "images": [
         "evidence-f4a1373a752d"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2019-freshy-01",
@@ -390,7 +400,8 @@
       ],
       "images": [
         "evidence-d6bc74b8e6ed"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2019-freshy-02",
@@ -408,10 +419,10 @@
       "decision": "ไม่เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล"
+        "ไม่พบข้อมูล - หัวหน้าฝ่ายเสนอ",
+        "ไม่พบข้อมูล - หัวหน้าค้าน",
+        "ไม่พบข้อมูล - ผู้สนับสนุนฝ่ายเสนอ #1",
+        "ไม่พบข้อมูล - ผู้สนับสนุนฝ่ายค้าน #2"
       ],
       "placement": "ตกรอบคัดเลือก",
       "videos": [
@@ -420,7 +431,8 @@
       "sources": [
         "https://www.facebook.com/photo/?fbid=2501549423254602"
       ],
-      "images": []
+      "images": [],
+      "reviewed": true
     },
     {
       "id": "2020-freshy-01",
@@ -433,8 +445,8 @@
       "side": "ฝ่ายค้าน",
       "opponent": "คณะนิติศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
-      "result": "ชนะ",
-      "basis": "ยืนยัน",
+      "result": "แพ้",
+      "basis": "ยืนยันโดยผู้ใช้",
       "decision": "ไม่เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
@@ -453,7 +465,8 @@
       "images": [
         "evidence-c2938de9dc45",
         "evidence-a2b7e5ecd9a4"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2020-freshy-02",
@@ -466,15 +479,15 @@
       "side": "ฝ่ายเสนอ",
       "opponent": "คณะรัฐศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
-      "result": "แพ้",
-      "basis": "อนุมานจาก Win สะสมหลังรอบพิเศษ",
-      "decision": "ไม่พบข้อมูล",
+      "result": "ชนะ",
+      "basis": "ยืนยันโดยผู้ใช้",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล"
+        "ไม่พบข้อมูล สนับสนุนค้าน #3",
+        "ไม่พบข้อมูล หัวหน้าฝ่ายเสนอ",
+        "ไม่พบข้อมูล สนับสนุนเสนอ #2",
+        "ไม่พบข้อมูล สนับสนุนเสนอ 1 และ 3"
       ],
       "placement": "อันดับ 4",
       "videos": [
@@ -488,7 +501,8 @@
       "images": [
         "evidence-945ebc91c0d3",
         "evidence-8ddcaedee751"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2020-freshy-03",
@@ -502,7 +516,7 @@
       "opponent": "คณะนิติศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "ชนะ",
-      "basis": "ยืนยันจากการ์ดผลรอบ 8 ทีม",
+      "basis": "ยืนยัน",
       "decision": "เอกฉันท์",
       "judges": "ไม่พบจำนวนกรรมการ",
       "awards": [
@@ -521,7 +535,8 @@
       "images": [
         "evidence-aee831858f70",
         "evidence-2c8ec1720635"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2020-freshy-04",
@@ -553,7 +568,8 @@
       ],
       "images": [
         "evidence-123593eea71c"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2020-freshy-05",
@@ -567,8 +583,8 @@
       "opponent": "คณะนิเทศศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
       "result": "แพ้",
-      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 4 หมายถึงแพ้คู่ชิงอันดับ 3",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "ไม่เป็นเอกฉันท์ (1-4)",
       "judges": "ไม่พบข้อมูล",
       "awards": [
         "ไม่พบข้อมูล",
@@ -584,7 +600,8 @@
         "https://www.facebook.com/photo/?fbid=3490364634373071",
         "https://www.facebook.com/VatasilpChula/videos/301089430997808"
       ],
-      "images": []
+      "images": [],
+      "reviewed": true
     },
     {
       "id": "2021-freshy-01",
@@ -593,7 +610,7 @@
       "eventId": "freshy",
       "order": 1.0,
       "round": "รอบที่ 1",
-      "motion": "Plant-based diet คือคำตอบของการบริโภคในอนาคต",
+      "motion": "เวทีประกวดนางงามไม่ควรจัดต่อไปในอนาคต",
       "side": "ฝ่ายค้าน",
       "opponent": "คณะพาณิชยศาสตร์และการบัญชี",
       "opponentSide": "ฝ่ายเสนอ",
@@ -609,12 +626,9 @@
       ],
       "placement": "อันดับ 1",
       "videos": [],
-      "sources": [
-        "https://www.facebook.com/photo/?fbid=9330992143643595"
-      ],
-      "images": [
-        "evidence-b638dfeba338"
-      ]
+      "sources": [],
+      "images": [],
+      "reviewed": true
     },
     {
       "id": "2021-freshy-02",
@@ -646,47 +660,35 @@
       ],
       "images": [
         "evidence-5771865b7cf9"
-      ]
+      ],
+      "reviewed": true
     },
     {
-      "id": "2021-visionary-03",
+      "id": "2021-freshy-03",
       "year": 2021,
       "sequence": 3,
-      "eventId": "visionary",
-      "order": 2.25,
-      "round": "โต้วาทีสร้างสรรค์สังคม รอบที่ 2",
-      "motion": "การแสดงออกทางความคิดผ่านคำพูดไม่ควรมีขอบเขต",
+      "eventId": "freshy",
+      "order": 3.0,
+      "round": "รอบ 8 ทีม",
+      "motion": "สังคมไทยยังไม่เหมาะสมกับรัฐสวัสดิการ",
       "side": "ฝ่ายเสนอ",
-      "opponent": "คณะนิเทศศาสตร์",
+      "opponent": "คณะแพทยศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
-      "result": "แพ้",
-      "basis": "อนุมานจากประกาศคู่ต่อเนื่อง",
-      "decision": "ไม่พบข้อมูล",
-      "judges": "ไม่พบข้อมูล",
+      "result": "ชนะ",
+      "basis": "ยืนยันโดยผู้ใช้",
+      "decision": "",
+      "judges": "",
       "awards": [
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล"
+        "ผู้สนับสนุนฝ่ายเสนอคนที่ 3",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
       ],
-      "placement": "รายการแยก; ไม่พบอันดับสุดท้าย",
-      "videos": [
-        "https://www.youtube.com/watch?v=QETYKkhqXAE"
-      ],
-      "sources": [
-        "https://www.facebook.com/photo.php?fbid=4497523250323866",
-        "https://www.facebook.com/VatasilpChula/posts/pfbid0P2CBUrDi69vM3v78zLpQiSfbvGFfWznLKjgv5qMjjQzpuWU2yaSXebEyuQCDFZ1Jl",
-        "https://www.facebook.com/photo/?fbid=4516415651767959",
-        "https://www.facebook.com/photo/?fbid=4516415658434625",
-        "https://www.facebook.com/photo/?fbid=4516415751767949",
-        "https://www.facebook.com/VatasilpChula/posts/pfbid0P2CBUrDi69vM3v78zLpQiSfbvGFfWznLKjgv5qMjjQzpuWU2yaSXebEyuQCDFZ1Jl",
-        "https://www.facebook.com/photo/?fbid=4516415651767959",
-        "https://www.facebook.com/photo/?fbid=4516415658434625",
-        "https://www.facebook.com/photo/?fbid=4516415751767949"
-      ],
-      "images": [
-        "evidence-c30d114e83d3"
-      ]
+      "placement": "อันดับ 1",
+      "videos": [],
+      "sources": [],
+      "images": [],
+      "reviewed": true
     },
     {
       "id": "2021-freshy-04",
@@ -700,11 +702,11 @@
       "opponent": "คณะพาณิชยศาสตร์และการบัญชี",
       "opponentSide": "ฝ่ายเสนอ",
       "result": "ชนะ",
-      "basis": "อนุมานตามกติกาผู้ใช้: อันดับสุดท้าย 1 หมายถึงชนะรอบ 4 ทีมและเข้าชิงชนะเลิศ",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
+        "ไม่พบข้อมูล - หัวหน้าฝ่ายค้าน",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
@@ -716,7 +718,8 @@
       "sources": [
         "https://www.facebook.com/VatasilpChula"
       ],
-      "images": []
+      "images": [],
+      "reviewed": true
     },
     {
       "id": "2021-freshy-05",
@@ -730,8 +733,8 @@
       "opponent": "คณะวิทยาศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
       "result": "ชนะ",
-      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 1 หมายถึงชนะรอบชิงชนะเลิศ",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
         "ไม่พบข้อมูล",
@@ -746,7 +749,8 @@
       "sources": [
         "https://www.facebook.com/VatasilpChula"
       ],
-      "images": []
+      "images": [],
+      "reviewed": true
     },
     {
       "id": "2022-freshy-01",
@@ -759,8 +763,8 @@
       "side": "ฝ่ายเสนอ",
       "opponent": "คณะเศรษฐศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
-      "result": "แพ้",
-      "basis": "ยืนยันจากการ์ดผล",
+      "result": "ชนะ",
+      "basis": "ยืนยันโดยผู้ใช้",
       "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
@@ -778,7 +782,8 @@
       ],
       "images": [
         "evidence-11f036f7a8c0"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2022-freshy-02",
@@ -791,8 +796,8 @@
       "side": "ฝ่ายเสนอ",
       "opponent": "คณะนิติศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
-      "result": "แพ้",
-      "basis": "ยืนยัน",
+      "result": "ชนะ",
+      "basis": "ยืนยันโดยผู้ใช้",
       "decision": "ไม่เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
@@ -808,12 +813,40 @@
       ],
       "images": [
         "evidence-fb02064dcaf4"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2022-freshy-03",
       "year": 2022,
       "sequence": 3,
+      "eventId": "freshy",
+      "order": 3.0,
+      "round": "รอบ 8 ทีม",
+      "motion": "กิจกรรมของมหาวิทยาลัยควรส่งเสริมนิสิตมากกว่าสังคม",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะพาณิชยศาสตร์และการบัญชี",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยันโดยผู้ใช้",
+      "decision": "",
+      "judges": "",
+      "awards": [
+        "ผู้สนับสนุนฝ่ายค้านคนที่ 1",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
+        "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
+      ],
+      "placement": "อันดับ 3",
+      "videos": [],
+      "sources": [],
+      "images": [],
+      "reviewed": true
+    },
+    {
+      "id": "2022-freshy-04",
+      "year": 2022,
+      "sequence": 4,
       "eventId": "freshy",
       "order": 4.0,
       "round": "รอบรองชนะเลิศ (อนุมานจากการเข้าชิงอันดับ 3)",
@@ -822,11 +855,11 @@
       "opponent": "คณะนิเทศศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "แพ้",
-      "basis": "อนุมานตามเส้นทาง: อันดับสุดท้าย 3 และมีคู่ชิงอันดับ 3 หมายถึงแพ้รอบ 4 ทีม",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
+        "ผู้สนับสนุนฝ่ายเสนอคนที่ 3",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
@@ -838,12 +871,13 @@
       ],
       "images": [
         "evidence-7e5f9041859e"
-      ]
+      ],
+      "reviewed": true
     },
     {
-      "id": "2022-freshy-04",
+      "id": "2022-freshy-05",
       "year": 2022,
-      "sequence": 4,
+      "sequence": 5,
       "eventId": "freshy",
       "order": 5.0,
       "round": "ชิงอันดับ 3",
@@ -852,8 +886,8 @@
       "opponent": "คณะแพทยศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "ชนะ",
-      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 3 หมายถึงชนะคู่ชิงอันดับ 3",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "ไม่เป็นเอกฉันท์ (3-2)",
       "judges": "ไม่พบข้อมูล",
       "awards": [
         "ไม่พบข้อมูล",
@@ -870,7 +904,8 @@
       ],
       "images": [
         "evidence-a7c4d1243759"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2023-freshy-01",
@@ -881,41 +916,11 @@
       "round": "รอบคัดเลือกที่ 1",
       "motion": "เด็กเล็กควรได้รับการส่งเสริมให้ใช้ได้มากกว่าสองภาษา",
       "side": "ฝ่ายค้าน",
-      "opponent": "คณะวิทยาศาสตร์",
-      "opponentSide": "ฝ่ายเสนอ",
-      "result": "แพ้",
-      "basis": "อนุมานจาก Win สะสมหลังรอบ 2",
-      "decision": "ไม่พบข้อมูล",
-      "judges": "ไม่พบข้อมูล",
-      "awards": [
-        "หัวหน้าฝ่ายเสนอ",
-        "ผู้สนับสนุนฝ่ายเสนอ #3",
-        "หัวหน้าฝ่ายค้าน",
-        "ผู้สนับสนุนฝ่ายค้าน #3"
-      ],
-      "placement": "อันดับ 4",
-      "videos": [],
-      "sources": [
-        "https://www.instagram.com/stories/highlights/18074737402393513/",
-        "https://www.instagram.com/p/CyvcDMLpacq/?img_index=4",
-        "https://www.instagram.com/p/CyvcDMLpacq/?img_index=4"
-      ],
-      "images": []
-    },
-    {
-      "id": "2023-freshy-02",
-      "year": 2023,
-      "sequence": 2,
-      "eventId": "freshy",
-      "order": 1.0,
-      "round": "รอบคัดเลือกที่ 1",
-      "motion": "เด็กเล็กควรได้รับการส่งเสริมให้ใช้ได้มากกว่าสองภาษา",
-      "side": "ฝ่ายค้าน",
       "opponent": "คณะเภสัชศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
       "result": "ชนะ",
       "basis": "ยืนยัน",
-      "decision": "ไม่ปรากฏในภาพ",
+      "decision": "ไม่เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
         "หัวหน้าฝ่ายเสนอ",
@@ -930,12 +935,13 @@
       ],
       "images": [
         "evidence-218816a08c7e"
-      ]
+      ],
+      "reviewed": true
     },
     {
-      "id": "2023-freshy-03",
+      "id": "2023-freshy-02",
       "year": 2023,
-      "sequence": 3,
+      "sequence": 2,
       "eventId": "freshy",
       "order": 2.0,
       "round": "รอบคัดเลือกที่ 2",
@@ -962,40 +968,40 @@
       "images": [
         "evidence-bec61d136660",
         "evidence-73b532cf43cf"
-      ]
+      ],
+      "reviewed": true
     },
     {
-      "id": "2023-freshy-04",
+      "id": "2023-freshy-03",
       "year": 2023,
-      "sequence": 4,
+      "sequence": 3,
       "eventId": "freshy",
       "order": 3.0,
       "round": "รอบ 8 ทีมสุดท้าย",
-      "motion": "เจ้าของสิทธิบัตรยาควรกำหนดราคายาได้ตามต้องการ",
+      "motion": "อสังหาริมทรัพย์ไทยไม่ควรให้ชาวต่างชาติซื้อขายขาดได้",
       "side": "ฝ่ายเสนอ",
       "opponent": "คณะรัฐศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "ชนะ",
-      "basis": "อนุมานตามเส้นทาง: มีการแข่งขันรอบ 4 ทีมต่อ จึงผ่านรอบ 8 ทีม",
+      "basis": "อนุมาน",
       "decision": "ไม่พบผลโหวตรายคู่",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
+        "ผู้สนับสนุนฝ่ายเสนอคนที่ 1",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
       ],
       "placement": "อันดับ 4",
       "videos": [],
-      "sources": [
-        "https://www.facebook.com/photo/?fbid=627277082941211&set=pcb.627277149607871"
-      ],
-      "images": []
+      "sources": [],
+      "images": [],
+      "reviewed": true
     },
     {
-      "id": "2023-freshy-05",
+      "id": "2023-freshy-04",
       "year": 2023,
-      "sequence": 5,
+      "sequence": 4,
       "eventId": "freshy",
       "order": 4.0,
       "round": "รอบรองชนะเลิศ",
@@ -1004,8 +1010,8 @@
       "opponent": "คณะนิติศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
       "result": "แพ้",
-      "basis": "อนุมานตามเส้นทาง: อันดับสุดท้าย 4 และมีคู่ชิงอันดับ 3 หมายถึงแพ้รอบ 4 ทีม",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
         "ไม่พบข้อมูล",
@@ -1021,12 +1027,13 @@
       ],
       "images": [
         "evidence-2a2b4e54f33c"
-      ]
+      ],
+      "reviewed": true
     },
     {
-      "id": "2023-freshy-06",
+      "id": "2023-freshy-05",
       "year": 2023,
-      "sequence": 6,
+      "sequence": 5,
       "eventId": "freshy",
       "order": 5.0,
       "round": "ชิงอันดับ 3",
@@ -1035,7 +1042,7 @@
       "opponent": "คณะวิทยาศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "แพ้",
-      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 4 หมายถึงแพ้คู่ชิงอันดับ 3",
+      "basis": "อนุมาน",
       "decision": "ไม่พบข้อมูล",
       "judges": "ไม่พบข้อมูล",
       "awards": [
@@ -1052,7 +1059,8 @@
       ],
       "images": [
         "evidence-f6a34343fd14"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2024-freshy-01",
@@ -1066,14 +1074,14 @@
       "opponent": "คณะสถาปัตยกรรมศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "ชนะ",
-      "basis": "อนุมานจากเส้นทางเข้ารอบ 8 ทีม",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล",
-        "ไม่พบข้อมูล"
+        "หัวหน้าเสนอ",
+        "หัวหน้าค้าน",
+        "สนับสนุนเสนอ 3",
+        "สนับสนุนเสนอ 2"
       ],
       "placement": "อันดับ 2",
       "videos": [
@@ -1082,12 +1090,40 @@
       "sources": [
         "https://www.facebook.com/VatasilpChula"
       ],
-      "images": []
+      "images": [],
+      "reviewed": true
     },
     {
       "id": "2024-freshy-02",
       "year": 2024,
       "sequence": 2,
+      "eventId": "freshy",
+      "order": 2.0,
+      "round": "รอบคัดเลือกที่ 2",
+      "motion": "มาตรฐานทางจริยธรรมไม่ควรถูกเอามากำหนดกับผู้ดำรงตำแหน่งทางการเมือง",
+      "side": "ฝ่ายค้าน",
+      "opponent": "คณะอักษรศาสตร์",
+      "opponentSide": "ฝ่ายเสนอ",
+      "result": "ชนะ",
+      "basis": "ยืนยันโดยผู้ใช้",
+      "decision": "ไม่เป็นเอกฉันท์",
+      "judges": "",
+      "awards": [
+        "สนับสนุนเสนอ 3",
+        "หัวหน้าค้าน",
+        "สนับสนุนค้าน 1",
+        "สนับสนุนค้าน 2"
+      ],
+      "placement": "อันดับ 2",
+      "videos": [],
+      "sources": [],
+      "images": [],
+      "reviewed": true
+    },
+    {
+      "id": "2024-freshy-03",
+      "year": 2024,
+      "sequence": 3,
       "eventId": "freshy",
       "order": 3.0,
       "round": "รอบ 8 ทีมสุดท้าย",
@@ -1096,11 +1132,11 @@
       "opponent": "คณะอักษรศาสตร์",
       "opponentSide": "ฝ่ายค้าน",
       "result": "ชนะ",
-      "basis": "อนุมานตามเส้นทาง: มีการแข่งขันรอบ 4 ทีมต่อ จึงผ่านรอบ 8 ทีม",
+      "basis": "อนุมาน",
       "decision": "ไม่พบข้อมูล",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
+        "หัวหน้าเสนอ",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
@@ -1112,12 +1148,13 @@
       "sources": [
         "https://www.facebook.com/photo?fbid=843062028029381&set=a.476394861362768"
       ],
-      "images": []
+      "images": [],
+      "reviewed": true
     },
     {
-      "id": "2024-freshy-03",
+      "id": "2024-freshy-04",
       "year": 2024,
-      "sequence": 3,
+      "sequence": 4,
       "eventId": "freshy",
       "order": 4.0,
       "round": "รอบรองชนะเลิศ (4 ทีมสุดท้าย)",
@@ -1126,11 +1163,11 @@
       "opponent": "คณะเภสัชศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
       "result": "ชนะ",
-      "basis": "อนุมานตามกติกาผู้ใช้: อันดับสุดท้าย 2 หมายถึงชนะรอบ 4 ทีมและเข้าชิงชนะเลิศ",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
-        "ไม่พบข้อมูล",
+        "หัวหน้าเสนอ",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น",
         "— รอบนี้ประกาศอันดับ 1 เท่านั้น"
@@ -1142,12 +1179,13 @@
       "sources": [
         "https://www.facebook.com/VatasilpChula"
       ],
-      "images": []
+      "images": [],
+      "reviewed": true
     },
     {
-      "id": "2024-freshy-04",
+      "id": "2024-freshy-05",
       "year": 2024,
-      "sequence": 4,
+      "sequence": 5,
       "eventId": "freshy",
       "order": 6.0,
       "round": "รอบชิงชนะเลิศ",
@@ -1157,7 +1195,7 @@
       "opponentSide": "ฝ่ายเสนอ",
       "result": "แพ้",
       "basis": "ยืนยัน",
-      "decision": "ไม่พบผลโหวตรายคู่",
+      "decision": "เป็นเอกฉันท์",
       "judges": "ไม่พบข้อมูล",
       "awards": [
         "ไม่พบข้อมูล",
@@ -1172,7 +1210,8 @@
       "sources": [
         "https://www.facebook.com/VatasilpChula"
       ],
-      "images": []
+      "images": [],
+      "reviewed": true
     },
     {
       "id": "2025-freshy-01",
@@ -1205,7 +1244,8 @@
       "images": [
         "evidence-bc1a7284b142",
         "evidence-c2220a9832e9"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2025-freshy-02",
@@ -1214,7 +1254,7 @@
       "eventId": "freshy",
       "order": 2.0,
       "round": "รอบคัดเลือกที่ 2 (รอบแฟ้มสะสมผลงาน)",
-      "motion": "ส่งเสริมความเหลื่อมล้ำทางการศึกษาไทย",
+      "motion": "รอบแฟ้มสะสมผลงานส่งเสริมความเหลื่อมล้ำทางการศึกษาไทย",
       "side": "ฝ่ายค้าน",
       "opponent": "คณะสถาปัตยกรรมศาสตร์",
       "opponentSide": "ฝ่ายเสนอ",
@@ -1239,7 +1279,8 @@
         "evidence-768e3ecffc30",
         "evidence-8249b9751a96",
         "evidence-25f17494ca13"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2025-freshy-03",
@@ -1271,7 +1312,8 @@
       ],
       "images": [
         "evidence-ad723671a46a"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2025-freshy-04",
@@ -1303,7 +1345,8 @@
       ],
       "images": [
         "evidence-c2db0a5e1fe4"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2025-freshy-05",
@@ -1312,13 +1355,13 @@
       "eventId": "freshy",
       "order": 6.0,
       "round": "รอบชิงชนะเลิศ",
-      "motion": "ไม่พบข้อความญัตติที่ยืนยันได้",
-      "side": "ไม่พบข้อมูล",
+      "motion": "การมีอยู่ขององค์กรการกุศลคือการผลักภาระของรัฐให้ประชาชน",
+      "side": "ฝ่ายเสนอ",
       "opponent": "คณะนิติศาสตร์ (อนุมานจากอันดับแชมป์และรองชนะเลิศ)",
-      "opponentSide": "ไม่พบข้อมูล",
+      "opponentSide": "ฝ่ายค้าน",
       "result": "แพ้",
-      "basis": "อนุมานตามอันดับสุดท้าย: อันดับ 2 หมายถึงแพ้รอบชิงชนะเลิศ",
-      "decision": "ไม่พบข้อมูล",
+      "basis": "อนุมาน",
+      "decision": "เป็นเอกฉันท์",
       "judges": "5",
       "awards": [
         "ไม่พบข้อมูล",
@@ -1335,7 +1378,8 @@
       ],
       "images": [
         "evidence-d6dd5d5868cb"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2026-freshy-01",
@@ -1368,7 +1412,8 @@
       "images": [
         "evidence-4dc5a23bd912",
         "evidence-4b958fb236e2"
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "2026-freshy-02",
@@ -1401,7 +1446,13 @@
       "images": [
         "evidence-1deae18fa190",
         "evidence-95da43e55e4c"
-      ]
+      ],
+      "reviewed": true
     }
-  ]
+  ],
+  "validation": {
+    "source": "สรุปการแข่งขันโต้วาทีคณะวิศวะ_2017-2026_ฉบับวิเ.xlsm",
+    "sourceSha256": "c8cc9ca788b897a52a91fd2e31022cb45cb77f1d708f60669f46f270f209abcf",
+    "date": "2026-10-18"
+  }
 }

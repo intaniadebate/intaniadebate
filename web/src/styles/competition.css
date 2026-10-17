@@ -1,0 +1,142 @@
+/* Hallmark · genre: modern-minimal · macrostructure: Season Dossier + Match Ledger
+ * design-system: design.md · designed-as-app
+ * Pre-emit critique: P4 H5 E4 S5 R4 V4 */
+.competition-workspace {
+  --season-accent: var(--color-season-wine);
+  --season-soft: var(--color-season-wine-soft);
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.competition-workspace[data-season-tone="olive"] { --season-accent: var(--color-season-olive); --season-soft: var(--color-season-olive-soft); }
+.competition-workspace[data-season-tone="slate"] { --season-accent: var(--color-season-slate); --season-soft: var(--color-season-slate-soft); }
+.competition-workspace[data-season-tone="clay"] { --season-accent: var(--color-season-clay); --season-soft: var(--color-season-clay-soft); }
+.competition-workspace > .year-navigation { align-self: stretch; }
+.competition-workspace .year-rail { max-height: calc(100svh - 8rem); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding-right: .5rem; }
+.competition-workspace .year-rail a[aria-current], .competition-workspace .year-rail a:hover { color: var(--season-accent); }
+.competition-workspace .year-rail a[aria-current] .year-dot { background: var(--season-accent); border-color: var(--season-accent); }
+.competition-workspace .season-cover { position: relative; isolation: isolate; padding: clamp(1.5rem, 3vw, 2.5rem); background: var(--season-soft); border-radius: var(--radius-card); overflow: clip; }
+.competition-workspace .season-heading { position: relative; margin-bottom: 2rem; align-items: start; }
+.competition-workspace .season-heading .eyebrow { color: var(--season-accent); font-size: .9375rem; margin: 0; letter-spacing: .08em; }
+.competition-workspace .season-heading h2 { font-size: clamp(5rem, 3rem + 6vw, 8rem); line-height: .95; color: var(--season-accent); margin: 1rem 0 .65rem; }
+.competition-workspace .season-year-rule { display: none; }
+.competition-workspace .season-be { font-size: 1rem; margin: 0; color: var(--ink); }
+.competition-workspace .placement { max-width: 44%; padding-top: .2rem; }
+.competition-workspace .placement > span { font-size: .9375rem; color: var(--ink); }
+.competition-workspace .placement > strong { font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); color: var(--season-accent); font-weight: 500; line-height: 1.7; text-align: right; margin-top: .5rem; }
+.competition-workspace .placement > strong:has(small) { display: flex; font: 5rem/1 var(--display); gap: .5rem; align-items: baseline; }
+.competition-workspace .placement small { font: 1rem var(--body); }
+.competition-workspace .season-score { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; align-items: center; gap: 1rem; padding: 1.25rem 0 0; border-bottom: 0; border-top: 1px solid var(--season-accent); font-size: 1rem; }
+.competition-workspace .season-score > div { display: flex; flex-direction: column; gap: .5rem; }
+.competition-workspace .season-score > div > span { font-size: .9375rem; }
+.competition-workspace .season-score strong { font: 600 2rem/1.1 var(--body); font-variant-numeric: tabular-nums; }
+.competition-workspace .season-score .score-win { color: var(--color-win); }
+.competition-workspace .season-score .score-loss { color: var(--color-loss); }
+.competition-workspace .season-score > a { display: flex; align-items: center; justify-content: center; gap: 1rem; color: var(--season-accent); font-size: 1rem; min-height: 3rem; padding: .5rem 1rem; border: 1px solid currentColor; margin: 0; white-space: nowrap; }
+.competition-workspace .season-score > a:hover { background: var(--paper); }
+.competition-workspace .season-backdrop { position: absolute; inset: 0; z-index: -1; }
+.competition-workspace .season-backdrop > :is(img, div) { width: 100%; height: 100%; object-fit: cover; }
+.competition-workspace .season-backdrop::after { content: ''; position: absolute; inset: 0; background: var(--color-year-photo-mask); }
+.competition-workspace .round-index { margin-block: 2rem 2.75rem; }
+.competition-workspace .round-index > p { font-size: 1rem; margin: 0 0 .75rem; font-weight: 500; }
+.competition-workspace .round-index ol { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0; }
+.competition-workspace .round-index a { display: flex; align-items: center; gap: .6rem; min-height: 2.75rem; padding: .5rem .8rem; border: 1px solid var(--line); font-size: .9375rem; line-height: 1.5; background: var(--paper); }
+.competition-workspace .round-index a > span { color: var(--season-accent); font-variant-numeric: tabular-nums; }
+.competition-workspace .round-index a:hover { border-color: var(--season-accent); background: var(--season-soft); }
+.competition-workspace .match-timeline { margin: 0; padding: 0; }
+.competition-workspace .match-timeline::before { display: none; }
+.competition-workspace .match-item { display: grid; grid-template-columns: 8rem minmax(0, 1fr); column-gap: 1.5rem; padding: 0 0 2rem; scroll-margin-top: 7.5rem; }
+.competition-workspace .match-stage { position: relative; display: flex; flex-direction: column; align-items: start; padding-top: .3rem; }
+.competition-workspace .match-stage::after { content: ''; position: absolute; top: 3.3rem; bottom: -1.7rem; left: 1.25rem; width: 1px; background: var(--line); }
+.competition-workspace .match-item:last-child .match-stage::after { bottom: 0; }
+.competition-workspace .timeline-node { position: static; display: grid; width: 2.5rem; height: 2.5rem; font: 500 1rem var(--body); border-color: var(--season-accent); color: var(--season-accent); background: var(--paper); flex-shrink: 0; }
+.competition-workspace .match-stage > p { position: relative; z-index: 1; font-size: 1.0625rem; font-weight: 500; line-height: 1.65; background: var(--paper); padding-block: .75rem .25rem; margin: .25rem 0 0; width: 100%; }
+.competition-workspace .stage-year { position: relative; z-index: 1; font-size: .875rem; color: var(--muted); background: var(--paper); padding-bottom: .75rem; width: 100%; }
+.competition-workspace .match-card { min-width: 0; background: var(--color-card); padding: clamp(1.25rem, 2.5vw, 2rem); border: 1px solid var(--line); border-radius: var(--radius-card); }
+.competition-workspace .match-topline { align-items: start; gap: 1rem; }
+.competition-workspace .match-team { font-size: 1rem; font-weight: 500; line-height: 1.7; }
+.competition-workspace .match-team > span { font-weight: 400; color: var(--muted); }
+.competition-workspace .result-chip { font-size: 1.0625rem; font-weight: 600; line-height: 1.5; padding: .4rem .85rem; border: 0; border-radius: var(--radius-control); flex-shrink: 0; }
+.competition-workspace .result-chip > span { font-size: 1.2rem; }
+.competition-workspace .result-chip.win { color: var(--color-win); background: var(--color-win-soft); }
+.competition-workspace .result-chip.loss { color: var(--color-loss); background: var(--color-loss-soft); }
+.competition-workspace .match-card h3 { margin: .8rem 0 1.4rem; font-size: clamp(1.25rem, 1.125rem + .6vw, 1.75rem); font-weight: 500; line-height: 1.65; }
+.competition-workspace .against { font-size: 1rem; color: var(--muted); margin-right: .3rem; }
+.competition-workspace .motion-block { border-top: 1px solid var(--line); padding-top: 1.15rem; }
+.competition-workspace .motion-label { display: block; font-size: 1rem; color: var(--season-accent); font-weight: 500; margin-bottom: .5rem; }
+.competition-workspace .match-motion { font-size: var(--text-motion); line-height: 1.65; color: var(--ink); font-weight: 500; max-width: 46ch; margin: 0; text-wrap: pretty; overflow-wrap: anywhere; }
+.competition-workspace .match-actions { gap: .6rem 1.25rem; margin-top: 1.5rem; }
+.competition-workspace .match-actions > .text-link { font-size: 1rem; color: var(--season-accent); }
+.competition-workspace .match-details { font-size: 1rem; }
+.competition-workspace .match-details > summary { color: var(--ink); font-size: 1rem; gap: .8rem; padding-block: .4rem; }
+.competition-workspace .match-details > summary:hover { color: var(--season-accent); }
+.competition-workspace .match-detail-content { background: var(--paper); padding: 1.25rem; margin-top: 1rem; }
+.competition-workspace .match-detail-content dt { font-size: .9375rem; }
+.competition-workspace .match-detail-content dd { font-size: 1rem; }
+.competition-workspace .match-awards h4 { font-size: 1.0625rem; }
+.competition-workspace .match-awards p { font-size: 1rem; gap: .75rem; }
+.competition-workspace .source-links, .competition-workspace .match-evidence figcaption { font-size: .875rem; }
+.competition-workspace .season-finish { margin: .25rem 0 0 9.5rem; padding: 1.5rem 2rem 2rem; background: var(--season-soft); border-radius: var(--radius-card); }
+.competition-workspace .finish-dot { display: none; }
+.competition-workspace .season-finish > p { font-size: 1rem; color: var(--ink); margin: 0 0 .5rem; }
+.competition-workspace .season-finish > strong { font-size: 1.75rem; font-weight: 500; color: var(--season-accent); }
+.competition-workspace .season-finish > .text-link { font-size: 1rem; }
+.competition-workspace .other-event { margin-top: 3rem; padding-top: 2rem; }
+.competition-workspace .other-event > p:not(.eyebrow) { font-size: 1rem; }
+.competition-workspace .other-event .match-timeline { margin-top: 1.5rem; }
+.competition-workspace .chapter-pager { font: 500 1.125rem var(--body); gap: 1rem; }
+.competition-workspace .chapter-pager a { padding: .6rem 1rem; border: 1px solid var(--line); }
+.competition-workspace .chapter-pager a:hover { border-color: var(--season-accent); color: var(--season-accent); }
+.mvp-two .competition-workspace :where(a, summary, select):focus-visible { outline-color: var(--season-accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .competition-workspace .match-card { transition: border-color 180ms ease; }
+  .competition-workspace .match-card:hover { border-color: var(--season-accent); }
+}
+@media (max-width: 1000px) {
+  .competition-workspace { gap: 2rem; }
+  .competition-workspace .match-item { grid-template-columns: 6.5rem minmax(0, 1fr); column-gap: 1rem; }
+  .competition-workspace .season-finish { margin-left: 7.5rem; }
+  .competition-workspace .season-score { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .competition-workspace .season-score > a { grid-column: 1 / -1; width: fit-content; }
+}
+@media (max-width: 800px) {
+  .competition-workspace { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .competition-workspace .year-navigation { position: sticky; top: 5.1rem; z-index: 10; background: var(--paper); padding-block: .5rem; }
+  .competition-workspace .year-picker-mobile { padding: 0; border: 0; }
+  .competition-workspace .year-picker-mobile label { font-size: 1rem; }
+  .competition-workspace .year-picker-mobile select { min-width: 0; font-size: 1rem; }
+}
+@media (max-width: 600px) {
+  .competition-workspace .season-cover { padding: 1.25rem; }
+  .competition-workspace .season-heading { gap: .75rem; margin-bottom: 1.5rem; }
+  .competition-workspace .season-heading .eyebrow { font-size: .8125rem; }
+  .competition-workspace .season-heading h2 { font-size: clamp(4.1rem, 3rem + 5vw, 6rem); }
+  .competition-workspace .season-be { font-size: .9375rem; }
+  .competition-workspace .placement { max-width: 42%; }
+  .competition-workspace .placement > span { font-size: .875rem; }
+  .competition-workspace .placement > strong { font-size: 1.125rem; }
+  .competition-workspace .placement > strong:has(small) { font-size: 3.5rem; }
+  .competition-workspace .placement small { font-size: .875rem; }
+  .competition-workspace .season-score { gap: 1rem .5rem; }
+  .competition-workspace .season-score > div > span { font-size: .875rem; }
+  .competition-workspace .season-score strong { font-size: 1.75rem; }
+  .competition-workspace .season-score > a { font-size: 1rem; width: 100%; }
+  .competition-workspace .round-index { margin-block: 1.5rem 2rem; }
+  .competition-workspace .round-index a { font-size: .875rem; padding-inline: .65rem; }
+  .competition-workspace .match-item { display: block; padding: 0 0 1.5rem; }
+  .competition-workspace .match-stage { flex-direction: row; align-items: center; gap: .75rem; padding: 0 0 .75rem; }
+  .competition-workspace .match-stage::after { display: none; }
+  .competition-workspace .match-stage > p { width: auto; margin: 0; padding: 0; font-size: 1.0625rem; }
+  .competition-workspace .stage-year { display: none; }
+  .competition-workspace .timeline-node { width: 2rem; height: 2rem; font-size: .875rem; }
+  .competition-workspace .match-card { padding: 1.25rem; }
+  .competition-workspace .match-team { font-size: .9375rem; }
+  .competition-workspace .match-team > span { display: block; }
+  .competition-workspace .result-chip { font-size: 1rem; padding: .3rem .65rem; }
+  .competition-workspace .match-card h3 { font-size: 1.375rem; }
+  .competition-workspace .match-motion { font-size: 1.375rem; line-height: 1.75; }
+  .competition-workspace .match-detail-content { padding: 1rem .75rem; }
+  .competition-workspace .match-detail-content dl { grid-template-columns: minmax(0, 1fr); }
+  .competition-workspace .season-finish { margin-left: 0; padding: 1.5rem; }
+  .competition-workspace .chapter-pager a { font-size: 1rem; padding-inline: .8rem; }
+}

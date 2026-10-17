@@ -30,7 +30,7 @@ npm run preview
 
 - [วิธีแก้เนื้อหาและนำเข้า Excel](../docs/CONTENT_GUIDE.md)
 - [รูปใน Cloudinary / Google Drive / CDN](../docs/CLOUD_MEDIA.md)
-- `src/data/competitions.json`: 43 แถวจาก Excel รวม Visionary 1 แถว; ห้ามแก้ผลแข่งแยกจากต้นทาง
+- `src/data/competitions.json`: 44 แมตช์ CU Freshy Debate จาก Excel ที่ผู้ใช้ตรวจแก้ 18 ตุลาคม 2569 ชนะ 29 แพ้ 15; ห้ามแก้ผลแข่งแยกจากต้นทาง
 - `src/data/rosters.json`: 10 ปี ปีละ 6 คน
 - `src/data/albums.json`: อัลบั้มจริง ปัจจุบันยังว่าง
 - `src/data/media.json`: ทะเบียนรูปที่ทุกหน้าอ้างด้วย ID

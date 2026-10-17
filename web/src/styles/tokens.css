@@ -23,6 +23,23 @@
   --color-swatch-sage-soft: oklch(89.49% 0.0229 135);
   --color-swatch-ink: oklch(29.48% 0.0092 248.1);
   --color-swatch-ink-soft: oklch(90.48% 0.0055 117.9);
+  --color-win: #196446;
+  --color-win-soft: #eaf3ed;
+  --color-loss: #a13036;
+  --color-loss-soft: #f8ebeb;
+  --color-season-wine: #743b4b;
+  --color-season-wine-soft: #ede1e2;
+  --color-season-olive: #515c3d;
+  --color-season-olive-soft: #e8ebdf;
+  --color-season-slate: #405c70;
+  --color-season-slate-soft: #e1e9ed;
+  --color-season-clay: #82513c;
+  --color-season-clay-soft: #efe5dc;
+  --color-card: #fcfaf6;
+  --color-year-photo-mask: #f5f2ebe8;
+  --text-caption: .875rem;
+  --text-reading: 1.0625rem;
+  --text-motion: clamp(1.375rem, 1.125rem + .8vw, 1.875rem);
 
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Noto Sans Thai", Tahoma, sans-serif;
