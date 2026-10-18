@@ -41,6 +41,6 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
     <script>
       import '../scripts/site.js';
     </script>
-    <BirthdayPopup />
+    {cover && <BirthdayPopup />}
   </body>
 </html>
