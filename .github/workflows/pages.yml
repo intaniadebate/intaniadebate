@@ -37,6 +37,7 @@ jobs:
           PUBLIC_BASE_PATH: /
           PUBLIC_MEDIA_PROVIDER: cloudinary
           PUBLIC_CLOUDINARY_CLOUD_NAME: cdzhyyir
+          PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
           ASTRO_TELEMETRY_DISABLED: '1'
         run: npm run build
       - uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,58 @@
+/* A small editorial consent panel; equal choices and no entrance motion. */
+.analytics-choice {
+  position: fixed;
+  z-index: 60;
+  inset-inline: var(--space-md);
+  bottom: max(var(--space-md), env(safe-area-inset-bottom));
+  margin-inline: auto;
+  max-inline-size: 64rem;
+  max-block-size: 55dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-md);
+  border: 1px solid var(--color-rule);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  box-shadow: 0 4px 24px var(--color-shadow-soft);
+}
+.analytics-choice-copy { flex: 1; min-inline-size: 0; }
+.mvp-two .analytics-choice h2 { margin: 0 0 var(--space-2xs); font-size: 1.0625rem; font-weight: 500; line-height: 1.6; }
+.analytics-choice p { margin: 0; font-size: .875rem; line-height: 1.85; }
+.analytics-choice a, .privacy-page a { text-decoration: underline; text-underline-offset: .2em; }
+.analytics-choice-actions { display: flex; gap: var(--space-xs); flex-shrink: 0; }
+.mvp-two .analytics-choice button, .mvp-two .analytics-settings {
+  min-block-size: 44px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-control);
+  padding: var(--space-2xs) var(--space-sm);
+  background: var(--color-paper);
+  color: var(--color-accent);
+  font-size: .875rem;
+  line-height: 1.5;
+  white-space: normal;
+}
+.analytics-settings { cursor: pointer; }
+.privacy-page { max-inline-size: 70ch; padding-block: var(--space-xl) var(--space-2xl); }
+.mvp-two .privacy-page h1 { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.5; }
+.privacy-page h2 { margin-block-start: var(--space-xl); font-size: 1.25rem; font-weight: 500; }
+.privacy-page p, .privacy-page li { font-size: 1rem; line-height: 1.9; }
+.privacy-page [data-analytics-state] { color: var(--color-muted); }
+@media (width <= 50rem) {
+  .analytics-choice {
+    inset-inline: var(--space-sm);
+    bottom: calc(var(--mobile-tab-height, 0px) + env(safe-area-inset-bottom) + var(--space-xs));
+    align-items: stretch;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+  }
+  .analytics-choice-actions > button { flex: 1; }
+  .privacy-page { padding-block-start: var(--space-lg); }
+}
+@media (hover: hover) and (pointer: fine) {
+  .mvp-two :is(.analytics-choice button, .analytics-settings):hover { background: var(--color-soft); }
+}
+@media print { .analytics-choice { display: none; } }
