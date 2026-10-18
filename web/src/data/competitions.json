@@ -625,7 +625,9 @@
         "หัวหน้าฝ่ายเสนอ และผู้สนับสนุนฝ่ายเสนอ #1"
       ],
       "placement": "อันดับ 1",
-      "videos": [],
+      "videos": [
+        "https://www.youtube.com/watch?v=EAj4nGh2peU"
+      ],
       "sources": [],
       "images": [],
       "reviewed": true
@@ -1115,7 +1117,9 @@
         "สนับสนุนค้าน 2"
       ],
       "placement": "อันดับ 2",
-      "videos": [],
+      "videos": [
+        "https://www.youtube.com/watch?v=7shjEX6edB8"
+      ],
       "sources": [],
       "images": [],
       "reviewed": true
