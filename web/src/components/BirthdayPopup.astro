@@ -1,0 +1,113 @@
+---
+import Media from './Media.astro';
+---
+
+<dialog class="birthday-dialog" data-birthday-dialog aria-labelledby="birthday-dialog-title">
+  <h2 class="visually-hidden" id="birthday-dialog-title">สุขสันต์วันเกิด nicestarns</h2>
+  <form method="dialog">
+    <button class="birthday-dialog-close" type="submit" aria-label="ปิดคำอวยพรวันเกิด" autofocus>
+      <span aria-hidden="true">×</span>
+    </button>
+  </form>
+  <div class="birthday-image">
+    <Media id="birthday-2026" eager width={1440} fit="contain" />
+  </div>
+</dialog>
+
+<script>
+  import '../scripts/birthday-popup.js';
+</script>
+
+<style>
+  .birthday-dialog {
+    position: fixed;
+    inset: 0;
+    box-sizing: border-box;
+    width: min(88vw, 88dvh, 46rem);
+    max-width: none;
+    max-height: 88dvh;
+    aspect-ratio: 1;
+    margin: auto;
+    padding: 0.5rem;
+    overflow: visible;
+    border: 1px solid #d8b778;
+    background: #3c0b13;
+    box-shadow: 0 1.5rem 5rem rgb(11 5 8 / 0.36);
+    overscroll-behavior: contain;
+  }
+
+  .birthday-dialog::backdrop {
+    overflow: hidden;
+    overscroll-behavior: contain;
+    background: rgb(28 7 12 / 0.82);
+    backdrop-filter: blur(3px);
+  }
+
+  .birthday-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .birthday-image :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .birthday-dialog > form {
+    position: absolute;
+    z-index: 1;
+    top: 0.85rem;
+    right: 0.85rem;
+    margin: 0;
+  }
+
+  .birthday-dialog-close {
+    display: grid;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    place-items: center;
+    border: 1px solid #d8b778;
+    border-radius: 50%;
+    background: #3c0b13;
+    color: #fff0d5;
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+
+  .birthday-dialog-close:hover {
+    background: #631724;
+  }
+
+  html[data-motion='paused'] .birthday-dialog[open]::backdrop {
+    animation: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .birthday-dialog[open] {
+      animation: birthday-dialog-enter 240ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)) both;
+    }
+
+    .birthday-dialog[open]::backdrop {
+      animation: birthday-backdrop-enter 200ms ease-out both;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .birthday-dialog[open],
+    .birthday-dialog[open]::backdrop {
+      animation: none;
+    }
+  }
+
+  @keyframes birthday-dialog-enter {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes birthday-backdrop-enter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>

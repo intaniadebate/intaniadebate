@@ -1,5 +1,6 @@
 ---
 import { withBase } from '../lib/paths.mjs';
+import BirthdayPopup from '../components/BirthdayPopup.astro';
 import '../styles/legacy.css';
 import '../styles/v2.css';
 import '../styles/readability.css';
@@ -39,5 +40,6 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
     <script>
       import '../scripts/site.js';
     </script>
+    <BirthdayPopup />
   </body>
 </html>

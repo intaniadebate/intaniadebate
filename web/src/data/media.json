@@ -878,5 +878,25 @@
         "width": 640
       }
     ]
+  },
+  "birthday-2026": {
+    "width": 2048,
+    "height": 2048,
+    "alt": "โปสเตอร์สุขสันต์วันเกิด nicestarns สมาชิกสภาสูงและอาม่าของชมรม",
+    "caption": "คำอวยพรวันเกิดจาก Intania Debate Club",
+    "credit": "",
+    "kind": "photo",
+    "publishable": true,
+    "local": "/media/birthday-2026-1440.webp",
+    "variants": [
+      {
+        "src": "/media/birthday-2026-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/media/birthday-2026-1440.webp",
+        "width": 1440
+      }
+    ]
   }
 }
