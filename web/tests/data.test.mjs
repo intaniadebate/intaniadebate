@@ -10,6 +10,7 @@ const competition = read('../src/data/competitions.json');
 const roster = read('../src/data/rosters.json');
 const media = read('../src/data/media.json');
 const albums = read('../src/data/albums.json');
+const videoPreviews = read('../src/data/video-previews.json');
 
 test('team years map to Intania cohort codes', () => {
   assert.equal(intania(2017), 'Intania 101');
@@ -49,6 +50,22 @@ test('corrected results, inserted rounds and the confirmed 2023 motion survive t
   assert.equal(match(2021, 6).round, 'รอบชิงชนะเลิศ');
   for (const year of [2021, 2022, 2023, 2024]) {
     assert.equal(competition.matches.filter(m => m.year === year).length, 5);
+  }
+});
+
+test('each YouTube match recording has a titled poster from the approved thumbnail host', () => {
+  const youtubeHosts = new Set(['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtu.be']);
+  const videoUrls = [...new Set(competition.matches.flatMap(match => match.videos))];
+  const youtubeUrls = videoUrls.filter(value => youtubeHosts.has(new URL(value).hostname));
+  assert.deepEqual(Object.keys(videoPreviews).sort(), youtubeUrls.sort());
+  for (const url of youtubeUrls) {
+    const preview = videoPreviews[url];
+    const thumbnail = new URL(preview.thumbnail);
+    assert.ok(preview.title.trim());
+    assert.equal(thumbnail.protocol, 'https:');
+    assert.equal(thumbnail.hostname, 'i.ytimg.com');
+    assert.ok(Number.isInteger(preview.width) && preview.width > 0);
+    assert.ok(Number.isInteger(preview.height) && preview.height > 0);
   }
 });
 
