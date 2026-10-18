@@ -918,5 +918,71 @@
         "width": 1440
       }
     ]
+  },
+  "roster-2018-01": {
+    "cloudinary": {
+      "publicId": "484728163_18497464144013265_1883072697665516347_n",
+      "version": 1792319431
+    },
+    "width": 1440,
+    "height": 1800,
+    "alt": "ภาพสมาชิกทำเนียบปี 2018 คนที่ 1",
+    "publishable": true,
+    "kind": "photo"
+  },
+  "roster-2018-02": {
+    "cloudinary": {
+      "publicId": "486694745_18400430593101929_4451430379454191403_n",
+      "version": 1792319431
+    },
+    "width": 1440,
+    "height": 1440,
+    "alt": "ภาพสมาชิกทำเนียบปี 2018 คนที่ 2",
+    "publishable": true,
+    "kind": "photo"
+  },
+  "roster-2018-03": {
+    "cloudinary": {
+      "publicId": "626840179_18560240305044924_6531360874939555114_n",
+      "version": 1792319431
+    },
+    "width": 1440,
+    "height": 1439,
+    "alt": "ภาพสมาชิกทำเนียบปี 2018 คนที่ 3",
+    "publishable": true,
+    "kind": "photo"
+  },
+  "roster-2018-04": {
+    "cloudinary": {
+      "publicId": "653622555_18119444170615674_1044943951762355593_n",
+      "version": 1792319430
+    },
+    "width": 1108,
+    "height": 1108,
+    "alt": "ภาพสมาชิกทำเนียบปี 2018 คนที่ 4",
+    "publishable": true,
+    "kind": "photo"
+  },
+  "roster-2018-05": {
+    "cloudinary": {
+      "publicId": "654451139_18106781914875114_7535141540880325528_n",
+      "version": 1792319431
+    },
+    "width": 1440,
+    "height": 1800,
+    "alt": "ภาพสมาชิกทำเนียบปี 2018 คนที่ 5",
+    "publishable": true,
+    "kind": "photo"
+  },
+  "roster-2018-06": {
+    "cloudinary": {
+      "publicId": "WhatsApp_Image_2026-10-18_at_17.16.51",
+      "version": 1792319431
+    },
+    "width": 1536,
+    "height": 2048,
+    "alt": "ภาพสมาชิกทำเนียบปี 2018 คนที่ 6",
+    "publishable": true,
+    "kind": "photo"
   }
 }

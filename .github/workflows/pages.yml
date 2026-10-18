@@ -35,7 +35,8 @@ jobs:
         env:
           PUBLIC_SITE_URL: https://intaniadebateclub.com
           PUBLIC_BASE_PATH: /
-          PUBLIC_MEDIA_PROVIDER: local
+          PUBLIC_MEDIA_PROVIDER: cloudinary
+          PUBLIC_CLOUDINARY_CLOUD_NAME: cdzhyyir
           ASTRO_TELEMETRY_DISABLED: '1'
         run: npm run build
       - uses: actions/upload-pages-artifact@v3
