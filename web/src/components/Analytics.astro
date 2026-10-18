@@ -1,0 +1,20 @@
+---
+import { withBase } from '../lib/paths.mjs';
+import '../styles/analytics.css';
+const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || '';
+const siteUrl = Astro.site?.origin || '';
+---
+<div data-analytics-config data-measurement-id={measurementId} data-site-url={siteUrl} hidden></div>
+<section class="analytics-choice" data-analytics-panel aria-labelledby="analytics-heading" hidden>
+  <div class="analytics-choice-copy">
+    <h2 id="analytics-heading">ช่วยให้เรารู้ว่าเรื่องไหนน่าอ่าน</h2>
+    <p>อนุญาตให้ใช้ Google Analytics เพื่อนับการเข้าชมและการกด โดยไม่ส่งชื่อหรือข้อมูลติดต่อ เลือกไม่อนุญาตก็ใช้เว็บได้ตามปกติ <a href={withBase('/privacy')}>รายละเอียดความเป็นส่วนตัว</a></p>
+  </div>
+  <div class="analytics-choice-actions">
+    <button type="button" data-analytics-choice="denied">ไม่อนุญาต</button>
+    <button type="button" data-analytics-choice="granted">อนุญาตสถิติ</button>
+  </div>
+</section>
+<script>
+  import '../scripts/analytics.js';
+</script>

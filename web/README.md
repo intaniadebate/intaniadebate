@@ -36,3 +36,7 @@ npm run preview
 - `src/data/media.json`: ทะเบียนรูปที่ทุกหน้าอ้างด้วย ID
 
 ยังไม่มีหน้า admin แก้เนื้อหาผ่านไฟล์ข้อมูลแล้ว build ใหม่ การเชื่อม cloud เตรียมไว้ แต่ยังไม่ได้อัปโหลดหรือทดสอบกับบัญชีจริง
+
+## สถิติการใช้งาน
+
+GA4 นับยอดเข้าชมและการกดหลังผู้เข้าชมอนุญาต ตั้ง `PUBLIC_GA_MEASUREMENT_ID` ใน build environment และปิด Enhanced measurement ของ stream เพื่อไม่ให้นับซ้ำ; ไม่เก็บสถิติใน dev/localhost ดู [คู่มือ Analytics](../docs/ANALYTICS.md)

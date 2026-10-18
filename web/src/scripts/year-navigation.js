@@ -21,7 +21,7 @@ export function initYearNavigation(onSwap) {
     });
   }, { passive: true });
 
-  async function navigate(href, { pop = false, restore = null, focus = false } = {}) {
+  async function navigate(href, { pop = false, restore = null, focus = false, source = 'history' } = {}) {
     const url = new URL(href, location.href);
     if (url.origin !== location.origin) return;
     if (!pop && url.pathname.replace(/\/$/, '') === location.pathname.replace(/\/$/, '')) return;
@@ -72,6 +72,7 @@ export function initYearNavigation(onSwap) {
         window.scrollTo({ left: saved.x, top: saved.y, behavior: 'instant' });
       });
       if (announcement) announcement.textContent = `แสดงข้อมูลปี ${replacement.dataset.selectedYear} แล้ว`;
+      window.dispatchEvent(new CustomEvent('intania:year-changed', { detail: { kind, year: replacement.dataset.selectedYear, source } }));
     } catch (error) {
       if (error.name !== 'AbortError') location.assign(url.href);
     } finally {
@@ -88,10 +89,10 @@ export function initYearNavigation(onSwap) {
     const link = event.target.closest('a[data-year-link]');
     if (!link || !surface()?.contains(link) || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target === '_blank' || link.hasAttribute('download')) return;
     event.preventDefault();
-    void navigate(link.href, { focus: true });
+    void navigate(link.href, { focus: true, source: 'link' });
   });
   document.addEventListener('change', event => {
-    if (event.target.matches('[data-year-navigation]')) void navigate(event.target.value, { focus: true });
+    if (event.target.matches('[data-year-navigation]')) void navigate(event.target.value, { focus: true, source: 'select' });
   });
   window.addEventListener('popstate', event => {
     if (event.state?.intaniaYear?.kind !== kind) return;

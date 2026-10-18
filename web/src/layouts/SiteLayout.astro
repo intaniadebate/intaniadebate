@@ -2,6 +2,7 @@
 import ArrowUpRight from '../components/ArrowUpRight.astro';
 import { withBase } from '../lib/paths.mjs';
 import BirthdayPopup from '../components/BirthdayPopup.astro';
+import Analytics from '../components/Analytics.astro';
 import '../styles/legacy.css';
 import '../styles/v2.css';
 import '../styles/readability.css';
@@ -36,11 +37,12 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
       <details class="mobile-menu"><summary>เมนู <span aria-hidden="true">＋</span></summary><nav aria-label="เมนูหลักบนมือถือ">{nav.map(item => <a href={withBase(item.href)} aria-current={active === item.id ? 'page' : undefined}>{item.label}</a>)}</nav></details>
     </div></header>
     <main id="main"><slot /></main>
-    <footer class="site-footer shell"><a class="brand" href={withBase('/home')}>INTANIA DEBATE CLUB</a><span>คิด พูด และเติบโตไปด้วยกัน<br />คณะวิศวกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</span><a class="credit-link" href={withBase('/credits')}>เครดิตและแหล่งที่มา <ArrowUpRight /></a></footer>
+    <footer class="site-footer shell"><a class="brand" href={withBase('/home')}>INTANIA DEBATE CLUB</a><span>คิด พูด และเติบโตไปด้วยกัน<br />คณะวิศวกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</span><a class="credit-link" href={withBase('/credits')}>เครดิตและแหล่งที่มา <ArrowUpRight /></a><a class="credit-link" href={withBase('/privacy')}>ความเป็นส่วนตัว</a><button type="button" class="analytics-settings" data-analytics-settings hidden>ตั้งค่าสถิติการใช้งาน</button></footer>
     <div class="site-preferences shell"><button type="button" class="motion-toggle" aria-pressed="false">การเคลื่อนไหว: เปิด</button><details class="tone-panel"><summary>เลือกบรรยากาศ</summary><div class="tone-options"><button data-tone="wine" aria-pressed="true"><span class="swatch wine"></span>ครีม / ไวน์</button><button data-tone="sage" aria-pressed="false"><span class="swatch sage"></span>เซจ / เขียว</button><button data-tone="ink" aria-pressed="false"><span class="swatch ink"></span>กระดาษ / หมึก</button></div></details></div>
     <script>
       import '../scripts/site.js';
     </script>
+    <Analytics />
     {cover && <BirthdayPopup />}
   </body>
 </html>
