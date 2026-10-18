@@ -20,6 +20,9 @@ scope.querySelectorAll('img[data-media-fallback]').forEach(image => {
 });
 }
 initMedia();
+document.addEventListener('error', event => {
+  if (event.target?.matches?.('.video-preview img')) event.target.remove();
+}, true);
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 let paused = root.dataset.motion === 'paused';
 try { paused = localStorage.getItem('intania-motion') === 'paused'; } catch {}

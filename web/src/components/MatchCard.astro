@@ -1,6 +1,7 @@
 ---
 import ArrowUpRight from './ArrowUpRight.astro';
 import Media from './Media.astro';
+import MatchVideos from './MatchVideos.astro';
 import { awardText, isKnown, roundName, safeExternalUrl } from '../lib/data.mjs';
 const { match, index } = Astro.props;
 const inferred = match.basis.includes('อนุมาน');
@@ -14,8 +15,9 @@ const awards = match.awards.map((value, i) => ({ value: awardText(value), rank: 
     <div class="match-topline"><span class="match-team">วิศวกรรมศาสตร์<span>{isKnown(match.side) ? ` · ${match.side}` : ''}</span></span><strong class:list={['result-chip', match.result === 'ชนะ' ? 'win' : 'loss']}><span aria-hidden="true">{match.result === 'ชนะ' ? '✓' : '×'}</span> {match.result}</strong></div>
     <h3><span class="against">พบ</span> {match.opponent.replace(/\s*\(.*$/, '')}</h3>
     <div class="motion-block"><span class="motion-label">ญัตติ</span><p class="match-motion">“{match.motion}”</p></div>
-    <div class="match-actions">{videos.map((video, n) => <a class="text-link match-video" href={video} data-content-id={match.id} target="_blank" rel="noreferrer">{video.includes('playlist') ? 'ดูเพลย์ลิสต์' : 'ดูบันทึกการแข่งขัน'}{videos.length > 1 ? ` ${n + 1}` : ''} <ArrowUpRight /></a>)}<details class="match-details"><summary>รายละเอียดแมตช์ <span aria-hidden="true">＋</span></summary><div class="match-detail-content">
+    <div class="match-actions"><details class="match-details"><summary>รายละเอียดแมตช์ <span aria-hidden="true">＋</span></summary><div class="match-detail-content">
       <dl><div><dt>ฝ่ายวิศวะ</dt><dd>{match.side || 'ไม่ระบุ'}</dd></div><div><dt>ฝ่ายคู่แข่ง</dt><dd>{match.opponentSide || 'ไม่ระบุ'}</dd></div>{isKnown(match.decision) && <div><dt>มติ</dt><dd>{match.decision}</dd></div>}{isKnown(match.judges) && <div><dt>กรรมการ</dt><dd>{match.judges} คน</dd></div>}</dl>
+      {videos.length > 0 && <section class="match-recordings" aria-labelledby={`match-recordings-${match.id}`}><h4 id={`match-recordings-${match.id}`}>บันทึกการแข่งขัน</h4><MatchVideos videos={videos} label={`วิศวกรรมศาสตร์ พบ ${match.opponent} · ${roundName(match.order)} ปี ${match.year + 543}`} matchId={match.id} /></section>}
       {awards.length > 0 && <div class="match-awards"><h4>นักโต้ดีเด่น</h4>{awards.map(award => <p><span>{award.rank}</span>{award.value}</p>)}</div>}
       <p class="source-note">{match.reviewed ? 'ผลตามตารางที่ชมรมตรวจสอบและปรับแก้แล้ว' : inferred ? 'ผลสรุปจากอันดับ เส้นทาง หรือสถิติสะสมตามตารางที่รวบรวมไว้' : 'ผลจากหลักฐานรายคู่ตามตารางที่รวบรวมไว้'}</p>
       {sources.length > 0 && <div class="source-links">{sources.slice(0, 4).map((source, n) => <a href={source} data-content-id={match.id} target="_blank" rel="noreferrer">แหล่งข้อมูล {n + 1} <ArrowUpRight /></a>)}</div>}

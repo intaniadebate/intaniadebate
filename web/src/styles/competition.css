@@ -69,6 +69,20 @@
 .competition-workspace .match-motion { font-size: var(--text-motion); line-height: 1.65; color: var(--ink); font-weight: 500; max-width: 46ch; margin: 0; text-wrap: pretty; overflow-wrap: anywhere; }
 .competition-workspace .match-actions { gap: .6rem 1.25rem; margin-top: 1.5rem; }
 .competition-workspace .match-actions > .text-link { font-size: 1rem; color: var(--season-accent); }
+.competition-workspace .match-recordings { margin-block: 1.5rem; }
+.competition-workspace .match-recordings > h4 { margin: 0; font-size: 1rem; font-weight: 500; }
+.competition-workspace .match-video-list { display: grid; gap: .75rem; margin-block-start: .75rem; }
+.competition-workspace a.match-video { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: .9rem; min-width: 0; padding: .5rem; border: 1px solid var(--line); border-radius: var(--radius-control); background: var(--color-card); color: var(--ink); text-decoration: none; }
+.competition-workspace .video-preview { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 9; min-width: 0; overflow: hidden; border-radius: calc(var(--radius-control) / 2); background: var(--color-ink); color: var(--color-paper); }
+.competition-workspace .video-preview img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.competition-workspace .video-play { position: relative; display: grid; place-items: center; width: 3rem; height: 2.25rem; border-radius: var(--radius-control); background: var(--color-accent); color: var(--color-accent-ink); box-shadow: 0 2px 12px var(--color-photo-overlay); }
+.competition-workspace .video-play svg { width: 1.4rem; height: 1.4rem; }
+.competition-workspace .video-platform { position: absolute; inset: auto auto .4rem .4rem; padding: .2rem .45rem; border-radius: .2rem; background: var(--color-ink); color: var(--color-paper); font-size: .75rem; line-height: 1.5; }
+.competition-workspace .video-copy { display: grid; gap: .2rem; min-width: 0; padding-block: .25rem; overflow-wrap: anywhere; }
+.competition-workspace .video-copy small, .competition-workspace .video-author { color: var(--muted); font-size: .8125rem; line-height: 1.6; }
+.competition-workspace .video-copy strong { font-size: 1rem; font-weight: 500; line-height: 1.65; }
+.competition-workspace .video-open { display: flex; align-items: center; gap: .25rem; min-height: 2.75rem; margin-block-start: .2rem; color: var(--season-accent); font-size: .9375rem; text-decoration: underline; text-underline-offset: .2em; }
+.competition-workspace a.match-video:hover, .competition-workspace a.match-video:focus-visible { border-color: var(--season-accent); }
 .competition-workspace .match-details { font-size: 1rem; }
 .competition-workspace .match-details > summary { color: var(--ink); font-size: 1rem; gap: .8rem; padding-block: .4rem; }
 .competition-workspace .match-details > summary:hover { color: var(--season-accent); }
@@ -139,6 +153,9 @@
   .competition-workspace .match-motion { font-size: 1.375rem; line-height: 1.75; }
   .competition-workspace .match-detail-content { padding: 1rem .75rem; }
   .competition-workspace .match-detail-content dl { grid-template-columns: minmax(0, 1fr); }
+  .competition-workspace a.match-video { grid-template-columns: minmax(0, 1fr); gap: .6rem; }
+  .competition-workspace .video-preview { width: 100%; }
+  .competition-workspace .video-copy { padding-inline: .25rem; }
   .competition-workspace .season-finish { margin-left: 0; padding: 1.5rem; }
   .competition-workspace .chapter-pager a { font-size: 1rem; padding-inline: .8rem; }
 }

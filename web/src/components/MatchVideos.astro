@@ -1,0 +1,39 @@
+---
+import ArrowUpRight from './ArrowUpRight.astro';
+import previews from '../data/video-previews.json';
+
+const { videos, label, matchId } = Astro.props;
+const cards = videos.map((url, index) => {
+  const source = new URL(url);
+  const youtube = ['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtu.be'].includes(source.hostname);
+  const playlist = source.pathname === '/playlist';
+  const preview = previews[url];
+  const title = preview?.title || label;
+  return { url, index, youtube, playlist, preview, title };
+});
+---
+
+<div class="match-video-list">
+  {cards.map(({ url, index, youtube, playlist, preview, title }) => (
+    <a
+      class:list={['match-video', { 'has-preview': preview }]}
+      href={url}
+      data-content-id={matchId}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${playlist ? 'เปิดเพลย์ลิสต์' : 'ชมคลิป'}: ${title} (เปิดแท็บใหม่)`}
+    >
+      <span class="video-preview" aria-hidden="true">
+        {preview && <img src={preview.thumbnail} width={preview.width} height={preview.height} loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="" />}
+        <span class="video-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5v14l11-7Z" /></svg></span>
+        <span class="video-platform">{youtube ? 'YouTube' : 'VIDEO'}{playlist && <span> · เพลย์ลิสต์</span>}</span>
+      </span>
+      <span class="video-copy">
+        <small>{playlist ? 'เพลย์ลิสต์การแข่งขัน' : 'บันทึกการแข่งขัน'}{videos.length > 1 ? ` · ${String(index + 1).padStart(2, '0')}` : ''}</small>
+        <strong>{title}</strong>
+        {preview?.author && <span class="video-author">{preview.author}</span>}
+        <span class="video-open">{playlist ? 'เปิดเพลย์ลิสต์' : 'ชมการแข่งขัน'}{youtube ? 'บน YouTube' : ''} <span aria-hidden="true"><ArrowUpRight /></span></span>
+      </span>
+    </a>
+  ))}
+</div>
