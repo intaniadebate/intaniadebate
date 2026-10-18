@@ -1,0 +1,70 @@
+name: Work session — Check-in
+description: ลงชื่อเริ่มงาน ระบุขอบเขต และใช้ Issue นี้ check-out/ส่งต่องาน
+title: "[WORK] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## CHECK-IN — active
+
+        CHECK-IN ก่อนเริ่มแก้ไฟล์หรือการตั้งค่า อ่าน CONTRIBUTING.md และงานที่เปิดอยู่ก่อน แล้ว Assign yourself หลังสร้าง Issue
+        เมื่อจบ พัก หรือติดปัญหา ให้คอมเมนต์ CHECK-OUT ใน Issue นี้ตาม docs/WORK_LOG.md
+  - type: input
+    id: operator
+    attributes:
+      label: ผู้รับผิดชอบ / session
+      placeholder: "@username / ชื่อ session หรือ AI ที่ทำงานตามคำขอผู้ดูแล"
+    validations:
+      required: true
+  - type: input
+    id: started
+    attributes:
+      label: เวลา check-in
+      placeholder: "YYYY-MM-DD HH:mm +07:00 (Asia/Bangkok)"
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: เป้าหมายและผลที่ต้องการ
+    validations:
+      required: true
+  - type: input
+    id: branch
+    attributes:
+      label: Branch และ base commit
+      placeholder: "fix/short-task-name จาก main@commit-sha"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: ขอบเขตไฟล์ / หน้า / บริการ
+      description: ระบุเส้นทางไฟล์หรือการตั้งค่าที่จะเปลี่ยน เพื่อให้ทีมตรวจงานชนกันได้
+    validations:
+      required: true
+  - type: textarea
+    id: overlap
+    attributes:
+      label: งานที่อาจชนกันและข้อตกลงแบ่งงาน
+      description: ใส่ลิงก์ Issue/PR ที่เกี่ยวข้อง หรือระบุว่าไม่พบงานชนกัน
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: วิธีตรวจผล
+      placeholder: "build / หน้าและอุปกรณ์ที่ตรวจ / ลิงก์เอกสารที่ต้องตรวจ"
+    validations:
+      required: true
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: ก่อนเริ่มงาน
+      options:
+        - label: อ่าน CONTRIBUTING.md และตรวจ Issue/PR ที่เปิดอยู่แล้ว
+          required: true
+        - label: ตรวจ main ล่าสุดและเก็บงานค้างของคนอื่นไว้แล้ว
+          required: true
+        - label: จะเพิ่ม CHECK-OUT ใน Issue นี้เมื่อจบ พัก หรือติดปัญหา
+          required: true
