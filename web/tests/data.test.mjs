@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
-import { awardText, rivals, resultSummary, validateData } from '../src/lib/data.mjs';
+import { awardText, intania, rivals, resultSummary, validateData } from '../src/lib/data.mjs';
 import { resolveMedia, mediaSrcset } from '../src/lib/media.mjs';
 const read = file => JSON.parse(fs.readFileSync(new URL(file, import.meta.url), 'utf8'));
 const competition = read('../src/data/competitions.json');
@@ -11,6 +11,10 @@ const roster = read('../src/data/rosters.json');
 const media = read('../src/data/media.json');
 const albums = read('../src/data/albums.json');
 
+test('team years map to Intania cohort codes', () => {
+  assert.equal(intania(2017), 'Intania 101');
+  assert.equal(intania(2026), 'Intania 110');
+});
 test('the validated import retains all 44 rows and all ten final placements', () => {
   assert.equal(competition.matches.length, 44);
   assert.deepEqual(competition.seasons.map(s => s.placement), ['อันดับ 4', 'อันดับ 3', 'ตกรอบคัดเลือก', 'อันดับ 4', 'อันดับ 1', 'อันดับ 3', 'อันดับ 4', 'อันดับ 2', 'อันดับ 2', 'ตกรอบคัดเลือก']);

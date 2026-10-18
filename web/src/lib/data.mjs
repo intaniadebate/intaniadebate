@@ -1,4 +1,6 @@
 export const years = Array.from({ length: 10 }, (_, i) => 2017 + i);
+// Club teams go by Intania cohort code: the 2017 freshmen are Intania 101.
+export const intania = year => `Intania ${year - 1916}`;
 export const events = { freshy: 'CU Freshy Debate', visionary: 'The Visionary Debate' };
 export const isKnown = value => Boolean(value && !/^(ไม่พบ|ยังไม่|ไม่ปรากฏ|—)/.test(String(value)));
 export const awardText = value => {
