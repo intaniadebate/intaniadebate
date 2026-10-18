@@ -1,0 +1,12 @@
+---
+import '../styles/photo-viewer.css';
+---
+<dialog class="photo-viewer" data-photo-viewer closedby="any" aria-label="ดูภาพขยาย">
+  <div class="photo-viewer-toolbar"><p data-photo-status role="status" aria-live="polite"></p><button type="button" data-photo-close autofocus aria-label="ปิดรูปขยาย">ปิด ×</button></div>
+  <img alt="" decoding="async" />
+  <div class="photo-viewer-bottom"><button type="button" data-photo-step="-1" aria-label="ภาพก่อนหน้า">←</button><p data-photo-caption></p><button type="button" data-photo-step="1" aria-label="ภาพถัดไป">→</button></div>
+</dialog>
+<script>
+  import { installPhotoViewer } from '../lib/photo-viewer.mjs';
+  installPhotoViewer({ win: window, doc: document });
+</script>
