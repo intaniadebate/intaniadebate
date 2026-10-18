@@ -11,6 +11,10 @@
 - Media provider: Cloudinary; cloud name `cdzhyyir`
 - Custom domain, Organization verification, DNS และ HTTPS: [คู่มือโดเมน](CUSTOM_DOMAIN.md)
 
+## ก่อนแก้หรือเผยแพร่เว็บ
+
+ทุกคนรวมถึง AI ต้องทำ [check-in/check-out](WORK_LOG.md) ตาม [คู่มือร่วมพัฒนา](../CONTRIBUTING.md) ตรวจ Issue/PR ที่เปิดอยู่ แยก branch ต่อหนึ่งงาน และระบุผลตรวจพร้อมงานค้างก่อนส่งต่อ การ merge เข้า `main` จะเผยแพร่เว็บจริงทันที จึงต้อง review diff ให้แน่ใจว่าไม่รวมงานค้างของคนอื่น
+
 ## เริ่มจากเครื่องใหม่
 
 ```sh
