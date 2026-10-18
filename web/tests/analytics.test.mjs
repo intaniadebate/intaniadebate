@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyticsEnabled, publicPage, readConsent, linkEvent, installAnalytics, CONSENT_KEY, CONSENT_DAYS } from '../src/lib/analytics.mjs';
+import { analyticsEnabled, publicPage, readConsent, linkEvent, installAnalytics, pageContext, photoParameters, CONSENT_KEY, CONSENT_DAYS } from '../src/lib/analytics.mjs';
 
 const measurementId = 'G-TEST123456';
 const origin = 'https://intaniadebateclub.com';
@@ -134,7 +134,7 @@ test('year swaps count only successful new pages; Back counts a view but not a y
   fixture.win.fire('intania:year-changed', { detail: { kind: 'competitions', year: '2017', source: 'history' } });
   assert.equal(fixture.events().filter(event => event[1] === 'page_view').length, 3);
   assert.equal(fixture.events().filter(event => event[1] === 'year_select').length, 1);
-  assert.equal(fixture.events().at(-1)[2].page_referrer, `${origin}/competitions/2021`);
+  assert.equal(fixture.events().filter(event => event[1] === 'page_view').at(-1)[2].page_referrer, `${origin}/competitions/2021`);
 });
 
 test('withdrawal disables the stream, clears pending hits and unloads the tag', () => {
@@ -169,7 +169,7 @@ test('blocked storage remains usable and allows a choice for only this document'
 
 test('link tracking excludes personal profiles and retains only public video IDs', () => {
   const link = (href, video = false) => ({ href, matches: selector => selector === '.match-video' && video });
-  assert.deepEqual(linkEvent(link('https://www.instagram.com/intaniadebateclub/?secret=1'), origin), ['contact_click', { platform: 'instagram' }]);
+  assert.deepEqual(linkEvent(link('https://www.instagram.com/intaniadebateclub/?secret=1'), origin), ['contact_click', { platform: 'instagram', contact_kind: 'club' }]);
   assert.equal(linkEvent(link('https://www.instagram.com/personal_member/'), origin), null);
   assert.equal(linkEvent(link('javascript:alert(1)'), origin), null);
   assert.deepEqual(linkEvent(link('https://www.youtube.com/watch?v=AbCdEf12345&email=private', true), origin), ['video_click', { video_id: 'AbCdEf12345' }]);
@@ -235,4 +235,74 @@ test('an expired choice cannot restart tracking from storage', () => {
   assert.equal(fixture.panel.hidden, false);
   assert.equal(fixture.loads, 0);
   assert.equal(fixture.commands().length, 0);
+});
+
+test('archive aliases and article pages expose only controlled report dimensions', () => {
+  assert.deepEqual(pageContext('/members', '2026'), { section: 'members', year: '2026' });
+  assert.deepEqual(pageContext('/competitions/2021', '2017'), { section: 'competitions', year: '2021' });
+  assert.deepEqual(pageContext('/posts/workshop'), { section: 'news', article_slug: 'workshop' });
+  assert.deepEqual(pageContext('/members', 'private@example.com'), { section: 'members' });
+});
+
+test('year views include direct entry, successful swaps and Back without duplicate page calls', () => {
+  const fixture = browserFixture({ href: `${origin}/members/2018` });
+  const analytics = fixture.install(true); analytics.choose('granted'); analytics.pageView();
+  fixture.navigate(`${origin}/members/2021`);
+  fixture.win.fire('intania:year-changed', { detail: { kind: 'members', year: '2021', source: 'link' } });
+  fixture.navigate(`${origin}/members/2018`);
+  fixture.win.fire('intania:year-changed', { detail: { kind: 'members', year: '2018', source: 'history' } });
+  assert.deepEqual(fixture.events().filter(x => x[1] === 'year_view').map(x => x[2].year), ['2018', '2021', '2018']);
+  assert.equal(fixture.events().filter(x => x[1] === 'year_select').length, 1);
+});
+
+test('news has separate click and actual view metrics', () => {
+  const fixture = browserFixture({ href: `${origin}/posts/recruitment?email=private` });
+  fixture.install(true).choose('granted');
+  assert.equal(fixture.events().filter(x => x[1] === 'news_view').length, 1);
+  assert.equal(fixture.events().find(x => x[1] === 'news_view')[2].article_slug, 'recruitment');
+  assert.ok(!JSON.stringify(fixture.events()).includes('email='));
+});
+
+test('year click attempts count independently of successful views, including current-year links', () => {
+  const link = { href: `${origin}/members/2018`, matches: s => s === '[data-year-link]' };
+  assert.deepEqual(linkEvent(link, origin), ['year_click', { section: 'members', year: '2018', method: 'link' }]);
+  const fixture = browserFixture(); fixture.install(true).choose('granted');
+  fixture.doc.fire('change', { target: { matches: () => true, value: `${origin}/members/2021?secret=private` } });
+  assert.equal(fixture.events().at(-1)[1], 'year_click');
+  assert.equal(fixture.events().at(-1)[2].year, '2021');
+});
+
+test('annotated Instagram posts and member links identify content without personal profile URLs', () => {
+  const link = (href, dataset) => ({ href, dataset, matches: () => false });
+  assert.deepEqual(linkEvent(link('https://www.instagram.com/private_member/', { memberId: '2018-01' }), origin), ['contact_click', { platform: 'instagram', contact_kind: 'member', member_id: '2018-01' }]);
+  assert.deepEqual(linkEvent(link('https://www.instagram.com/p/PrivateCode/?secret=x', { clubPost: 'workshop' }), origin), ['contact_click', { platform: 'instagram', contact_kind: 'news_source', article_slug: 'workshop' }]);
+  assert.equal(linkEvent(link('https://www.instagram.com/private_member/', {}), origin), null);
+});
+
+test('photo parameters cannot forward names, captions, URLs or arbitrary methods', () => {
+  const detail = { image_id: 'roster-2018-01', section: 'members', year: 2018, member_id: '2018-01', method: 'open', name: 'PRIVATE NAME', src: 'https://private.example/image?token=secret', caption: 'PRIVATE CAPTION' };
+  assert.deepEqual(photoParameters(detail), { image_id: 'roster-2018-01', section: 'members', year: '2018', member_id: '2018-01', method: 'open' });
+  for (const value of [null, { ...detail, image_id: 'person@example.com' }, { ...detail, section: 'private' }, { ...detail, method: 'PRIVATE' }]) assert.equal(photoParameters(value), null);
+});
+
+test('photo and album events are consent-gated, not replayed, and stop after withdrawal', () => {
+  const fixture = browserFixture({ href: `${origin}/memories` });
+  const analytics = fixture.install(true);
+  const detail = { image_id: 'memory-01', album_id: 'trip-2026', year: 2026, section: 'memories', method: 'next', name: 'PRIVATE' };
+  fixture.win.fire('intania:photo-view', { detail });
+  analytics.choose('granted');
+  assert.equal(fixture.events().filter(x => x[1] === 'photo_view').length, 0);
+  for (const name of ['album-open', 'photo-open', 'photo-view', 'photo-navigate', 'photo-close']) fixture.win.fire(`intania:${name}`, { detail });
+  assert.equal(fixture.events().filter(x => x[1] === 'photo_view').length, 1);
+  assert.equal(fixture.events().filter(x => x[1] === 'album_open').length, 1);
+  assert.ok(!JSON.stringify(fixture.events()).includes('PRIVATE'));
+  analytics.choose('denied'); fixture.win.fire('intania:photo-view', { detail });
+  assert.equal(fixture.events().length, 0);
+});
+
+test('middle-clicks are measured without changing native link behaviour', () => {
+  const fixture = browserFixture(); fixture.install(true).choose('granted');
+  const link = { href: `${origin}/posts/workshop`, matches: () => false, closest: () => null };
+  fixture.doc.fire('auxclick', { button: 1, target: { closest: s => s === 'a[href]' ? link : null } });
+  assert.equal(fixture.events().filter(x => x[1] === 'news_click').length, 1);
 });

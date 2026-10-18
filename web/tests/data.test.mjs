@@ -11,15 +11,19 @@ const roster = read('../src/data/rosters.json');
 const media = read('../src/data/media.json');
 const albums = read('../src/data/albums.json');
 
-test('the validated Excel import retains all 44 rows, source fingerprint and all ten final placements', () => {
+test('the validated import retains all 44 rows and all ten final placements', () => {
   assert.equal(competition.matches.length, 44);
-  const workbook = path.resolve('..', 'การแข่งขัน', competition.source);
-  assert.equal(createHash('sha256').update(fs.readFileSync(workbook)).digest('hex'), competition.sourceSha256);
   assert.deepEqual(competition.seasons.map(s => s.placement), ['อันดับ 4', 'อันดับ 3', 'ตกรอบคัดเลือก', 'อันดับ 4', 'อันดับ 1', 'อันดับ 3', 'อันดับ 4', 'อันดับ 2', 'อันดับ 2', 'ตกรอบคัดเลือก']);
   assert.deepEqual(resultSummary(competition.matches), { total: 44, wins: 29, losses: 15 });
   assert.ok(competition.matches.every(m => m.reviewed));
   assert.equal(competition.validation.date, '2026-10-18');
   validateData(competition, roster, albums, media);
+});
+// The source workbook is private and deliberately absent from the public repo/CI.
+// When explicitly supplied, a mismatch must fail rather than silently skip.
+test('an explicitly supplied private source workbook matches the import fingerprint', { skip: !process.env.INTANIA_SOURCE_WORKBOOK && 'private workbook not supplied' }, () => {
+  const workbook = path.resolve(process.env.INTANIA_SOURCE_WORKBOOK);
+  assert.equal(createHash('sha256').update(fs.readFileSync(workbook)).digest('hex'), competition.sourceSha256);
 });
 test('rival totals account for each validated match once and retain event filtering', () => {
   assert.equal(rivals(competition.matches).reduce((n, r) => n + r.matches.length, 0), 44);

@@ -92,31 +92,6 @@ if (albumYear) {
   };
   albumYear.addEventListener('change', updateAlbums); type.addEventListener('change', updateAlbums); updateAlbums();
 }
-const dialog = document.querySelector('[data-gallery]');
-if (dialog) {
-  const albums = JSON.parse(document.querySelector('[data-gallery-data]').textContent);
-  let currentAlbum; let index = 0; let opener;
-  const photo = dialog.querySelector('img');
-  const caption = dialog.querySelector('[data-gallery-caption]');
-  const status = dialog.querySelector('[data-gallery-status]');
-  const showImage = () => {
-    const image = currentAlbum.photos[index];
-    photo.src = image.src; photo.alt = image.alt; photo.width = image.width; photo.height = image.height;
-    caption.textContent = image.caption || image.alt;
-    status.textContent = `${currentAlbum.title} · ${index + 1} / ${currentAlbum.photos.length}`;
-    dialog.querySelectorAll('[data-gallery-step]').forEach(button => button.disabled = currentAlbum.photos.length < 2);
-  };
-  photo.addEventListener('error', () => { status.textContent = 'โหลดภาพนี้ไม่สำเร็จ ลองดูภาพถัดไปหรือเปิดใหม่อีกครั้ง'; });
-  document.querySelectorAll('[data-gallery-open]').forEach(button => button.addEventListener('click', () => {
-    currentAlbum = albums.find(album => album.id === button.dataset.galleryOpen);
-    if (!currentAlbum?.photos.length) return;
-    opener = button; index = 0; showImage(); dialog.showModal();
-  }));
-  dialog.querySelector('[data-gallery-close]').addEventListener('click', () => dialog.close());
-  dialog.querySelectorAll('[data-gallery-step]').forEach(button => button.addEventListener('click', () => { index = (index + Number(button.dataset.galleryStep) + currentAlbum.photos.length) % currentAlbum.photos.length; showImage(); }));
-  dialog.addEventListener('keydown', event => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); index = (index + (event.key === 'ArrowRight' ? 1 : -1) + currentAlbum.photos.length) % currentAlbum.photos.length; showImage(); } });
-  dialog.addEventListener('close', () => { photo.removeAttribute('src'); opener?.focus(); });
-}
 const observer = 'IntersectionObserver' in window && !reduced.matches
   ? new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-inview'); observer.unobserve(entry.target); } }), { threshold: 0.12 })
   : null;

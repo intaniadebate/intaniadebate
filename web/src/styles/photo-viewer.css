@@ -1,0 +1,16 @@
+.mvp-two .photo-trigger { display: block; width: 100%; padding: 0; color: inherit; background: transparent; cursor: zoom-in; text-align: inherit; }
+.photo-trigger img { width: 100%; }
+.photo-trigger:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 5px; }
+.member-portrait .photo-trigger { height: 100%; }
+.member-portrait .member-index { pointer-events: none; }
+.photo-viewer { width: min(72rem, calc(100% - 2rem)); max-width: none; max-height: calc(100dvh - 2rem); padding: var(--space-sm); border: 1px solid var(--color-rule); color: var(--color-ink); background: var(--color-paper); overflow-y: auto; overscroll-behavior: contain; }
+.photo-viewer::backdrop { background: var(--color-photo-overlay); }
+.photo-viewer[open] { display: flex; flex-direction: column; gap: var(--space-sm); }
+.photo-viewer > img { display: block; width: 100%; min-height: 8rem; max-height: 70dvh; object-fit: contain; }
+.photo-viewer-toolbar, .photo-viewer-bottom { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); }
+.photo-viewer p { font-size: .875rem; line-height: 1.7; overflow-wrap: anywhere; }
+.photo-viewer-toolbar p, .photo-viewer-bottom p { min-width: 0; }
+.photo-viewer-bottom p { flex: 1; text-align: center; }
+.mvp-two .photo-viewer button { flex-shrink: 0; min-width: 44px; min-height: 44px; padding: .5rem .75rem; border: 1px solid var(--color-rule); background: var(--color-paper); color: var(--color-accent); }
+.photo-viewer button:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+@media (max-width: 540px) { .photo-viewer { width: calc(100% - 1rem); max-height: calc(100dvh - 1rem); } .photo-viewer > img { max-height: 60dvh; } }
