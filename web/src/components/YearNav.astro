@@ -1,11 +1,11 @@
 ---
 import ArrowUpRight from './ArrowUpRight.astro';
 import { withBase } from '../lib/paths.mjs';
-import { years } from '../lib/data.mjs';
+import { years, intania } from '../lib/data.mjs';
 const { selected, base, label = 'เลือกปี' } = Astro.props;
 ---
 <aside class="year-navigation">
-  <div class="year-picker-mobile"><label for={`year-${base.replaceAll('/', '')}`}>{label}</label><select id={`year-${base.replaceAll('/', '')}`} data-year-navigation>{years.map(year => <option value={withBase(`${base}/${year}`)} selected={year === selected}>{year} / {year + 543}</option>)}</select></div>
+  <div class="year-picker-mobile"><label for={`year-${base.replaceAll('/', '')}`}>{label}</label><select id={`year-${base.replaceAll('/', '')}`} data-year-navigation>{years.map(year => <option value={withBase(`${base}/${year}`)} selected={year === selected}>{year} · {intania(year)}</option>)}</select></div>
   <noscript><nav class="year-noscript" aria-label={label}>{years.map(year => <a href={withBase(`${base}/${year}`)} aria-current={year === selected ? 'page' : undefined}>{year}</a>)}</nav></noscript>
   <nav class="year-rail" aria-label={label}><p class="eyebrow">เลือกปี</p>{years.map(year => <a data-year-link href={withBase(`${base}/${year}`)} aria-current={year === selected ? 'page' : undefined}><span>{year}</span><span class="year-dot" aria-hidden="true"></span></a>)}<a data-year-link class="latest-year" href={withBase(`${base}/2026`)}>ไปปีล่าสุด <ArrowUpRight /></a><p class="year-loading" data-year-loading></p></nav>
 </aside>
