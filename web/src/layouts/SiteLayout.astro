@@ -20,7 +20,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
   <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title} — Intania Debate Club</title><meta name="description" content={description} />
-    <meta name="theme-color" content="#f5f2eb" /><link rel="icon" href="data:," />
+    <meta name="theme-color" content="#f5f2eb" /><link rel="icon" type="image/png" href={withBase('/favicon.png?v=1')} />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

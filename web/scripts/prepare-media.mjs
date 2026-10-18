@@ -7,7 +7,7 @@ export async function prepareMedia(preview = false) {
   const target = path.resolve(root, preview ? '.local-public' : 'public');
   if (path.dirname(target) !== root || !['public', '.local-public'].includes(path.basename(target))) throw new Error('Unexpected generated-media directory');
   await fs.mkdir(path.join(target, 'media'), { recursive: true });
-  for (const name of ['preferences.js', '_headers']) await fs.copyFile(path.join(root, 'static', name), path.join(target, name));
+  for (const name of ['preferences.js', '_headers', 'favicon.png']) await fs.copyFile(path.join(root, 'static', name), path.join(target, name));
   await fs.mkdir(path.join(target, 'licenses'), { recursive: true });
   for (const name of ['Noto-Sans-Thai-OFL.txt', 'Cormorant-Garamond-OFL.txt']) await fs.copyFile(path.join(root, 'static', 'licenses', name), path.join(target, 'licenses', name));
   const manifestPath = path.join(root, 'src', 'data', 'media.json');
