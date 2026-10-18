@@ -17,6 +17,7 @@ const other = selected.filter(m => m.eventId !== 'freshy');
 const summary = resultSummary(main);
 const season = data.seasons.find(s => s.year === year);
 const rank = season.placement.match(/อันดับ\s*(\d+)/)?.[1];
+const isHeartSeason = year === 2019 || year === 2026;
 const visual = visuals.find(v => v.year === year) || { tone: 'wine', backgroundImage: null };
 ---
 <SiteLayout title={`เส้นทางแข่งขัน ${year} (พ.ศ. ${year + 543})`} active="competitions">
@@ -25,14 +26,15 @@ const visual = visuals.find(v => v.year === year) || { tone: 'wine', backgroundI
   <div class="archive-workspace competition-workspace shell" data-year-surface="competitions" data-selected-year={year} data-season-tone={visual.tone}><YearNav selected={year} base="/competitions" label="เลือกปีการแข่งขัน" /><section class="season-chapter" aria-labelledby="season-heading">
     <header class="season-cover">
       {visual.backgroundImage && <div class="season-backdrop" aria-hidden="true"><Media id={visual.backgroundImage} sizes="100vw" /></div>}
-      <div class="season-heading"><div><p class="eyebrow">CU FRESHY DEBATE</p><h2 id="season-heading">{year}<span class="season-year-rule" aria-hidden="true"></span></h2><p class="season-be">พ.ศ. {year + 543} · เส้นทางการแข่งขัน</p></div><div class:list={['placement', rank === '1' && 'is-champion']}><span>อันดับประจำปี</span><strong>{rank ? <><small>อันดับ</small>{rank}</> : 'ตกรอบคัดเลือก'}</strong></div></div>
+      <div class="season-heading"><div><p class="eyebrow">CU FRESHY DEBATE</p><h2 id="season-heading">{year}<span class="season-year-rule" aria-hidden="true"></span></h2><p class="season-be">พ.ศ. {year + 543} · เส้นทางการแข่งขัน</p></div><div class:list={['placement', rank === '1' && 'is-champion']}><span>{isHeartSeason ? 'ความทรงจำของปีนี้' : 'อันดับประจำปี'}</span><strong>{rank ? <><small>อันดับ</small>{rank}</> : isHeartSeason ? <svg class="placement-heart" viewBox="0 0 24 24" role="img"><title>{`ให้กำลังใจทีมปี ${year}`}</title><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z" /></svg> : 'ตกรอบคัดเลือก'}</strong></div></div>
       <div class="season-score"><div><span>แมตช์ที่บันทึก</span><strong>{summary.total}</strong></div><div class="score-win"><span>ชนะ</span><strong>{summary.wins}</strong></div><div class="score-loss"><span>แพ้</span><strong>{summary.losses}</strong></div><a href={withBase(`/members/${year}`)}>รู้จักทีมปีนี้ <span aria-hidden="true"><ArrowUpRight /></span></a></div>
     </header>
     <nav class="round-index" aria-label={`ข้ามไปยังรอบการแข่งขันปี ${year}`}><p>เส้นทางปีนี้</p><ol>{main.map((match, i) => <li><a href={`#match-${match.id}`}><span>{String(i + 1).padStart(2, '0')}</span>{roundName(match.order)}</a></li>)}</ol></nav>
     <ol class="match-timeline">{main.map((match, i) => <MatchCard match={match} index={i} />)}</ol>
-    <div class="season-finish"><span class="finish-dot" aria-hidden="true"></span><p>จากเวทีนี้ สู่บทถัดไป</p><strong>{season.placement}</strong><a class="text-link" href={withBase(`/members/${year}`)}>หกเสียงของปี {year} <ArrowUpRight /></a></div>
+    <div class="season-finish"><span class="finish-dot" aria-hidden="true"></span><p>จากเวทีนี้ สู่บทถัดไป</p><strong>{isHeartSeason ? <svg class="season-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z" /></svg> : season.placement}</strong><a class="text-link" href={withBase(`/members/${year}`)}>หกเสียงของปี {year} <ArrowUpRight /></a></div>
     {other.length > 0 && <aside class="other-event"><p class="eyebrow">อีกเวทีของปีเดียวกัน</p><h3>The Visionary Debate</h3><p>รายการแยกจาก CU Freshy Debate</p><ol class="match-timeline">{other.map((match, i) => <MatchCard match={match} index={i} />)}</ol></aside>}
     <nav class="chapter-pager" aria-label="เปลี่ยนปี">{year > 2017 ? <a data-year-link href={withBase(`/competitions/${year - 1}`)}>← {year - 1}</a> : <span />}{year < 2026 && <a data-year-link href={withBase(`/competitions/${year + 1}`)}>{year + 1} →</a>}</nav>
   </section></div>
   <Rivals matches={data.matches} />
 </SiteLayout>
+

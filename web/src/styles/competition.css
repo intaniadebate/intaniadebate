@@ -26,6 +26,8 @@
 .competition-workspace .placement > strong { font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); color: var(--season-accent); font-weight: 500; line-height: 1.7; text-align: right; margin-top: .5rem; }
 .competition-workspace .placement > strong:has(small) { display: flex; font: 5rem/1 var(--display); gap: .5rem; align-items: baseline; }
 .competition-workspace .placement small { font: 1rem var(--body); }
+.competition-workspace .placement-heart { display: block; width: 2.4rem; height: 2.4rem; margin-inline-start: auto; color: var(--season-accent); fill: currentColor; }
+.competition-workspace .season-finish > .season-heart { display: block; width: 2rem; height: 2rem; margin: .35rem 0 .75rem; color: var(--season-accent); fill: currentColor; }
 .competition-workspace .season-score { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; align-items: center; gap: 1rem; padding: 1.25rem 0 0; border-bottom: 0; border-top: 1px solid var(--season-accent); font-size: 1rem; }
 .competition-workspace .season-score > div { display: flex; flex-direction: column; gap: .5rem; }
 .competition-workspace .season-score > div > span { font-size: .9375rem; }
@@ -140,3 +142,4 @@
   .competition-workspace .season-finish { margin-left: 0; padding: 1.5rem; }
   .competition-workspace .chapter-pager a { font-size: 1rem; padding-inline: .8rem; }
 }
+
