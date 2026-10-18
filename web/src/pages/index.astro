@@ -1,8 +1,9 @@
 ---
+import ArrowUpRight from '../components/ArrowUpRight.astro';
 import { withBase } from '../lib/paths.mjs';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Media from '../components/Media.astro';
 ---
 <SiteLayout title="A space for every voice" cover>
-  <section class="cover-main shell"><div class="cover-copy"><p class="eyebrow">THE ART OF SPEAKING & LISTENING</p><h1>A space for<br /><em>every voice.</em></h1><p class="cover-thai">เพราะทุกเสียง มีเรื่องราวที่ควรได้ยิน</p><p class="intro-small">พื้นที่ของการพูด การฟัง และการเติบโตไปด้วยกัน<br />ชมรมโต้วาที คณะวิศวกรรมศาสตร์ จุฬาฯ</p><a class="button button-primary enter-button" href={withBase('/home')}>มารู้จักพวกเรา <span aria-hidden="true">↗</span></a></div><a class="cover-image" href={withBase('/home')} aria-label="เข้าสู่เว็บไซต์ชมรม"><Media id="microphone" eager width={1440} /><div class="image-frame"></div><span class="image-bottom"><span>LET YOUR<br /><i>voice be heard.</i></span><span class="circle-arrow" aria-hidden="true">↗</span></span></a></section>
+  <section class="cover-main shell"><div class="cover-copy"><p class="eyebrow">THE ART OF SPEAKING & LISTENING</p><h1>A space for<br /><em>every voice.</em></h1><p class="cover-thai">เพราะทุกเสียง มีเรื่องราวที่ควรได้ยิน</p><p class="intro-small">พื้นที่ของการพูด การฟัง และการเติบโตไปด้วยกัน<br />ชมรมโต้วาที คณะวิศวกรรมศาสตร์ จุฬาฯ</p><a class="button button-primary enter-button" href={withBase('/home')}>มารู้จักพวกเรา <span aria-hidden="true"><ArrowUpRight /></span></a></div><a class="cover-image" href={withBase('/home')} aria-label="เข้าสู่เว็บไซต์ชมรม"><Media id="microphone" eager width={1440} /><div class="image-frame"></div><span class="image-bottom"><span>LET YOUR<br /><i>voice be heard.</i></span><span class="circle-arrow" aria-hidden="true"><ArrowUpRight /></span></span></a></section>
 </SiteLayout>

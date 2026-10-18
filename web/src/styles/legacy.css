@@ -2,6 +2,7 @@
  * tone: quiet campus editorial · anchor hue: wine 11° · nav: N1b · footer: Ft2 · contrast: pass (40–41)
  */
 @import url("./tokens.css");
+.arrow-icon { display: inline-block; inline-size: 1em; block-size: 1em; flex: none; vertical-align: -0.12em; }
 *{box-sizing:border-box}
 :root{--paper:var(--color-paper);--surface:var(--color-paper-2);--accent:var(--color-accent);--ink:var(--color-ink);--muted:var(--color-muted);--line:var(--color-rule);--soft:var(--color-soft);--display:var(--font-display);--body:var(--font-body);color-scheme:light;scroll-behavior:smooth}
 html[data-theme=sage]{--paper:var(--color-paper);--surface:var(--color-paper-2);--accent:var(--color-accent);--ink:var(--color-ink);--muted:var(--color-muted);--line:var(--color-rule);--soft:var(--color-soft)}

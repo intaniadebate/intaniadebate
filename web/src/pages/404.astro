@@ -1,5 +1,6 @@
 ---
+import ArrowUpRight from '../components/ArrowUpRight.astro';
 import { withBase } from '../lib/paths.mjs';
 import SiteLayout from '../layouts/SiteLayout.astro';
 ---
-<SiteLayout title="ไม่พบหน้านี้"><section class="not-found shell"><p class="eyebrow">404 / A DIFFERENT CHAPTER</p><h1>เรื่องราวนี้<br /><em>ยังหาไม่เจอ</em></h1><a class="button button-primary" href={withBase('/home')}>กลับหน้าแรก ↗</a></section></SiteLayout>
+<SiteLayout title="ไม่พบหน้านี้"><section class="not-found shell"><p class="eyebrow">404 / A DIFFERENT CHAPTER</p><h1>เรื่องราวนี้<br /><em>ยังหาไม่เจอ</em></h1><a class="button button-primary" href={withBase('/home')}>กลับหน้าแรก <ArrowUpRight /></a></section></SiteLayout>
