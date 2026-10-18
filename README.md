@@ -4,6 +4,8 @@
 
 เว็บสาธารณะ: https://intaniadebateclub.com/
 
+Repository ของชมรม: https://github.com/intaniadebate/intaniadebate
+
 สถานะการเชื่อมโดเมนและ HTTPS: [คู่มือโดเมน](docs/CUSTOM_DOMAIN.md)
 
 Home และ 3 หน้าหลัก: เส้นทางแข่งขัน ทำเนียบ และนอกเวที ข้อมูลการแข่งขัน 2017–2026 จากตารางของชมรม รายชื่อ/อัลบั้มอยู่ระหว่างรวบรวม
@@ -23,3 +25,4 @@ Push เข้า `main` จะ build และ deploy ผ่าน GitHub Actio
 - [คู่มือเว็บ](web/README.md)
 - [แก้เนื้อหา](docs/CONTENT_GUIDE.md)
 - [Cloud media](docs/CLOUD_MEDIA.md)
+- [Deploy และส่งต่อผู้ดูแล](docs/GITHUB_PAGES.md)
