@@ -131,3 +131,12 @@ GitHub connector cannot create an Issue (403 Resource not accessible by integrat
 - Validation: `npm run build` passed (31 pages); `git diff --check` passed. Browser preview showed both full-frame layers crossfading with the same 1.2s easing; screenshot: `web/.local/home-story-full-fade.jpg` (ignored local evidence).
 - Deployment: no push, PR, Actions run, or production deploy. `git fetch origin` remains unavailable due network name resolution; GitHub Issue/PR check-in remains local-only.
 - Released scope: `web/src/styles/community-story.css` and this task log.
+
+## CHECK-OUT update — branch pushed
+
+- Time: 2026-10-19 21:46 +07:00 (Asia/Bangkok).
+- User explicitly requested pushing the task branch. Network access succeeded after retrying outside the restricted sandbox.
+- Branch: `feat/home-community-story`; commit `4bff2eb` and its task changes are now on `origin/feat/home-community-story`.
+- Validation: remote fetch succeeded before this update; branch was clean and tracking the pushed remote branch.
+- Deployment: branch push only; no PR was created, and no production deploy was verified.
+- Released scope: Home story full-frame fade and this task log.
