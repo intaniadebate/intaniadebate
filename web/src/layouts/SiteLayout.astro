@@ -1,7 +1,6 @@
 ---
 import ArrowUpRight from '../components/ArrowUpRight.astro';
 import { withBase } from '../lib/paths.mjs';
-import BirthdayPopup from '../components/BirthdayPopup.astro';
 import Analytics from '../components/Analytics.astro';
 import PhotoViewer from '../components/PhotoViewer.astro';
 import '../styles/legacy.css';
@@ -45,6 +44,5 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
     </script>
     <Analytics />
     <PhotoViewer />
-    {cover && <BirthdayPopup />}
   </body>
 </html>
