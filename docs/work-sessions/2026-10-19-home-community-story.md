@@ -140,3 +140,13 @@ GitHub connector cannot create an Issue (403 Resource not accessible by integrat
 - Validation: remote fetch succeeded before this update; branch was clean and tracking the pushed remote branch.
 - Deployment: branch push only; no PR was created, and no production deploy was verified.
 - Released scope: Home story full-frame fade and this task log.
+
+## CHECK-IN — PR integration attempt
+
+- Operator/session: Codex / maintainer's direct request to merge this branch.
+- Time: 2026-10-19 21:46 +07:00 (Asia/Bangkok).
+- Objective: prepare a PR for `feat/home-community-story` into the latest `main`, inspect checks and merge requirements, and merge if allowed.
+- Branch/base: `feat/home-community-story` / `c06e52168e1eb9032c2ec871a2321700b27750fe`.
+- Scope: GitHub PR integration and this task log; source implementation is already committed.
+- Coordination: no matching open Issue/PR was found. GitHub integration denied Issue creation with 403 `Resource not accessible by integration`; no `gh` CLI is installed. This local-only check-in does not reserve shared files.
+- Validation plan: inspect branch diff against latest `main`, create PR, check status/checks/reviews and merge rules, then merge if ready. Existing production build passed (31 pages); no source changes in this integration step.
