@@ -20,6 +20,7 @@ media_file = args.output.parent / 'media.json'
 source_file = args.output.parents[2] / '.local/media-sources.json'
 media = json.loads(media_file.read_text(encoding='utf-8')) if media_file.exists() else {}
 media_sources = json.loads(source_file.read_text(encoding='utf-8')) if source_file.exists() else {}
+claimed = {}  # evidence key -> file used in this run; keys come from the file name only
 def links(value):
     return re.findall(r'https://[^\s;]+', str(value or ''))
 def clean(value):
@@ -40,6 +41,8 @@ for row in sheet.iter_rows(min_row=5, values_only=True):
         if not p.is_file():
             continue
         key = 'evidence-' + hashlib.sha256(p.name.encode()).hexdigest()[:12]
+        if claimed.setdefault(key, p.resolve()) != p.resolve():
+            raise ValueError(f'Evidence images {claimed[key]} and {p} share file name {p.name!r} (key {key}); rename one so each image keeps its own key')
         if key not in media:
             from PIL import Image
             with Image.open(p) as im:
