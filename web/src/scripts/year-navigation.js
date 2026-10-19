@@ -12,6 +12,12 @@ export function initYearNavigation(onSwap) {
   const saveCurrent = () => history.replaceState({ ...history.state, intaniaYear: { kind, ...position() } }, '', location.href);
   saveCurrent();
   history.scrollRestoration = 'manual';
+  const settle = () => {
+    surface()?.querySelector('.year-navigation')?.removeAttribute('aria-busy');
+    const status = surface()?.querySelector('[data-year-loading]');
+    if (status) status.textContent = '';
+    pending = null;
+  };
   let scrollFrame;
   window.addEventListener('scroll', () => {
     if (pending || scrollFrame) return;
@@ -76,12 +82,7 @@ export function initYearNavigation(onSwap) {
     } catch (error) {
       if (error.name !== 'AbortError') location.assign(url.href);
     } finally {
-      if (pending === controller) {
-        surface()?.querySelector('.year-navigation')?.removeAttribute('aria-busy');
-        const status = surface()?.querySelector('[data-year-loading]');
-        if (status) status.textContent = '';
-        pending = null;
-      }
+      if (pending === controller) settle();
     }
   }
 
@@ -97,8 +98,8 @@ export function initYearNavigation(onSwap) {
   window.addEventListener('popstate', event => {
     if (event.state?.intaniaYear?.kind !== kind) return;
     if (new URL(lastUrl).pathname === location.pathname) {
-      pending?.abort();
-      pending = null;
+      // The aborted load skips its own cleanup, so release the busy rail here.
+      if (pending) { pending.abort(); settle(); }
       lastUrl = location.href;
       window.scrollTo({ left: event.state.intaniaYear.x, top: event.state.intaniaYear.y, behavior: 'instant' });
       return;
