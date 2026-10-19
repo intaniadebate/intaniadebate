@@ -15,6 +15,15 @@
 
 ทุกคนรวมถึง AI ต้องทำ [check-in/check-out](WORK_LOG.md) ตาม [คู่มือร่วมพัฒนา](../CONTRIBUTING.md) ตรวจ Issue/PR ที่เปิดอยู่ แยก branch ต่อหนึ่งงาน และระบุผลตรวจพร้อมงานค้างก่อนส่งต่อ การ merge เข้า `main` จะเผยแพร่เว็บจริงทันที จึงต้อง review diff ให้แน่ใจว่าไม่รวมงานค้างของคนอื่น
 
+## Security headers
+
+GitHub Pages ไม่รองรับการตั้ง HTTP response header เอง และไม่อ่านไฟล์ `_headers` (ไฟล์นี้ใช้ได้เฉพาะบาง host เช่น Cloudflare Pages/Netlify) repo จึงไม่เก็บ `_headers` ไว้ เพื่อไม่ให้เข้าใจผิดว่ามีผลอยู่
+
+- `Referrer-Policy: strict-origin-when-cross-origin` ตั้งแทนด้วย `<meta name="referrer">` ใน `web/src/layouts/SiteLayout.astro` ซึ่งทุกหน้าใช้ร่วมกัน
+- `X-Content-Type-Options: nosniff` และ `Permissions-Policy` ตั้งผ่าน `<meta>` ไม่ได้ ตอนนี้จึงยังไม่มีบนเว็บจริง
+
+หากต้องการ header เหล่านี้ในอนาคต ต้องให้ผู้ดูแลตัดสินใจเปลี่ยนโครงสร้าง เช่น เปิด proxy/CDN หน้า GitHub Pages (Cloudflare proxy พร้อม Transform Rules) หรือย้ายไป host ที่รองรับ header เอง (Cloudflare Pages, Netlify) งานนี้กระทบ DNS/HTTPS ตาม[คู่มือโดเมน](CUSTOM_DOMAIN.md) จึงต้องเปิด Issue แยกก่อน ตรวจผลด้วย `curl -sI https://intaniadebateclub.com/`
+
 ## เริ่มจากเครื่องใหม่
 
 ```sh
