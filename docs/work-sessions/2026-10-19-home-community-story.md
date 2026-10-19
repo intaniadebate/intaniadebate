@@ -112,3 +112,22 @@ GitHub connector cannot create an Issue (403 Resource not accessible by integrat
 - Evidence (local, ignored): `web/.local/home-story-edge-fade.jpg`.
 - Coordination/deploy: GitHub issue/PR search found no matching open task and fetch still fails due network name resolution. This check-in/out remains local-only; no Actions run or production deploy verified.
 - Released scope: Home story styles only; no other checkout scopes changed.
+
+## CHECK-IN — active (whole-frame fade clarification)
+
+- Operator/session: Codex / maintainer's direct revision in this chat.
+- Time: 2026-10-19 21:40 +07:00 (Asia/Bangkok).
+- Objective: remove the per-edge wash and fade each whole photo in/out during every transition.
+- Branch/base: `feat/home-community-story` / `bce2bd9`; continue the existing task checkout.
+- Scope: `web/src/styles/community-story.css` and this task log.
+- Coordination: `git fetch origin` failed because network name resolution is unavailable. No matching Issue/PR is visible from earlier searches; this local-only note does not reserve shared files.
+- Validation: production build; inspect a real transition in the local Home preview; check computed opacity on outgoing and incoming frames; run `git diff --check`.
+
+## CHECK-OUT — done locally, not deployed
+
+- Time: 2026-10-19 21:41 +07:00 (Asia/Bangkok).
+- Changes: removed the edge gradients and set outgoing frames to opacity 0, so incoming and outgoing photos crossfade across the entire frame. The photo remains clickable to pause/resume without controls or status text.
+- Branch/base: `feat/home-community-story` / `bce2bd9`.
+- Validation: `npm run build` passed (31 pages); `git diff --check` passed. Browser preview showed both full-frame layers crossfading with the same 1.2s easing; screenshot: `web/.local/home-story-full-fade.jpg` (ignored local evidence).
+- Deployment: no push, PR, Actions run, or production deploy. `git fetch origin` remains unavailable due network name resolution; GitHub Issue/PR check-in remains local-only.
+- Released scope: `web/src/styles/community-story.css` and this task log.

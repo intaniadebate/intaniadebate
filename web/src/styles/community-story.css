@@ -17,8 +17,7 @@
 .story-stage:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
 .story-slide { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; z-index: 0; pointer-events: none; transition: opacity 1200ms var(--ease-in-out); }
 .story-slide.is-current { opacity: 1; z-index: 1; }
-.story-slide.is-leaving { opacity: 1; z-index: 0; }
-.story-slide::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(270deg, var(--color-paper), transparent 28%), linear-gradient(0deg, var(--color-paper), transparent 16%); }
+.story-slide.is-leaving { opacity: 0; z-index: 0; }
 .story-slide img { display: block; width: 100%; height: 100%; object-fit: contain; }
 @media (prefers-reduced-motion: no-preference) {
   .story-slide.is-current img, .story-slide.is-leaving img { animation: photo-drift 16s ease-in-out infinite alternate; }
@@ -33,7 +32,6 @@ html[data-motion="paused"] .story-slide { transition: none; }
   .community-about .about-copy { grid-row: 1; }
   .mvp-two .community-about h2 { font-size: clamp(1.875rem, 7vw, 2.75rem); margin-bottom: 1.25rem; }
   .mvp-two .community-about .about-copy > p { font-size: 1rem; }
-  .story-slide::after { background: linear-gradient(180deg, var(--color-paper), transparent 18%), linear-gradient(90deg, var(--color-paper), transparent 12%), linear-gradient(0deg, var(--color-paper), transparent 10%); }
   .story-caption-text p { min-height: 3.6em; }
 }
 @media (prefers-reduced-motion: reduce) {
