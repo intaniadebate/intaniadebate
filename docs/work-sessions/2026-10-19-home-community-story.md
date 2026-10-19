@@ -49,3 +49,24 @@ GitHub connector cannot create an Issue (403 Resource not accessible by integrat
 - Evidence (local, ignored): `web/.local/home-story-revised.jpg`.
 - GitHub: no Issue/PR was available for team-visible check-out; local-only record remains due to the documented 403 and automatic-review restriction. No production Actions run or live deployment verified.
 - Released scope: Home story component, script, and styles. No other scopes changed.
+
+## CHECK-IN — active (local-only click-to-toggle revision)
+
+- Operator/session: Codex / maintainer's direct revision in this chat.
+- Time: 2026-10-19 21:26 +07:00 (Asia/Bangkok).
+- Objective: remove visible slideshow controls and status text; clicking the image pauses/resumes autoplay while retaining the crossfade and accessible keyboard interaction.
+- Branch/base: `feat/home-community-story` / `d1ff515`; continue the existing task checkout.
+- Scope: `web/src/components/CommunityStory.astro`, `web/src/scripts/community-story.js`, `web/src/styles/community-story.css`, and this task log.
+- Coordination: GitHub open Issue/PR searches returned no matching task. `git fetch origin` could not resolve network access. Following the repo's local-only fallback, this check-in is not team-visible and does not reserve these files. Preserve all other checkout work.
+- Validation: production build; inspect actual desktop/mobile preview; verify autoplay, click/keyboard pause-resume, soft fade, and reduced-motion behavior; run `git diff --check` and JavaScript syntax check.
+
+## CHECK-OUT — review (local-only click-to-toggle revision)
+
+- Operator/session: Codex / maintainer's direct revision in this chat.
+- End: 2026-10-19 21:28 +07:00 (Asia/Bangkok).
+- Changes: the photo itself is now the keyboard-accessible play/pause toggle; removed all visible slideshow buttons and pause/status copy. Captions remain part of the photo story and crossfade remains at 1.2 s.
+- Branch/commit: `feat/home-community-story`; revision commit follows below. No push, PR, or deployment.
+- Validation passed: production build (31 pages), `node --check src/scripts/community-story.js`, and `git diff --check`. Browser verified click pauses for longer than the 6.5 s interval, Space resumes, autoplay changes the image and caption, and no slideshow control elements remain. Computed slide transition remains opacity 1.2 s with the existing ease-in-out curve.
+- Evidence (local, ignored): `web/.local/home-story-click-toggle.jpg`.
+- Coordination/deploy: no matching open Issue/PR appeared in GitHub searches; the latest fetch failed because network name resolution was unavailable. Keep the check-in/check-out local-only and publish when access is available. No Actions run or production deployment verified.
+- Released scope: Home story component, script, and styles; no other checkout scopes changed.

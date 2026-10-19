@@ -8,9 +8,7 @@ export function initCommunityStories() {
     initialized.add(story);
     const slides = [...story.querySelectorAll('[data-story-slide]')];
     if (slides.length < 2) return;
-    const button = story.querySelector('[data-story-playback]');
-    const previousButton = story.querySelector('[data-story-previous]');
-    const nextButton = story.querySelector('[data-story-next]');
+    const toggle = story.querySelector('[data-story-toggle]');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     const connection = navigator.connection;
     const failed = new Set();
@@ -25,15 +23,10 @@ export function initCommunityStories() {
 
     const motionBlocked = () => reduced.matches || document.documentElement.dataset.motion === 'paused';
     const canPlay = () => visible && !document.hidden && !paused && !motionBlocked() && failed.size < slides.length - 1;
-    const updateButton = () => {
+    const updateToggle = () => {
       const stopped = paused || motionBlocked();
-      button.setAttribute('aria-pressed', String(stopped));
-      button.disabled = motionBlocked() || failed.size >= slides.length - 1;
-      previousButton.disabled = failed.size >= slides.length - 1;
-      nextButton.disabled = failed.size >= slides.length - 1;
-      button.querySelector('[data-story-playback-label]').textContent = motionBlocked() ? 'ภาพนิ่ง' : stopped ? 'เล่นภาพ' : 'หยุดภาพ';
-      button.querySelector('[data-story-pause-icon]').toggleAttribute('hidden', stopped);
-      button.querySelector('[data-story-play-icon]').toggleAttribute('hidden', !stopped);
+      toggle.setAttribute('aria-pressed', String(stopped));
+      toggle.disabled = failed.size >= slides.length - 1;
     };
     const load = index => {
       if (loading.has(index)) return loading.get(index);
@@ -72,12 +65,12 @@ export function initCommunityStories() {
     };
     const schedule = () => {
       clearTimeout(timer);
-      updateButton();
+      updateToggle();
       if (!canPlay() || busy) return;
       void load(nextIndex());
       timer = setTimeout(() => show(nextIndex()), HOLD);
     };
-    const show = async (index, manual = false) => {
+    const show = async index => {
       clearTimeout(timer);
       clearTimeout(finishFade);
       slides.forEach(slide => slide.classList.remove('is-leaving'));
@@ -86,7 +79,7 @@ export function initCommunityStories() {
       busy = true;
       const ready = await load(index);
       if (token !== request) return;
-      if (ready === false || (!manual && !canPlay())) { busy = false; schedule(); return; }
+      if (ready === false || !canPlay()) { busy = false; schedule(); return; }
       const previous = slides[current];
       // Keep the outgoing image opaque behind the incoming fade: no bright flash.
       previous.classList.remove('is-current');
@@ -96,26 +89,13 @@ export function initCommunityStories() {
       slides[current].classList.add('is-current');
       slides[current].removeAttribute('aria-hidden');
       story.querySelector('[data-story-caption]').textContent = slides[current].dataset.caption;
-      if (manual) story.querySelector('[data-story-announcement]').textContent = slides[current].dataset.caption;
       finishFade = setTimeout(() => {
         previous.classList.remove('is-leaving');
         busy = false;
         schedule();
       }, motionBlocked() ? 0 : FADE);
     };
-    const move = direction => {
-      paused = true;
-      updateButton();
-      let index = current;
-      for (let step = 0; step < slides.length; step++) {
-        index = (index + direction + slides.length) % slides.length;
-        if (!failed.has(index)) break;
-      }
-      void show(index, true);
-    };
-    previousButton.addEventListener('click', () => move(-1));
-    nextButton.addEventListener('click', () => move(1));
-    button.addEventListener('click', () => { paused = !paused; schedule(); });
+    toggle.addEventListener('click', () => { paused = !paused; schedule(); });
     document.addEventListener('visibilitychange', schedule);
     reduced.addEventListener('change', schedule);
     connection?.addEventListener('change', () => { if (connection.saveData) paused = true; schedule(); });
@@ -123,7 +103,6 @@ export function initCommunityStories() {
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(entries => { visible = entries[0].isIntersecting; schedule(); }, { threshold: .15 }).observe(story);
     } else { visible = true; }
-    story.querySelector('[data-story-controls]').hidden = false;
     schedule();
   });
 }

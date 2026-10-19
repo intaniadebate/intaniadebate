@@ -13,7 +13,8 @@
 .mvp-two .community-about .about-copy > .quiet-note { font-size: .9375rem; margin-top: 1.75rem; }
 .mvp-two .community-about .about-copy > .text-link { font-size: .9375rem; min-height: 44px; }
 .community-story { min-width: 0; margin: 0; }
-.story-stage { position: relative; isolation: isolate; aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-paper-2); border-radius: .75rem; }
+.story-stage { position: relative; display: block; width: 100%; margin: 0; padding: 0; border: 0; color: inherit; font: inherit; text-align: left; cursor: pointer; isolation: isolate; aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-paper-2); border-radius: .75rem; }
+.story-stage:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
 .story-slide { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; z-index: 0; pointer-events: none; transition: opacity 1200ms var(--ease-in-out); }
 .story-slide.is-current { opacity: 1; z-index: 1; }
 .story-slide.is-leaving { opacity: 1; z-index: 0; }
@@ -21,11 +22,6 @@
 .story-caption { display: flex; align-items: start; justify-content: space-between; gap: 1rem; padding-top: 1rem; }
 .story-kicker { font-size: .6875rem; letter-spacing: .12em; color: var(--color-accent); }
 .story-caption-text p { font-size: .875rem; line-height: 1.8; color: var(--color-muted); margin: .35rem 0 0; min-height: 3.6em; text-wrap: pretty; }
-.story-controls { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0 .75rem; border-top: 1px solid var(--color-rule); margin-top: .5rem; }
-.story-navigate { display: grid; place-items: center; width: 44px; height: 44px; flex: none; padding: 0; color: var(--color-accent); background: transparent; border: 0; }
-.mvp-two .story-playback { display: flex; align-items: center; justify-content: center; gap: .45rem; min-height: 44px; margin-inline-start: auto; padding: .25rem .5rem; color: var(--color-accent); background: transparent; border: 0; font-size: .8125rem; white-space: nowrap; }
-.story-playback svg { flex: none; }
-.story-playback:disabled { color: var(--color-muted); }
 html[data-motion="paused"] .story-slide { transition: none; }
 @media (max-width: 760px) {
   .mvp-two .community-about .about-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
