@@ -984,5 +984,125 @@
     "alt": "ภาพสมาชิกทำเนียบปี 2018 คนที่ 6",
     "publishable": true,
     "kind": "photo"
+  },
+  "community-first-hello": {
+    "local": "/media/community-first-hello-1280.webp",
+    "width": 1477,
+    "height": 1108,
+    "alt": "สมาชิกชมรมถ่ายภาพร่วมกันบริเวณโถงหลังวันคัดเลือก",
+    "publishable": true,
+    "kind": "photo",
+    "credit": "Intania Debate Club / ภาพจากผู้ดูแลชมรม",
+    "rights": "ผู้ดูแลให้ใช้ภาพจากโฟลเดอร์โปรโมทในหน้า Home เมื่อ 2026-10-19",
+    "variants": [
+      {
+        "src": "/media/community-first-hello-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/media/community-first-hello-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/community-first-hello-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "community-on-stage": {
+    "local": "/media/community-on-stage-1280.webp",
+    "width": 2048,
+    "height": 1536,
+    "alt": "ทีมโต้วาทีวิศวฯ ยืนชูถ้วยร่วมกันบนเวที CU Freshy Debate 2025",
+    "publishable": true,
+    "kind": "photo",
+    "credit": "Intania Debate Club / ภาพจากผู้ดูแลชมรม",
+    "rights": "ผู้ดูแลให้ใช้ภาพจากโฟลเดอร์โปรโมทในหน้า Home เมื่อ 2026-10-19",
+    "variants": [
+      {
+        "src": "/media/community-on-stage-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/media/community-on-stage-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/community-on-stage-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "community-farewell": {
+    "local": "/media/community-farewell-1280.webp",
+    "width": 1477,
+    "height": 1108,
+    "alt": "สมาชิกชมรมหลายคนยิ้มและถ่ายภาพร่วมกันในงานส่งท้ายรุ่น 110",
+    "publishable": true,
+    "kind": "photo",
+    "credit": "Intania Debate Club / ภาพจากผู้ดูแลชมรม",
+    "rights": "ผู้ดูแลให้ใช้ภาพจากโฟลเดอร์โปรโมทในหน้า Home เมื่อ 2026-10-19",
+    "variants": [
+      {
+        "src": "/media/community-farewell-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/media/community-farewell-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/community-farewell-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "community-trip": {
+    "local": "/media/community-trip-1280.webp",
+    "width": 1920,
+    "height": 1080,
+    "alt": "เพื่อนในชมรมรวมตัวถ่ายภาพและทำท่าทางสนุกสนานระหว่างทริป",
+    "publishable": true,
+    "kind": "photo",
+    "credit": "Intania Debate Club / ภาพจากผู้ดูแลชมรม",
+    "rights": "ผู้ดูแลให้ใช้ภาพจากโฟลเดอร์โปรโมทในหน้า Home เมื่อ 2026-10-19",
+    "variants": [
+      {
+        "src": "/media/community-trip-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/media/community-trip-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/community-trip-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "community-evening": {
+    "local": "/media/community-evening-1280.webp",
+    "width": 1280,
+    "height": 720,
+    "alt": "สมาชิกชมรมถ่ายภาพกลุ่มกลางแจ้งยามค่ำคืนโดยมีแสงเมืองเป็นฉากหลัง",
+    "publishable": true,
+    "kind": "photo",
+    "credit": "Intania Debate Club / ภาพจากผู้ดูแลชมรม",
+    "rights": "ผู้ดูแลให้ใช้ภาพจากโฟลเดอร์โปรโมทในหน้า Home เมื่อ 2026-10-19",
+    "variants": [
+      {
+        "src": "/media/community-evening-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/media/community-evening-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/community-evening-1280.webp",
+        "width": 1280
+      }
+    ]
   }
 }

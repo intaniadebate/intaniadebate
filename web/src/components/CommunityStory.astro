@@ -1,0 +1,29 @@
+---
+import story from '../data/home-story.json';
+import catalog from '../data/media.json';
+import { resolveMedia, mediaSrcset } from '../lib/media.mjs';
+import { withBase, srcsetWithBase } from '../lib/paths.mjs';
+import '../styles/community-story.css';
+
+const config = { provider: import.meta.env.PUBLIC_MEDIA_PROVIDER || 'local', cloudName: import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME, cdnBase: import.meta.env.PUBLIC_MEDIA_CDN_BASE_URL, preview: import.meta.env.DEV };
+const frames = story.flatMap(frame => {
+  const asset = catalog[frame.id];
+  const src = resolveMedia(asset, config, 960);
+  return src ? [{ ...frame, asset, src: withBase(src), srcset: srcsetWithBase(mediaSrcset(asset, config)), fallback: withBase(resolveMedia(asset, { provider: 'local', preview: config.preview }, 960)) }] : [];
+});
+const sizes = '(max-width: 760px) calc(100vw - 40px), (max-width: 1100px) 50vw, 700px';
+---
+{frames.length > 0 && <figure class="community-story" data-community-story role="region" aria-roledescription="ชุดภาพ" aria-label="ช่วงเวลาของพวกเราในชมรม">
+  <button type="button" class="story-stage" data-story-toggle aria-label="สลับเล่นหรือหยุดภาพ" aria-pressed="false">
+    {frames.map((frame, index) => <span class:list={['story-slide', index === 0 && 'is-current']} data-story-slide data-caption={frame.caption} aria-hidden={index === 0 ? undefined : 'true'}>
+      <img src={index === 0 ? frame.src : undefined} srcset={index === 0 ? frame.srcset : undefined} data-src={index > 0 ? frame.src : undefined} data-srcset={index > 0 ? frame.srcset : undefined} data-fallback={frame.fallback} sizes={sizes} width={frame.asset.width} height={frame.asset.height} alt={frame.asset.alt} loading={index === 0 ? 'lazy' : undefined} decoding="async" />
+    </span>)}
+  </button>
+  <figcaption class="story-caption">
+    <div class="story-caption-text"><span class="story-kicker">LIFE, BETWEEN THE DEBATES.</span><p data-story-caption>{frames[0].caption}</p></div>
+  </figcaption>
+</figure>}
+<script>
+  import { initCommunityStories } from '../scripts/community-story.js';
+  initCommunityStories();
+</script>
