@@ -91,3 +91,24 @@ GitHub connector cannot create an Issue (403 Resource not accessible by integrat
 - Evidence (local, ignored): `web/.local/home-story-photo-drift.jpg`.
 - Coordination/deploy: GitHub search found no matching open Issue/PR and `git fetch origin` failed due network name resolution. Check-in/out remains local-only; no production Actions run or live deployment verified.
 - Released scope: Home story styles and script; no other checkout scopes changed.
+
+## CHECK-IN — active (per-photo edge fade clarification)
+
+- Operator/session: Codex / maintainer's direct revision in this chat.
+- Time: 2026-10-19 21:37 +07:00 (Asia/Bangkok).
+- Objective: apply the microphone image's soft edge fade to every community photo, in addition to the existing frame-to-frame crossfade.
+- Branch/base: `feat/home-community-story` / `e41a333`; continue the existing task checkout.
+- Scope: `web/src/styles/community-story.css` and this local task log.
+- Coordination: latest GitHub issue/PR searches found no matching open task; `git fetch origin` failed due network name resolution. Use the documented local-only fallback; this note is not visible to the team and does not reserve the scope.
+- Validation: production build, inspect each transition/edge treatment in the local Home preview, and run `git diff --check`.
+
+## CHECK-OUT — review (local-only per-photo edge fade clarification)
+
+- Operator/session: Codex / maintainer's direct revision in this chat.
+- End: 2026-10-19 21:37 +07:00 (Asia/Bangkok).
+- Changes: added the microphone hero's soft paper-to-transparent gradient treatment to every community photo. On desktop the fade leads toward the adjacent copy and bottom edge; on mobile it softens the top, side and bottom edges. The crossfade between frames, slow drift, and click-to-pause/resume are preserved.
+- Branch/commit: `feat/home-community-story`; revision commit follows below. No push, PR, or deployment.
+- Validation passed: production build (31 pages) and `git diff --check`. Browser preview confirmed all five frame layers receive the edge gradient and showed the blend with the site background.
+- Evidence (local, ignored): `web/.local/home-story-edge-fade.jpg`.
+- Coordination/deploy: GitHub issue/PR search found no matching open task and fetch still fails due network name resolution. This check-in/out remains local-only; no Actions run or production deploy verified.
+- Released scope: Home story styles only; no other checkout scopes changed.
