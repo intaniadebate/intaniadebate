@@ -21,13 +21,8 @@
 .story-caption { display: flex; align-items: start; justify-content: space-between; gap: 1rem; padding-top: 1rem; }
 .story-kicker { font-size: .6875rem; letter-spacing: .12em; color: var(--color-accent); }
 .story-caption-text p { font-size: .875rem; line-height: 1.8; color: var(--color-muted); margin: .35rem 0 0; min-height: 3.6em; text-wrap: pretty; }
-.story-count { color: var(--color-muted); font: .875rem var(--font-mono); white-space: nowrap; padding-top: .2rem; }
-.story-count > span { color: var(--color-accent); }
 .story-controls { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0 .75rem; border-top: 1px solid var(--color-rule); margin-top: .5rem; }
-.story-steps { display: flex; gap: .25rem; }
-.story-steps button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; }
-.story-steps button > span { width: 1.5rem; height: 2px; background: var(--color-rule); transition: background-color var(--dur-fast) ease; }
-.story-steps button[aria-current] > span { background: var(--color-accent); }
+.story-navigate { display: grid; place-items: center; width: 44px; height: 44px; flex: none; padding: 0; color: var(--color-accent); background: transparent; border: 0; }
 .mvp-two .story-playback { display: flex; align-items: center; justify-content: center; gap: .45rem; min-height: 44px; margin-inline-start: auto; padding: .25rem .5rem; color: var(--color-accent); background: transparent; border: 0; font-size: .8125rem; white-space: nowrap; }
 .story-playback svg { flex: none; }
 .story-playback:disabled { color: var(--color-muted); }

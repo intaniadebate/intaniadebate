@@ -9,7 +9,8 @@ export function initCommunityStories() {
     const slides = [...story.querySelectorAll('[data-story-slide]')];
     if (slides.length < 2) return;
     const button = story.querySelector('[data-story-playback]');
-    const choices = [...story.querySelectorAll('[data-story-select]')];
+    const previousButton = story.querySelector('[data-story-previous]');
+    const nextButton = story.querySelector('[data-story-next]');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     const connection = navigator.connection;
     const failed = new Set();
@@ -28,6 +29,8 @@ export function initCommunityStories() {
       const stopped = paused || motionBlocked();
       button.setAttribute('aria-pressed', String(stopped));
       button.disabled = motionBlocked() || failed.size >= slides.length - 1;
+      previousButton.disabled = failed.size >= slides.length - 1;
+      nextButton.disabled = failed.size >= slides.length - 1;
       button.querySelector('[data-story-playback-label]').textContent = motionBlocked() ? 'ภาพนิ่ง' : stopped ? 'เล่นภาพ' : 'หยุดภาพ';
       button.querySelector('[data-story-pause-icon]').toggleAttribute('hidden', stopped);
       button.querySelector('[data-story-play-icon]').toggleAttribute('hidden', !stopped);
@@ -55,7 +58,6 @@ export function initCommunityStories() {
         if (!image.naturalWidth) throw new Error('Image unavailable');
       })().catch(() => {
         failed.add(index);
-        choices[index].disabled = true;
         return false;
       });
       loading.set(index, pending);
@@ -94,20 +96,25 @@ export function initCommunityStories() {
       slides[current].classList.add('is-current');
       slides[current].removeAttribute('aria-hidden');
       story.querySelector('[data-story-caption]').textContent = slides[current].dataset.caption;
-      story.querySelector('[data-story-count]').textContent = String(current + 1).padStart(2, '0');
-      choices.forEach((choice, i) => i === current ? choice.setAttribute('aria-current', 'true') : choice.removeAttribute('aria-current'));
-      if (manual) story.querySelector('[data-story-announcement]').textContent = `ภาพ ${current + 1} จาก ${slides.length}: ${slides[current].dataset.caption}`;
+      if (manual) story.querySelector('[data-story-announcement]').textContent = slides[current].dataset.caption;
       finishFade = setTimeout(() => {
         previous.classList.remove('is-leaving');
         busy = false;
         schedule();
       }, motionBlocked() ? 0 : FADE);
     };
-    choices.forEach((choice, index) => choice.addEventListener('click', () => {
+    const move = direction => {
       paused = true;
       updateButton();
+      let index = current;
+      for (let step = 0; step < slides.length; step++) {
+        index = (index + direction + slides.length) % slides.length;
+        if (!failed.has(index)) break;
+      }
       void show(index, true);
-    }));
+    };
+    previousButton.addEventListener('click', () => move(-1));
+    nextButton.addEventListener('click', () => move(1));
     button.addEventListener('click', () => { paused = !paused; schedule(); });
     document.addEventListener('visibilitychange', schedule);
     reduced.addEventListener('change', schedule);

@@ -28,3 +28,24 @@ GitHub connector cannot create an Issue (403 Resource not accessible by integrat
 - Preview: `http://127.0.0.1:4323/home#about`; production build served locally. No Cloudinary upload or other external service changes. No production deploy or Actions run triggered or verified.
 - Remaining: publish this log to one assigned Issue, push the task branch and open a PR after GitHub write approval/access; follow normal review/merge rules; verify Actions and the live result after merge. Keep the Issue open until completion is verified.
 - Released scope: all task files are available for review/handoff. Original `E:/debate/web` and dirty `.deploy-repo` source work are preserved. Latest fetched `origin/main` remains `c06e521`; no overlapping main changes needed integration.
+
+## CHECK-IN — active (local-only revision)
+
+- Operator/session: Codex / maintainer's direct revision in this chat.
+- Time: 2026-10-19 21:22 +07:00 (Asia/Bangkok).
+- Objective: align the Home section copy with the requested Thai text and remove any explicit photo count from the animated story controls while preserving the gentle fade.
+- Branch/base: `feat/home-community-story` / `b44be1f`; continue the existing task branch and checkout.
+- Scope: `web/src/pages/home.astro`, `web/src/components/CommunityStory.astro`, `web/src/scripts/community-story.js`, `web/src/styles/community-story.css`, and this local-only work log.
+- Check: rebuild `web`, confirm the generated Home has no slide count text or numbered photo labels, and visually inspect the fading story and manual controls in the running local preview.
+- GitHub issue check-in remains unavailable under the documented 403 and automatic-review restrictions above; this local note is not visible to the team.
+
+## CHECK-OUT — review (local-only revision)
+
+- Operator/session: Codex / maintainer's direct revision in this chat.
+- End: 2026-10-19 21:24 +07:00 (Asia/Bangkok).
+- Changes: removed the visible slide counter and numbered slide selectors; added previous/next controls with concise Thai labels. Kept the soft crossfade and playback toggle. Home relationship headline and supplied Thai body copy are present as requested.
+- Branch/commit: `feat/home-community-story`; revision commit recorded below. No push or deployment.
+- Validation: production build passed (31 pages); `node --check src/scripts/community-story.js` and `git diff --check` passed. Local browser visual check confirmed a changed frame, caption, unnumbered controls, and the requested copy. Existing build output uses the same crossfade implementation.
+- Evidence (local, ignored): `web/.local/home-story-revised.jpg`.
+- GitHub: no Issue/PR was available for team-visible check-out; local-only record remains due to the documented 403 and automatic-review restriction. No production Actions run or live deployment verified.
+- Released scope: Home story component, script, and styles. No other scopes changed.
