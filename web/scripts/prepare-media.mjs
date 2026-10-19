@@ -3,6 +3,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// Derivatives are auto-oriented with .rotate(), so plan widths from the displayed width:
+// EXIF orientations 5-8 swap the stored width and height (same rule as add-media.mjs).
+export function variantWidths(metadata) {
+  const width = metadata.orientation >= 5 && metadata.orientation <= 8 ? metadata.height : metadata.width;
+  return [...new Set([Math.min(640, width), Math.min(1440, width)])].sort((a, b) => a - b);
+}
 export async function prepareMedia(preview = false) {
   const target = path.resolve(root, preview ? '.local-public' : 'public');
   if (path.dirname(target) !== root || !['public', '.local-public'].includes(path.basename(target))) throw new Error('Unexpected generated-media directory');
@@ -32,8 +38,7 @@ export async function prepareMedia(preview = false) {
     if (!preview && !asset.publishable) continue;
     if (!sources[id]) continue;
     if (!/^[a-zA-Z0-9_-]+$/.test(id)) throw new Error('Unsafe media ID');
-    const metadata = await sharp(sources[id]).metadata();
-    const widths = [...new Set([Math.min(640, metadata.width), Math.min(1440, metadata.width)])].sort((a, b) => a - b);
+    const widths = variantWidths(await sharp(sources[id]).metadata());
     asset.variants = [];
     for (const width of widths) {
       const filename = `${id}-${width}.webp`;
