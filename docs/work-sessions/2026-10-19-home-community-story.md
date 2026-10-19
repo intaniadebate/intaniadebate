@@ -70,3 +70,24 @@ GitHub connector cannot create an Issue (403 Resource not accessible by integrat
 - Evidence (local, ignored): `web/.local/home-story-click-toggle.jpg`.
 - Coordination/deploy: no matching open Issue/PR appeared in GitHub searches; the latest fetch failed because network name resolution was unavailable. Keep the check-in/check-out local-only and publish when access is available. No Actions run or production deployment verified.
 - Released scope: Home story component, script, and styles; no other checkout scopes changed.
+
+## CHECK-IN — active (photo-drift match revision)
+
+- Operator/session: Codex / maintainer's direct revision in this chat.
+- Time: 2026-10-19 21:29 +07:00 (Asia/Bangkok).
+- Objective: make the Home photo sequence visually match the microphone image's gentle drift as well as its fade treatment.
+- Branch/base: `feat/home-community-story` / `991c5cb`; continue the existing task checkout.
+- Scope: `web/src/styles/community-story.css` and this local task log.
+- Coordination: GitHub search found no matching open task and `git fetch origin` failed due network name resolution; prior Issue creation was also denied. This is local-only and does not reserve shared files. No other active scope was visible in the checkout.
+- Validation: production build; inspect the Home section while images crossfade/drift; verify click-to-pause/resume freezes and resumes motion; check reduced-motion and global motion preference styles; `git diff --check`.
+
+## CHECK-OUT — review (local-only photo-drift match revision)
+
+- Operator/session: Codex / maintainer's direct revision in this chat.
+- End: 2026-10-19 21:35 +07:00 (Asia/Bangkok).
+- Changes: the current and outgoing club photos reuse the microphone's `photo-drift` animation (16 s ease-in-out, alternating), while adjacent frames crossfade over 1.2 s. The image click toggle pauses/resumes the drift and sequence together; no visible controls or status text were added.
+- Branch/commit: `feat/home-community-story`; revision commit follows below. No push, PR, or deployment.
+- Validation passed: production build (31 pages), `node --check src/scripts/community-story.js`, and `git diff --check`. Browser computed styles matched the microphone's drift values and confirmed the existing 1.2 s opacity transition; click changed animation-play-state between paused/running; no visible controls remained. Reduced-motion styles still exclude drift and fade.
+- Evidence (local, ignored): `web/.local/home-story-photo-drift.jpg`.
+- Coordination/deploy: GitHub search found no matching open Issue/PR and `git fetch origin` failed due network name resolution. Check-in/out remains local-only; no production Actions run or live deployment verified.
+- Released scope: Home story styles and script; no other checkout scopes changed.

@@ -24,7 +24,7 @@ export function initCommunityStories() {
     const motionBlocked = () => reduced.matches || document.documentElement.dataset.motion === 'paused';
     const canPlay = () => visible && !document.hidden && !paused && !motionBlocked() && failed.size < slides.length - 1;
     const updateToggle = () => {
-      const stopped = paused || motionBlocked();
+      const stopped = !canPlay();
       toggle.setAttribute('aria-pressed', String(stopped));
       toggle.disabled = failed.size >= slides.length - 1;
     };
