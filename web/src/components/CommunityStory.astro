@@ -1,0 +1,35 @@
+---
+import story from '../data/home-story.json';
+import catalog from '../data/media.json';
+import { resolveMedia, mediaSrcset } from '../lib/media.mjs';
+import { withBase, srcsetWithBase } from '../lib/paths.mjs';
+import '../styles/community-story.css';
+
+const config = { provider: import.meta.env.PUBLIC_MEDIA_PROVIDER || 'local', cloudName: import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME, cdnBase: import.meta.env.PUBLIC_MEDIA_CDN_BASE_URL, preview: import.meta.env.DEV };
+const frames = story.flatMap(frame => {
+  const asset = catalog[frame.id];
+  const src = resolveMedia(asset, config, 960);
+  return src ? [{ ...frame, asset, src: withBase(src), srcset: srcsetWithBase(mediaSrcset(asset, config)), fallback: withBase(resolveMedia(asset, { provider: 'local', preview: config.preview }, 960)) }] : [];
+});
+const sizes = '(max-width: 760px) calc(100vw - 40px), (max-width: 1100px) 50vw, 700px';
+---
+{frames.length > 0 && <figure class="community-story" data-community-story role="region" aria-roledescription="ชุดภาพ" aria-label="ช่วงเวลาของพวกเราในชมรม">
+  <div class="story-stage">
+    {frames.map((frame, index) => <div class:list={['story-slide', index === 0 && 'is-current']} data-story-slide data-caption={frame.caption} aria-hidden={index === 0 ? undefined : 'true'}>
+      <img src={index === 0 ? frame.src : undefined} srcset={index === 0 ? frame.srcset : undefined} data-src={index > 0 ? frame.src : undefined} data-srcset={index > 0 ? frame.srcset : undefined} data-fallback={frame.fallback} sizes={sizes} width={frame.asset.width} height={frame.asset.height} alt={frame.asset.alt} loading={index === 0 ? 'lazy' : undefined} decoding="async" />
+    </div>)}
+  </div>
+  <figcaption class="story-caption">
+    <div class="story-caption-text"><span class="story-kicker">LIFE, BETWEEN THE DEBATES.</span><p data-story-caption>{frames[0].caption}</p></div>
+    <span class="story-count" aria-hidden="true"><span data-story-count>01</span> / {String(frames.length).padStart(2, '0')}</span>
+  </figcaption>
+  {frames.length > 1 && <div class="story-controls" data-story-controls hidden>
+    <div class="story-steps" aria-label="เลือกช่วงเวลา">{frames.map((frame, index) => <button type="button" data-story-select={index} aria-label={`ภาพ ${index + 1}: ${frame.chapter}`} aria-current={index === 0 ? 'true' : undefined}><span aria-hidden="true"></span></button>)}</div>
+    <button type="button" class="story-playback" data-story-playback aria-pressed="false"><svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path data-story-pause-icon d="M5 4h3v12H5zm7 0h3v12h-3z" /><path data-story-play-icon d="m6 3 11 7-11 7z" hidden /></svg><span data-story-playback-label>หยุดภาพ</span></button>
+  </div>}
+  <span class="visually-hidden" data-story-announcement aria-live="polite" aria-atomic="true"></span>
+</figure>}
+<script>
+  import { initCommunityStories } from '../scripts/community-story.js';
+  initCommunityStories();
+</script>
