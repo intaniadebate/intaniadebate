@@ -17,36 +17,9 @@
 
 ## 2. แผนผังระบบ: อะไรทำหน้าที่อะไร
 
-```mermaid
-flowchart TB
-  Browser["เบราว์เซอร์สมาชิก\nหน้าเว็บ + cookie ของ session"]
-  Google["Google OAuth / OpenID Connect\nตรวจบัญชี Google และรหัสผ่านที่ Google"]
-  subgraph Cloudflare["Cloudflare — ระบบเว็บที่เสนอ"]
-    Public["Workers Static Assets\nหน้า public ที่ prerender + CSS/JS/รูป public"]
-    Server["Astro บน Cloudflare Worker\nหน้า private + API + ตรวจสิทธิ์"]
-    Auth["Better Auth ใน Worker\nGoogle callback + session"]
-    Policy["นโยบายของชมรมฝั่ง server\ninvite / profile / role / voting"]
-    DB[("D1 database\nusers, accounts, sessions\nprofiles, invites, roles\nelections, ballots, scores, audit")]
-    Secrets["Worker Secrets\nAuth secret + Google client secret"]
-    R2[("R2 private — เพิ่มเมื่อมีไฟล์ส่วนตัว\nอ่านผ่าน Worker ที่ตรวจสิทธิ์")]
-  end
-  GitHub["GitHub repository + PR / Actions\nเก็บ source และ migration\nไม่เก็บข้อมูลสมาชิกหรือคะแนนจริง"]
-  Media["Cloudinary / รูป public เดิม\nสื่อสำหรับหน้าเว็บสาธารณะ"]
-  GitHub -->|"build / test / deploy"| Server
-  GitHub -->|"build public assets"| Public
-  Browser -->|"หน้า public"| Public
-  Browser <-->|"HTTPS: หน้า private / API"| Server
-  Browser <-->|"Sign in with Google"| Google
-  Google -->|"callback ที่ตรวจแล้ว"| Auth
-  Server --> Auth
-  Auth --> Policy
-  Server --> Policy
-  Auth --> DB
-  Policy --> DB
-  Secrets --> Auth
-  Server -->|"ตรวจสิทธิ์ก่อนส่งไฟล์"| R2
-  Browser -->|"โหลดเฉพาะสื่อ public"| Media
-```
+![แผนผังระบบและที่เก็บข้อมูล](diagrams/member-auth-system.svg)
+
+[Mermaid source](diagrams/member-auth-system.mmd)
 
 **Better Auth เป็นไลบรารีในโค้ดเซิร์ฟเวอร์ของเรา** ไม่ใช่เว็บอีกแห่งที่ทีมต้องเข้าไปจัดการสมาชิก หน้า `/admin` ที่เราสร้างจะเป็นจุดจัดการผู้ใช้ โดยข้อมูลอยู่ใน D1 ของบัญชี Cloudflare ที่ชมรมกำหนด ส่วน Google รับผิดชอบการยืนยันบัญชีและรหัสผ่าน Google [Google provider](https://better-auth.com/docs/authentication/google), [Better Auth database](https://better-auth.com/docs/concepts/database)
 
@@ -66,23 +39,9 @@ flowchart TB
 
 ## 3. เส้นทางล็อกอินและชื่อที่สมาชิกตั้งเอง
 
-```mermaid
-sequenceDiagram
-  actor Member as สมาชิก
-  participant Web as เว็บ / Worker
-  participant Google as Google
-  participant DB as D1
-  Member->>Web: กด Sign in with Google
-  Web->>Google: OAuth redirect
-  Google-->>Web: Callback + identity ที่ตรวจแล้ว
-  Web->>Web: ตรวจ token, verified email และ invite / สถานะสมาชิก
-  Web->>DB: ผูก provider + Google sub กับ user_id ถาวร
-  DB-->>Web: role และสถานะล่าสุด
-  Web-->>Member: สร้าง session / ให้ตั้ง display name ครั้งแรก
-  Member->>Web: บันทึกชื่อที่ต้องการแสดง
-  Web->>DB: แก้ profile ของ user_id จาก session เท่านั้น
-  Web-->>Member: เข้า /club และใช้ชื่อใหม่นี้ในกิจกรรม
-```
+![เส้นทาง Google login และตั้งชื่อ](diagrams/member-auth-login.svg)
+
+[Mermaid source](diagrams/member-auth-login.mmd)
 
 1. Admin/owner เพิ่มอีเมลใน invite list เป็น `member` พร้อมวันหมดอายุและผู้เชิญ การสร้าง invite ไม่ส่งอีเมลอัตโนมัติในระยะแรก สมาชิกเข้าผ่านลิงก์ `/login` ที่ทีมแชร์ได้
 2. Better Auth จัดการ OAuth และ session; โค้ดชมรมตรวจอีเมลที่ **ยืนยันแล้ว**, invite ที่ยังใช้ได้ และสถานะบัญชีก่อนให้สิทธิ์/สร้าง session สำหรับสมาชิกใหม่ ตรวจสมาชิกเดิมด้วยทุกครั้งที่เข้าใช้งาน
@@ -140,20 +99,9 @@ sequenceDiagram
 | `result_snapshot` | election_id, คะแนนรวมต่อ candidate, จำนวนผู้ส่ง/ผู้มีสิทธิ์, ยอดแต้มใช้จริง, closed revision; สร้างหลังปิดและตรวจเทียบกับบัตรจริง |
 | `audit_event` / ประวัติบัตร | actor_user_id, action, target, เวลา, revision และเหตุผลที่จำเป็น; บันทึก role/invite/suspension, การเปิด/ปิดรอบ, ส่ง/แก้บัตร, เปิดดู/export รายละเอียด ไม่เก็บ secrets/cookies |
 
-```mermaid
-erDiagram
-  USER ||--|| MEMBER_PROFILE : has
-  USER ||--o{ ACCOUNT : identifies
-  USER ||--o{ SESSION : authenticates
-  USER ||--o{ ELECTION_VOTER : eligible
-  ELECTION ||--o{ ELECTION_VOTER : permits
-  ELECTION ||--o{ CANDIDATE : lists
-  ELECTION ||--o{ BALLOT : receives
-  USER ||--o{ BALLOT : submits
-  BALLOT ||--o{ BALLOT_SCORE : allocates
-  CANDIDATE ||--o{ BALLOT_SCORE : receives
-  ELECTION ||--o{ RESULT_SNAPSHOT : finalizes
-```
+![ความสัมพันธ์ข้อมูลสมาชิกและคะแนน](diagrams/member-auth-data.svg)
+
+[Mermaid source](diagrams/member-auth-data.mmd)
 
 รักษาความสัมพันธ์ด้วย foreign keys, unique constraints และ index ที่ใช้จริง การระงับ/ขอลบบัญชีไม่ควร cascade ลบคะแนนของรอบที่จบแล้วโดยไม่ตั้งใจ ต้องตกลงการเก็บ audit และการลบ/ทำข้อมูลไม่ระบุตัวบุคคลก่อนเปิดโหวตจริง
 
@@ -175,15 +123,9 @@ erDiagram
 
 ### สถานะของรอบและการปิด
 
-```mermaid
-stateDiagram-v2
-  [*] --> draft
-  draft --> scheduled: ล็อกกติกา รายชื่อ เวลา และแต้ม
-  scheduled --> open: ถึงเวลาเปิดตาม server
-  open --> closed: admin หยุด หรือถึง deadline
-  closed --> finalized: สรุปและตรวจยอดแบบ idempotent
-  finalized --> [*]
-```
+![สถานะรอบโหวต](diagrams/member-auth-voting.svg)
+
+[Mermaid source](diagrams/member-auth-voting.mmd)
 
 สถานะในฐานข้อมูลอาจอัปเดตช้ากว่าเวลา wall clock ได้ แต่ API ต้องตัดสินสิทธิ์จากสถานะ **ร่วมกับเวลา** เสมอ เมื่อ closed ห้ามกลับไป open หรือแก้บัตรเดิมในรุ่นแรก ถ้าต้องเลือกใหม่ให้เปิดรอบใหม่ที่อ้างรอบเก่า แยก `closed` (หยุดรับ) จาก `finalized` (ผลรวมพร้อมดู) เพื่อไม่แสดง snapshot ที่ยังคำนวณไม่เสร็จ
 
@@ -268,3 +210,5 @@ Dashboard คำนวณจากบัตร canonical ที่ server ยอ
 - [ ] ผ่าน spike และชุดตรวจรับ แล้ว review PR ลงมือทำแต่ละระยะก่อนใช้งานจริง
 
 การรีวิวเอกสารนี้ไม่ใช่การยืนยันว่าระบบทำเสร็จหรือพร้อมรับคะแนนจริง ขั้นถัดไปคือทำระยะ 0 และบันทึกหลักฐานตามเกณฑ์ด้านบน
+
+ภาพแผนผังเป็น SVG ที่ export จาก Mermaid เพื่ออ่านได้แม้ GitHub rich display ใช้งานไม่ได้ แก้ source `.mmd` แล้ว export ใหม่ด้วย `@mermaid-js/mermaid-cli` 12.0.0 และ config `docs/diagrams/member-auth-render.json`; ตรวจภาพก่อน commit ทุกครั้ง

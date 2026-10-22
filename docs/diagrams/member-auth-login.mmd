@@ -1,0 +1,15 @@
+sequenceDiagram
+  actor Member as สมาชิก
+  participant Web as เว็บ / Worker
+  participant Google as Google
+  participant DB as D1
+  Member->>Web: กด Sign in with Google
+  Web->>Google: OAuth redirect
+  Google-->>Web: Callback + identity ที่ตรวจแล้ว
+  Web->>Web: ตรวจ token, verified email และ invite / สถานะสมาชิก
+  Web->>DB: ผูก provider + Google sub กับ user_id ถาวร
+  DB-->>Web: role และสถานะล่าสุด
+  Web-->>Member: สร้าง session / ให้ตั้ง display name ครั้งแรก
+  Member->>Web: บันทึกชื่อที่ต้องการแสดง
+  Web->>DB: แก้ profile ของ user_id จาก session เท่านั้น
+  Web-->>Member: เข้า /club และใช้ชื่อใหม่นี้ในกิจกรรม

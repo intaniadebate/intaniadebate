@@ -1,0 +1,20 @@
+{
+  "theme": "base",
+  "securityLevel": "strict",
+  "themeVariables": {
+    "fontFamily": "Tahoma, Arial, sans-serif",
+    "fontSize": "18px",
+    "primaryColor": "#fff8ef",
+    "primaryTextColor": "#302b28",
+    "primaryBorderColor": "#7b2335",
+    "lineColor": "#7b2335",
+    "secondaryColor": "#f6e7ea",
+    "tertiaryColor": "#f2eee6"
+  },
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "linear"
+  },
+  "htmlLabels": false,
+  "look": "classic"
+}

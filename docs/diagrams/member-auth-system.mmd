@@ -1,0 +1,28 @@
+flowchart TB
+  Browser["สมาชิก / Browser<br/>Session cookie"]
+  Google["Google OAuth<br/>ยืนยันบัญชี"]
+  subgraph Cloudflare["Cloudflare"]
+    Public["Static Assets<br/>หน้า public + CSS/JS"]
+    Server["Astro Worker<br/>Private pages + API"]
+    Auth["Better Auth<br/>OAuth + Session"]
+    Policy["Server policy<br/>Invite / Roles / Vote"]
+    DB[("Cloudflare D1<br/>Users / Profiles<br/>Sessions / Votes<br/>Audit")]
+    Secrets["Worker Secrets<br/>Auth / OAuth secrets"]
+    R2[("R2 private<br/>ไฟล์ส่วนตัว (อนาคต)")]
+  end
+  GitHub["GitHub + Actions<br/>Source / Migrations<br/>Build / Deploy"]
+  Media["Cloudinary<br/>รูป public"]
+  GitHub -->|"Deploy"| Server
+  GitHub -->|"Build"| Public
+  Browser -->|"Public"| Public
+  Browser <-->|"HTTPS"| Server
+  Browser <-->|"Sign in"| Google
+  Google -->|"Callback"| Auth
+  Server --> Auth
+  Auth --> Policy
+  Server --> Policy
+  Auth --> DB
+  Policy --> DB
+  Secrets --> Auth
+  Server -->|"ตรวจสิทธิ์"| R2
+  Browser -->|"สื่อ public"| Media
