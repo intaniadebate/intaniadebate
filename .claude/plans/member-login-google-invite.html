@@ -23,12 +23,12 @@ li { margin-block: .5rem; }
 <main>
 <p class="note">PR #31 · แผนสำหรับทีมรีวิว · 22 ตุลาคม 2026</p>
 <h1>ระบบสมาชิก สิทธิ์ และการโหวตของชมรม</h1>
-<p>แผนฉบับปรับปรุงย้ายไปเป็น Markdown เพื่อให้อ่านตารางและแผนผังระบบได้บน GitHub โดยตรง ใช้เอกสารนี้เป็นข้อกำหนดหลักแทนแผนและ pseudo-diff ใน HTML รุ่นก่อน</p>
+<p>แผนฉบับย่อแยกเว็บ public เดิมออกจากระบบสมาชิกใน private repo พร้อมตารางหน้าใหม่และการเก็บ/ดาวน์โหลด/สำรองข้อมูล เอกสารภาพรวมเปิดให้อ่านได้ โดยข้อมูลจริงและกุญแจลับไม่อยู่ในเอกสารนี้</p>
 <p><strong><a href="https://github.com/intaniadebate/intaniadebate/blob/docs/member-login-plan/docs/MEMBER_AUTH_PLAN.md">อ่านแผนฉบับเต็ม พร้อมแผนผังระบบและข้อมูล</a></strong></p>
 <p><a href="../../docs/MEMBER_AUTH_PLAN.md">เปิดไฟล์ Markdown ใน checkout นี้</a> · <a href="https://github.com/intaniadebate/intaniadebate/pull/31">ร่วมรีวิวใน PR #31</a></p>
 <h2>ทิศทางที่ตกลงแล้ว</h2>
 <ul>
-<li>วิธี A: Astro บน Cloudflare Workers, ใช้ Better Auth และ D1 พร้อม invite list สำหรับ Google login</li>
+<li>สอง repo: เว็บหลัก Astro/GitHub Pages เดิม + เว็บสมาชิก Astro/Cloudflare Worker จาก private repo; ใช้ Google, Better Auth และ D1</li>
 <li>สมาชิกตั้งชื่อที่แสดงเองได้ สิทธิ์แยกเป็น <code>member / admin / owner</code> และผูกกิจกรรมกับรหัสผู้ใช้ถาวร</li>
 <li>ผู้มีสิทธิ์โหวตมีแต้มรวมเท่ากันต่อรอบ แล้วแบ่งให้ candidate ตามช่วงเวลาที่กำหนด admin/owner กดหยุดได้</li>
 <li>สมาชิกเห็นผลรวมหลังปิด ส่วน admin/owner ดูรายละเอียดรายคนได้ จึงไม่ใช่การโหวตแบบนิรนาม</li>
@@ -36,10 +36,10 @@ li { margin-block: .5rem; }
 <h2>ลำดับทำงาน</h2>
 <ol>
 <li>พิสูจน์ runtime, OAuth, D1 และเงื่อนไขเขียนข้อมูลพร้อมกันบน preview</li>
-<li>ย้าย hosting และตรวจหน้า public, HTTPS, apex/www และ rollback</li>
+<li>สร้าง private repo และ preview สำหรับเว็บสมาชิก โดยเว็บหลักยังอยู่ที่เดิม</li>
 <li>เพิ่ม login, profile, invite, บทบาทสามระดับ และส่วน private</li>
-<li>ทดสอบสิทธิ์ ส่งต่อผู้ดูแล และซ้อมกู้ข้อมูลก่อนเปิดสมาชิก</li>
-<li>ยืนยันกติกาโหวต แล้วทดลองระบบคะแนนและ dashboard บน staging ก่อนเปิดรอบจริง</li>
+<li>เพิ่ม JSON/CSV ตามสิทธิ์ สำรอง SQL ไป R2 private และซ้อมกู้ข้อมูลก่อนเปิดสมาชิก</li>
+<li>ยืนยันกติกา ซ้อมโหวต 30 คนและ dashboard บน staging แล้วค่อยเชื่อม subdomain/ปุ่มจากเว็บหลัก</li>
 </ol>
 <p class="note">นี่เป็นเอกสารแผน ยังไม่เพิ่มระบบจริง ไม่เปลี่ยน DNS และไม่ deploy ประวัติแผน HTML เดิมอ่านได้จาก Git history ของ PR</p>
 </main>

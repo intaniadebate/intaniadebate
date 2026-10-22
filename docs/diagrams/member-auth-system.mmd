@@ -1,28 +1,11 @@
 flowchart TB
-  Browser["สมาชิก / Browser<br/>Session cookie"]
-  Google["Google OAuth<br/>ยืนยันบัญชี"]
-  subgraph Cloudflare["Cloudflare"]
-    Public["Static Assets<br/>หน้า public + CSS/JS"]
-    Server["Astro Worker<br/>Private pages + API"]
-    Auth["Better Auth<br/>OAuth + Session"]
-    Policy["Server policy<br/>Invite / Roles / Vote"]
-    DB[("Cloudflare D1<br/>Users / Profiles<br/>Sessions / Votes<br/>Audit")]
-    Secrets["Worker Secrets<br/>Auth / OAuth secrets"]
-    R2[("R2 private<br/>ไฟล์ส่วนตัว (อนาคต)")]
-  end
-  GitHub["GitHub + Actions<br/>Source / Migrations<br/>Build / Deploy"]
-  Media["Cloudinary<br/>รูป public"]
-  GitHub -->|"Deploy"| Server
-  GitHub -->|"Build"| Public
-  Browser -->|"Public"| Public
-  Browser <-->|"HTTPS"| Server
-  Browser <-->|"Sign in"| Google
-  Google -->|"Callback"| Auth
-  Server --> Auth
-  Auth --> Policy
-  Server --> Policy
-  Auth --> DB
-  Policy --> DB
-  Secrets --> Auth
-  Server -->|"ตรวจสิทธิ์"| R2
-  Browser -->|"สื่อ public"| Media
+  PublicRepo["Public repo<br/>โค้ดเว็บหลัก"] -->|"Deploy"| Public["Astro<br/>GitHub Pages<br/>เว็บหลัก"]
+  PrivateRepo["Private repo<br/>โค้ดสมาชิก / API<br/>คู่มือภายใน"] -->|"Deploy"| App["Astro / Worker<br/>Better Auth<br/>เว็บสมาชิก + ตรวจสิทธิ์"]
+  Public -->|"ลิงก์เข้าสู่ระบบ"| App
+  Google["Google OAuth<br/>ยืนยันตัวตน"] <-->|"Login"| App
+  App <-->|"อ่าน / บันทึก"| DB[("Cloudflare D1<br/>สมาชิก / สิทธิ์<br/>คะแนน / Audit")]
+  App -->|"ตรวจสิทธิ์"| Download["ดาวน์โหลด<br/>JSON / CSV"]
+  PrivateRepo --> Backup["GitHub Actions<br/>สำรองข้อมูล"]
+  DB -->|"Export SQL"| Backup
+  Backup --> R2[("R2 private<br/>SQL backup<br/>ไฟล์แนบ")]
+  App <-->|"ไฟล์ตามสิทธิ์"| R2
