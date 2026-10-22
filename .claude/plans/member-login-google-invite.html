@@ -39,6 +39,7 @@ details>summary{cursor:pointer;font-weight:600}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:#f3f0ea;padding:1px 5px;border-radius:4px}
 table code{overflow-wrap:anywhere}
 .tw{overflow-x:auto}
+table.t.wide{min-width:720px}
 table.t{width:100%;border-collapse:collapse;font-size:14.5px;table-layout:fixed}
 table.t th,table.t td{border-bottom:1px solid var(--rule);padding:8px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
 table.t th{background:#faf8f4;font-size:13px}
@@ -157,20 +158,20 @@ footer.f{color:var(--muted);font-size:13px;margin:24px 0 40px}
 </section>
 
 <section class="card" id="options">
-<h2>Four ways to add login, smallest change in effort and cost first</h2>
-<p>You asked to see the options before scaling up. All four are free at the club's size (about 60 members over 10 years). They differ in what new things the club must run.</p>
-<div class="tw"><table class="t">
-<colgroup><col style="width:19%"><col style="width:22%"><col style="width:20%"><col style="width:19%"><col style="width:20%"></colgroup>
-<thead><tr><th>Option</th><th>New things to run</th><th>Roles + invite list</th><th>Risk to public site</th><th>Downside</th></tr></thead>
+<h2>Four ways to add login, compared by money and by upkeep</h2>
+<p>You asked to see the options before scaling up. The club has about 60 members over 10 years, and a new team of student volunteers takes over each year. So two costs matter: the monthly bill, and the chores each new team inherits.</p>
+<div class="tw"><table class="t wide">
+<colgroup><col style="width:17%"><col style="width:16%"><col style="width:17%"><col style="width:28%"><col style="width:22%"></colgroup>
+<thead><tr><th>Option</th><th>Cost at club size</th><th>Cost if it grows</th><th>Upkeep each year</th><th>Main downside</th></tr></thead>
 <tbody>
-<tr><td><b>A · Move the site to Cloudflare Workers + Better Auth</b> <span class="pill rec">recommended</span></td><td>One Cloudflare Worker (serves the same files) and one D1 database. Same Cloudflare account that already holds the DNS.</td><td>Yes. Better Auth <code>admin</code> plugin + our invite table.</td><td>Medium, once: the DNS moves from GitHub Pages to the Worker. Rollback = put the 4 DNS records back.</td><td>Deploy pipeline changes. D1 migrations run by hand with <code>wrangler</code>.</td></tr>
-<tr><td><b>B · Keep GitHub Pages, add a separate auth Worker</b></td><td>A second project at <code>auth.intaniadebateclub.com</code> + D1. Two deploys.</td><td>Yes, same as A.</td><td>None. Public site untouched.</td><td>Login pages are static shells that call the auth Worker from browser JS. Cross-origin cookies and CORS to set up. Two codebases.</td></tr>
-<tr><td><b>C · Clerk (hosted login service)</b></td><td>A Clerk account. Free to 50,000 monthly users.</td><td>Yes (Admin and Member built in, allowlist built in).</td><td>Low.</td><td>Checking roles on a page still needs server code, so you still need A or B underneath. User data lives with a vendor. Clerk branding on the free plan.</td></tr>
-<tr><td><b>D · Cloudflare Access (no code)</b></td><td>Zero Trust free plan, up to 50 seats.</td><td>Whitelist yes. Roles inside the site no. It only locks whole paths.</td><td>Needs the site behind Cloudflare proxy.</td><td>At the 51st person everyone becomes paid. No “my account” page, no admin screen.</td></tr>
+<tr><td><b>A · Move the site to Cloudflare Workers + Better Auth</b> <span class="pill rec">recommended</span></td><td><b>$0</b>. Workers Free + D1 Free.</td><td>$5/month Workers Paid, only past 100,000 server requests a day. Public pages never count.</td><td><b>Low.</b> One project, one deploy. Update 3 packages once a term. Hand over 2 accounts (Cloudflare, Google Cloud).</td><td>One DNS move in slice 1. Undo: put the 4 DNS records back.</td></tr>
+<tr><td><b>B · Keep GitHub Pages, add a separate auth Worker</b></td><td><b>$0</b>. Same free tiers as A.</td><td>Same as A.</td><td><b>Medium.</b> Two projects, two deploys, two sets of packages. CORS and cross-site cookie settings to keep in sync.</td><td>Login pages hide data with browser JS. More code for the same result.</td></tr>
+<tr><td><b>C · Clerk (hosted login service)</b></td><td><b>$0</b> to 50,000 monthly users, with Clerk branding.</td><td>$25/month Pro to remove branding.</td><td><b>Medium.</b> Still needs A or B to check roles on a page, plus a third account to hand over. Member data lives with the vendor.</td><td>Adds a vendor without removing any work.</td></tr>
+<tr><td><b>D · Cloudflare Access (no code)</b></td><td><b>$0</b> to 50 users.</td><td>$7 per user per month. Forum reports say all users become paid at the 51st: about $357/month.</td><td><b>Lowest.</b> No code. Edit the email list in the Cloudflare dashboard.</td><td>No roles inside the site, no account page. 60 members already passes 50.</td></tr>
 </tbody></table></div>
 <p class="muted">Rejected outright: Supabase Auth (free projects pause after 7 days without use), Lucia (the npm package is deprecated), <code>auth-astro</code> for Auth.js (no release since 2024-12). Sveltia or Decap CMS are good for editing JSON content later, but they do not give member accounts.</p>
 <h3>Why A over B</h3>
-<p>A and B use the same Better Auth code and the same database. B keeps the public site untouched, but it costs a second project, a second deploy, and pages that hide data with browser JS. A keeps one project: <code>/account</code> and <code>/admin</code> check the role on the server before any HTML leaves. Cloudflare serves the static pages for free with no request limit, so the public pages cost nothing extra. The one risk in A is the DNS move, and slice 1 does that alone, with no login code, so it is easy to undo.</p>
+<p>Both cost $0. The difference is upkeep. A and B use the same Better Auth code and the same database. B keeps the public site untouched, but every future team maintains a second project, a second deploy, and pages that hide data with browser JS. A keeps one project: <code>/account</code> and <code>/admin</code> check the role on the server before any HTML leaves. Cloudflare serves the static pages for free with no request limit, so the public pages cost nothing extra. The one risk in A is the DNS move, and slice 1 does that alone, with no login code, so it is easy to undo.</p>
 </section>
 
 <section class="card" id="proposed-approach">
@@ -215,7 +216,7 @@ footer.f{color:var(--muted);font-size:13px;margin:24px 0 40px}
 </svg>
 <h3>Who can open what</h3>
 <p class="muted">✅ opens · 🚫 refused · ↪ sent to <code>/login</code> · ≡ same as today</p>
-<div class="tw"><table class="t">
+<div class="tw"><table class="t wide">
 <thead><tr><th>Action</th><th>Today</th><th>Visitor (signed out)</th><th>Member</th><th>Admin</th></tr></thead>
 <tbody>
 <tr><td>Open <code>/home</code>, <code>/competitions/2020</code></td><td class="cell-y">✅</td><td class="cell-s">≡</td><td class="cell-s">≡</td><td class="cell-s">≡</td></tr>
@@ -252,12 +253,29 @@ footer.f{color:var(--muted);font-size:13px;margin:24px 0 40px}
 </section>
 
 <section class="card" id="impact">
-<h2>What changes for the team</h2>
-<div class="three">
-<div class="box"><h4>Cost</h4>Still free. Workers Free: 100,000 server requests per day, static files unlimited. D1 Free: 5 GB, 100,000 row writes per day.</div>
-<div class="box"><h4>New chores</h4>A Cloudflare API token in GitHub secrets. A Google OAuth client in Google Cloud. Three Worker secrets. One SQL line to make the first admin.</div>
-<div class="box"><h4>Risks</h4>DNS move in slice 1 (undo: restore 4 A records). Workers Free gives 10 ms CPU per request, so no password login. Google login is light enough.</div>
-</div>
+<h2>Option A costs $0 a month and about one hour of chores a term</h2>
+<h3>Money</h3>
+<div class="tw"><table class="t">
+<colgroup><col style="width:24%"><col style="width:22%"><col style="width:54%"></colgroup>
+<thead><tr><th>Item</th><th>Cost</th><th>Free limit, and what happens past it</th></tr></thead>
+<tbody>
+<tr><td>Cloudflare Workers</td><td>$0</td><td>100,000 server requests a day, 10 ms CPU each. Only <code>/api/auth/*</code>, <code>/account</code> and <code>/admin</code> count; static pages are free with no limit. Past it: $5/month Workers Paid.</td></tr>
+<tr><td>Cloudflare D1</td><td>$0</td><td>5 GB, 5 million row reads and 100,000 row writes a day. 60 users and their sessions use a tiny fraction.</td></tr>
+<tr><td>Google sign-in</td><td>$0</td><td>No verification fee for the basic scopes we ask for (name, email, profile).</td></tr>
+<tr><td>Domain, Cloudinary, GA4</td><td>unchanged</td><td>Already paid or free today. Not touched by this plan.</td></tr>
+</tbody></table></div>
+<h3>Upkeep</h3>
+<div class="tw"><table class="t">
+<colgroup><col style="width:30%"><col style="width:18%"><col style="width:52%"></colgroup>
+<thead><tr><th>Chore</th><th>How often</th><th>What to do</th></tr></thead>
+<tbody>
+<tr><td>Invite new members, remove leavers</td><td>Start and end of each term</td><td>An admin uses <code>/admin</code>. No code, no deploy.</td></tr>
+<tr><td>Update <code>better-auth</code>, <code>@astrojs/cloudflare</code>, <code>wrangler</code></td><td>Once a term</td><td>Open one PR. If a Better Auth release adds columns, run <code>npx @better-auth/cli generate</code> and add the new migration.</td></tr>
+<tr><td>Hand over accounts</td><td>Each year</td><td>Add the next team to the Cloudflare account and the Google Cloud project; keep 2 owners on each. Make one of them an admin on <code>/admin</code>.</td></tr>
+<tr><td>Rotate secrets</td><td>When someone with access leaves</td><td>Make a new <code>GOOGLE_CLIENT_SECRET</code>, <code>BETTER_AUTH_SECRET</code> and <code>CLOUDFLARE_API_TOKEN</code>. A new <code>BETTER_AUTH_SECRET</code> signs everyone out once.</td></tr>
+<tr><td>Back up D1</td><td>Once a term</td><td>D1 Time Travel restores any minute of the last 7 days on Free. For older copies, run <code>wrangler d1 export</code> and keep the file in the club's Drive.</td></tr>
+</tbody></table></div>
+<p class="muted">One-time setup: publish the Google OAuth consent screen to “In production”. In “Testing” only 100 listed test users can sign in. Workers Free also caps CPU at 10 ms per request, so the plan has no password login: hashing a password can take longer than that.</p>
 </section>
 
 <div class="divider">Part B · Implementation</div>
@@ -533,7 +551,8 @@ footer.f{color:var(--muted);font-size:13px;margin:24px 0 40px}
 <span class="add">+   "better-auth": "1.7.12",</span></pre></div>
 <div class="diff"><div class="hd"><span>docs/MEMBER_LOGIN.md</span><span>new file</span></div><pre>
 <span class="add">+ # ระบบเข้าสู่ระบบสมาชิก</span>
-<span class="add">+ ## ตั้ง Google OAuth client · ## ตั้ง secrets ด้วย wrangler secret put</span>
+<span class="add">+ ## ตั้ง Google OAuth client (publish consent screen เป็น In production) · ## ตั้ง secrets ด้วย wrangler secret put</span>
+<span class="add">+ ## งานดูแลรายเทอม: อัปเดต package, wrangler d1 export, ส่งต่อบัญชี, เปลี่ยน secret เมื่อคนออก</span>
 <span class="add">+ ## สร้างและ migrate D1: wrangler d1 migrations apply intaniadebate-auth --remote</span>
 <span class="add">+ ## แอดมินคนแรก: INSERT INTO member_invite (email, role, created_at) VALUES ('…', 'admin', unixepoch());</span></pre></div>
 </details>
