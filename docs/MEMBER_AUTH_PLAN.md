@@ -211,4 +211,4 @@ Dashboard คำนวณจากบัตร canonical ที่ server ยอ
 
 การรีวิวเอกสารนี้ไม่ใช่การยืนยันว่าระบบทำเสร็จหรือพร้อมรับคะแนนจริง ขั้นถัดไปคือทำระยะ 0 และบันทึกหลักฐานตามเกณฑ์ด้านบน
 
-ภาพแผนผังเป็น SVG ที่ export จาก Mermaid เพื่ออ่านได้แม้ GitHub rich display ใช้งานไม่ได้ แก้ source `.mmd` แล้ว export ใหม่ด้วย `@mermaid-js/mermaid-cli` 12.0.0 และ config `docs/diagrams/member-auth-render.json`; ตรวจภาพก่อน commit ทุกครั้ง
+ภาพแผนผังเป็น SVG ที่ export จาก Mermaid เพื่ออ่านได้แม้ GitHub rich display ใช้งานไม่ได้ แก้ source `.mmd` แล้ว export ใหม่ด้วย `@mermaid-js/mermaid-cli` 12.0.0 และ config `docs/diagrams/member-auth-render.json`; ตั้ง SVG width/height ตาม viewBox และเติมพื้นหลังทึบ เพื่อให้แสดงขนาดถูกต้องใน Markdown แล้วตรวจภาพก่อน commit ทุกครั้ง
