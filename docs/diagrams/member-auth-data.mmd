@@ -1,0 +1,12 @@
+erDiagram
+  USER ||--|| PROFILE : has
+  USER ||--o{ ACCOUNT : identifies
+  USER ||--o{ SESSION : authenticates
+  USER ||--o{ VOTER : eligible
+  ELECTION ||--o{ VOTER : permits
+  ELECTION ||--o{ CANDIDATE : lists
+  ELECTION ||--o{ BALLOT : receives
+  USER ||--o{ BALLOT : submits
+  BALLOT ||--o{ SCORE : allocates
+  CANDIDATE ||--o{ SCORE : receives
+  ELECTION ||--o{ RESULT : finalizes

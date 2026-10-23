@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แผนระบบสมาชิกและโหวต — Intania Debate Club</title>
+<style>
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #302b28; background: #f6f2ea; }
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.8; }
+main { max-width: 54rem; margin: 3rem auto; padding: 2rem; background: #fffdf9; border-top: .3rem solid #7b2335; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.5; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+a { color: #7b2335; text-underline-offset: .2em; overflow-wrap: anywhere; }
+a:focus-visible { outline: .15rem solid #7b2335; outline-offset: .25rem; }
+code { font-size: .9em; overflow-wrap: anywhere; }
+li { margin-block: .5rem; }
+.note { color: #625a53; }
+@media (max-width: 40rem) { main { margin: 1rem; padding: 1.25rem; } }
+</style>
+</head>
+<body>
+<main>
+<p class="note">PR #31 · แผนสำหรับทีมรีวิว · 22 ตุลาคม 2026</p>
+<h1>ระบบสมาชิก สิทธิ์ และการโหวตของชมรม</h1>
+<p>แผนฉบับย่อแยกเว็บ public เดิมออกจากระบบสมาชิกใน private repo พร้อมตารางหน้าใหม่และการเก็บ/ดาวน์โหลด/สำรองข้อมูล เอกสารภาพรวมเปิดให้อ่านได้ โดยข้อมูลจริงและกุญแจลับไม่อยู่ในเอกสารนี้</p>
+<p><strong><a href="https://github.com/intaniadebate/intaniadebate/blob/docs/member-login-plan/docs/MEMBER_AUTH_PLAN.md">อ่านแผนฉบับเต็ม พร้อมแผนผังระบบและข้อมูล</a></strong></p>
+<p><a href="../../docs/MEMBER_AUTH_PLAN.md">เปิดไฟล์ Markdown ใน checkout นี้</a> · <a href="https://github.com/intaniadebate/intaniadebate/pull/31">ร่วมรีวิวใน PR #31</a></p>
+<h2>ทิศทางที่ตกลงแล้ว</h2>
+<ul>
+<li>สอง repo: เว็บหลัก Astro/GitHub Pages เดิม + เว็บสมาชิก Astro/Cloudflare Worker จาก private repo; ใช้ Google, Better Auth และ D1</li>
+<li>สมาชิกตั้งชื่อที่แสดงเองได้ สิทธิ์แยกเป็น <code>member / admin / owner</code> และผูกกิจกรรมกับรหัสผู้ใช้ถาวร</li>
+<li>ผู้มีสิทธิ์โหวตมีแต้มรวมเท่ากันต่อรอบ แล้วแบ่งให้ candidate ตามช่วงเวลาที่กำหนด admin/owner กดหยุดได้</li>
+<li>สมาชิกเห็นผลรวมหลังปิด ส่วน admin/owner ดูรายละเอียดรายคนได้ จึงไม่ใช่การโหวตแบบนิรนาม</li>
+</ul>
+<h2>ลำดับทำงาน</h2>
+<ol>
+<li>พิสูจน์ runtime, OAuth, D1 และเงื่อนไขเขียนข้อมูลพร้อมกันบน preview</li>
+<li>สร้าง private repo และ preview สำหรับเว็บสมาชิก โดยเว็บหลักยังอยู่ที่เดิม</li>
+<li>เพิ่ม login, profile, invite, บทบาทสามระดับ และส่วน private</li>
+<li>เพิ่ม JSON/CSV ตามสิทธิ์ สำรอง SQL ไป R2 private และซ้อมกู้ข้อมูลก่อนเปิดสมาชิก</li>
+<li>ยืนยันกติกา ซ้อมโหวต 30 คนและ dashboard บน staging แล้วค่อยเชื่อม subdomain/ปุ่มจากเว็บหลัก</li>
+</ol>
+<p class="note">นี่เป็นเอกสารแผน ยังไม่เพิ่มระบบจริง ไม่เปลี่ยน DNS และไม่ deploy ประวัติแผน HTML เดิมอ่านได้จาก Git history ของ PR</p>
+</main>
+</body>
+</html>

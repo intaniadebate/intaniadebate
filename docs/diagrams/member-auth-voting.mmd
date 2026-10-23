@@ -1,0 +1,7 @@
+stateDiagram-v2
+  [*] --> draft
+  draft --> scheduled: ล็อกกติกา รายชื่อ เวลา และแต้ม
+  scheduled --> open: ถึงเวลาเปิดตาม server
+  open --> closed: admin หยุด หรือถึง deadline
+  closed --> finalized: สรุปและตรวจยอดแบบ idempotent
+  finalized --> [*]

@@ -1,0 +1,11 @@
+flowchart TB
+  PublicRepo["Public repo<br/>โค้ดเว็บหลัก"] -->|"Deploy"| Public["Astro<br/>GitHub Pages<br/>เว็บหลัก"]
+  PrivateRepo["Private repo<br/>โค้ดสมาชิก / API<br/>คู่มือภายใน"] -->|"Deploy"| App["Astro / Worker<br/>Better Auth<br/>เว็บสมาชิก + ตรวจสิทธิ์"]
+  Public -->|"ลิงก์เข้าสู่ระบบ"| App
+  Google["Google OAuth<br/>ยืนยันตัวตน"] <-->|"Login"| App
+  App <-->|"อ่าน / บันทึก"| DB[("Cloudflare D1<br/>สมาชิก / สิทธิ์<br/>คะแนน / Audit")]
+  App -->|"ตรวจสิทธิ์"| Download["ดาวน์โหลด<br/>JSON / CSV"]
+  PrivateRepo --> Backup["GitHub Actions<br/>สำรองข้อมูล"]
+  DB -->|"Export SQL"| Backup
+  Backup --> R2[("R2 private<br/>SQL backup<br/>ไฟล์แนบ")]
+  App <-->|"ไฟล์ตามสิทธิ์"| R2
