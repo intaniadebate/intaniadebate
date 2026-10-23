@@ -1,0 +1,53 @@
+---
+import poster from '../assets/home/club-reel-poster.webp?url';
+import videoSrc from '../assets/home/club-reel.mp4?url';
+import '../styles/community-reel.css';
+const reelUrl = 'https://www.instagram.com/intaniadebateclub/reel/DbhSoglzVhG/';
+---
+<section class="community-reel-section" aria-labelledby="community-reel-title">
+  <div class="community-reel-layout shell" data-community-reel>
+    <div class="community-reel-visual">
+      <video class="community-reel-video" data-reel-video data-src={videoSrc} poster={poster} width="540" height="960" preload="none" loading="lazy" playsinline aria-label="คลิปจาก Intania Debate Club"></video>
+      <button class="community-reel-play" type="button" data-reel-play aria-label="เล่นวิดีโอ">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 6 9 6-9 6V6Z" fill="currentColor" /></svg>
+      </button>
+      <p class="community-reel-error" data-reel-error role="status" hidden>โหลดคลิปไม่สำเร็จ ลองกดเล่นอีกครั้ง</p>
+      <noscript><a class="community-reel-noscript" href={videoSrc}>เล่นวิดีโอ</a></noscript>
+    </div>
+    <div class="community-reel-copy">
+      <p class="community-reel-eyebrow">A MOMENT FROM THE CLUB</p>
+      <h2 id="community-reel-title">ความทรงจำ<br />ที่พาเรา<em>กลับไปลองอีกครั้ง</em></h2>
+      <p>จากเรื่องวันวานที่ยังแอบค้างใจ กลายเป็นแรงฮึดให้กลับไปยืนบนเวทีอีกครั้ง พร้อมรุ่นพี่ที่คอยส่งต่อประสบการณ์ และเพื่อนใหม่ที่ทำให้การลองพูดครั้งแรกไม่ได้น่ากลัวอย่างที่คิด</p>
+      <p class="community-reel-note">เราอาจเริ่มจากอยากลองโต้วาที แต่สิ่งที่ได้กลับไป อาจเป็นเรื่องราวและผู้คนที่อยากจดจำ</p>
+      <a class="community-reel-link" href={reelUrl} target="_blank" rel="noopener noreferrer">วิดีโอจาก Intania Debate Club <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-community-reel]').forEach(reel => {
+    const video = reel.querySelector<HTMLVideoElement>('[data-reel-video]');
+    const play = reel.querySelector<HTMLButtonElement>('[data-reel-play]');
+    const error = reel.querySelector<HTMLElement>('[data-reel-error]');
+    if (!video || !play || !error) return;
+    const sync = () => {
+      play.hidden = !video.paused && !video.ended;
+      reel.classList.toggle('is-playing', !video.paused);
+    };
+    play.addEventListener('click', () => {
+      error.hidden = true;
+      // Keep source restoration and playback in the same trusted gesture.
+      if (!video.getAttribute('src')) video.src = video.dataset.src!;
+      video.controls = true;
+      if (video.ended) video.currentTime = 0;
+      void video.play().catch(() => { error.hidden = false; sync(); });
+    });
+    video.addEventListener('playing', sync);
+    video.addEventListener('pause', sync);
+    video.addEventListener('ended', sync);
+    video.addEventListener('error', () => { error.hidden = false; sync(); });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); });
+    new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting && !video.paused) video.pause();
+    }).observe(video);
+  });
+</script>

@@ -14,11 +14,13 @@ const frames = story.flatMap(frame => {
 const sizes = '(max-width: 760px) calc(100vw - 40px), (max-width: 1100px) 50vw, 700px';
 ---
 {frames.length > 0 && <figure class="community-story" data-community-story role="region" aria-roledescription="ชุดภาพ" aria-label="ช่วงเวลาของพวกเราในชมรม">
+  <div class="story-perspective"><div class="story-scroll-frame"><div class="story-pointer-frame">
   <button type="button" class="story-stage" data-story-toggle aria-label="สลับเล่นหรือหยุดภาพ" aria-pressed="false">
     {frames.map((frame, index) => <span class:list={['story-slide', index === 0 && 'is-current']} data-story-slide data-caption={frame.caption} aria-hidden={index === 0 ? undefined : 'true'}>
       <img src={index === 0 ? frame.src : undefined} srcset={index === 0 ? frame.srcset : undefined} data-src={index > 0 ? frame.src : undefined} data-srcset={index > 0 ? frame.srcset : undefined} data-fallback={frame.fallback} sizes={sizes} width={frame.asset.width} height={frame.asset.height} alt={frame.asset.alt} loading={index === 0 ? 'lazy' : undefined} decoding="async" />
     </span>)}
   </button>
+  </div></div></div>
   <figcaption class="story-caption">
     <div class="story-caption-text"><span class="story-kicker">LIFE, BETWEEN THE DEBATES.</span><p data-story-caption>{frames[0].caption}</p></div>
   </figcaption>
